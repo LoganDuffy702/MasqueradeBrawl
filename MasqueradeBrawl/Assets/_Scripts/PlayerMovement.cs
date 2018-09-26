@@ -24,17 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 
         transform.Translate(translation, 0, 0);
 
-        if (translation < 0)
-        {
-            //sr.flipX = false;
-            transform.Rotate(0, 0, 0);
-        }
-        else if (translation > 0)
-        {
-            //sr.flipX = true;
-            transform.Rotate(0, 180, 0);
-        }
-        
+       
 
         //if (Input.GetKey(KeyCode.D))
         //{
