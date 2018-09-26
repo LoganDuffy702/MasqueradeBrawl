@@ -3,7 +3,6 @@ using System.Collections;
 
 public class RigidWeapon : MonoBehaviour {
 
-	public bool BurstFire = false;//0 sets it on click 
 	public int burstSize = 5;
 	public float Damage = 10;
 	public float FireDelay=12;
@@ -26,29 +25,22 @@ public class RigidWeapon : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (BurstFire == false) {
-			if (Input.GetButtonDown ("Fire1")) {
-				//Fire ();
-				//ShotGun();
-				Debug.Log("Default single Shot");
-			}
+        var fire = Input.GetAxis("Fire1");
 
-		} else if (BurstFire == true) {
-			if (Input.GetButtonDown ("Fire1")) {
-				if (CanShoot == true) {
-					StartCoroutine (FireBurst ());
-					CanShoot = false;
-					StartCoroutine (Reload ());
+		if (fire > 0)
+        {
+			if (CanShoot == true) {
+				StartCoroutine (FireBurst ());
+				CanShoot = false;
+				StartCoroutine (Reload ());
 				
-
-				} else if (CanShoot == false) {
-					if (showText==true) {
-						Debug.Log ("Reloading");
-						//StartCoroutine(ReloadFX());
-					}
-                } 
-			}
-		} 
+			} else if (CanShoot == false) {
+				if (showText==true) {
+					Debug.Log ("Reloading");
+					//StartCoroutine(ReloadFX());
+				}
+            } 
+		}
 	}
 
 	//timer for reload speed 
