@@ -19,20 +19,37 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            //rb.velocity = (new Vector2(speed, rb.velocity.y));
-            rb.AddForce(new Vector2(speed, rb.velocity.y));
-            sr.flipX = true;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            //rb.velocity = (new Vector2(-speed, rb.velocity.y));
-            rb.AddForce(new Vector2(-speed, rb.velocity.y));
-            sr.flipX = false;
-        }
+        float translation = Input.GetAxis("Horizontal") * speed;
+        translation *= Time.deltaTime;
 
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, Maxspeed);
+        transform.Translate(translation, 0, 0);
+
+        if (translation < 0)
+        {
+            //sr.flipX = false;
+            transform.Rotate(0, 0, 0);
+        }
+        else if (translation > 0)
+        {
+            //sr.flipX = true;
+            transform.Rotate(0, 180, 0);
+        }
+        
+
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    //rb.velocity = (new Vector2(speed, rb.velocity.y));
+        //    rb.AddForce(new Vector2(speed, rb.velocity.y));
+        //    sr.flipX = true;
+        //}
+        //else if (Input.GetKey(KeyCode.A))
+        //{
+        //    //rb.velocity = (new Vector2(-speed, rb.velocity.y));
+        //    rb.AddForce(new Vector2(-speed, rb.velocity.y));
+        //    sr.flipX = false;
+        //}
+
+        //rb.velocity = Vector3.ClampMagnitude(rb.velocity, Maxspeed); if Addforce is used this makes a max speed
 
         //if (Flipped == true)
         //{
