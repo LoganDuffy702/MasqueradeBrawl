@@ -16,9 +16,7 @@ public class AimTest : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        float posH = Input.GetAxis("HorAim");
-        float posV = Input.GetAxis("VerAim");
-        Vector3 NewInput = new Vector3(posH, posV, 0f);
+        Vector3 NewInput = new Vector3(Input.GetAxis("HorAim"), Input.GetAxis("VerAim"), 0f);
         
         if (NewInput.sqrMagnitude < 0.1f)
         {

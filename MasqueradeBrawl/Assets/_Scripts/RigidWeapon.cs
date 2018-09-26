@@ -60,7 +60,7 @@ public class RigidWeapon : MonoBehaviour {
 	void Fire(){
         var bullet = (GameObject)Instantiate(TypeOfBullet, transform.position, transform.rotation);//Basic firing of bullet
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.TransformDirection(new Vector2(BulletSpeed,0));
-		Destroy (bullet, 1f);
+		//Destroy (bullet, 1f);
 	}
 
 	void ShotGun(){
@@ -71,7 +71,7 @@ public class RigidWeapon : MonoBehaviour {
             var bullet1 = (GameObject)Instantiate(TypeOfBullet, transform.position, transform.rotation);//Basic firing of bullet
             bullet1.GetComponent<Rigidbody2D>().velocity = bullet1.transform.TransformDirection(new Vector2(BulletSpeed,i));
             
-            Destroy(bullet1, 1f);
+            //Destroy(bullet1, 1f);
         }
     }
 
