@@ -3,11 +3,21 @@ using System.Collections;
 
 public class CamPowerUp : MonoBehaviour {
 
-    public Camera Camera1;
+    private Camera Camera1;
     public bool flipMe;
     public float duration;
+    public float LifeSpan;
     // Use this for initialization
 
+    void Start()
+    {
+        Camera1 = GameObject.Find("Main Camera").GetComponent<Camera>();
+        if (Camera1 == null)
+        {
+            Debug.Log("NO Camera FOund");
+        }
+        StartCoroutine(HidMe());
+    }
     void Update()
     {
         if (flipMe == true)
@@ -15,7 +25,6 @@ public class CamPowerUp : MonoBehaviour {
             CamFlip();
             StartCoroutine(FlipTimer());
         }
-
     }
 
     void CamFlip()
@@ -32,6 +41,14 @@ public class CamPowerUp : MonoBehaviour {
         flipMe = false;
         CamFix();
         Destroy(gameObject);
+    }
+
+    public IEnumerator HidMe()
+    {
+        yield return new WaitForSeconds(LifeSpan);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        Destroy(gameObject, duration + 10);
     }
 
     void OnTriggerEnter2D(Collider2D other)

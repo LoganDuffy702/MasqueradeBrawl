@@ -10,7 +10,7 @@ public class PowerUpGenerator : MonoBehaviour {
     public float maxOffsetX = 3f;
     public float maxOffsetY = 3f;
     private Vector3 lastSpawnPosition;
-    public float LifeSpan;
+    
     public float SpawnTimer;
     private bool spawnfloor = true;
     public float speed;
@@ -37,11 +37,6 @@ public class PowerUpGenerator : MonoBehaviour {
             spawnfloor = false;
         }
 
-        
-        
-
-
-
     }
 
     private GameObject RandomGroundObject()
@@ -54,13 +49,7 @@ public class PowerUpGenerator : MonoBehaviour {
         yield return new WaitForSeconds(SpawnTimer);
         spawnfloor = true;
     }
-    public IEnumerator HidMe()
-    {
-        yield return new WaitForSeconds(LifeSpan);
-        lastGroundObject.GetComponent<SpriteRenderer>().enabled = false;
-        lastGroundObject.GetComponent<BoxCollider2D>().enabled = false;
-        Destroy(lastGroundObject, 30);
-    }
+    
 
     private void SpawnNewGroundObject()
     {
@@ -81,6 +70,6 @@ public class PowerUpGenerator : MonoBehaviour {
         {
             lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.up * speed);
         }
-        StartCoroutine(HidMe());
+        
     }
 }

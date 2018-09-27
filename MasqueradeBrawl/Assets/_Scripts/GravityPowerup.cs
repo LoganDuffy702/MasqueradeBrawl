@@ -1,25 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GravityPowerup : MonoBehaviour {
 
     public bool GravityOFF;
-    public GameObject players;
+    //public List<GameObject> players = new List<GameObject>();
+    private GameObject Player1;
     public float duration;
     public float ReverseGravityScale;
     public float OriginalGravity;
+    public float LifeSpan;
     Rigidbody2D rigid;
     SpriteRenderer sr;
     //BoxCollider2D fix;
     PlayerMovement SpriteFlip;
     // Use this for initialization
     void Start () {
-       
-        rigid = players.GetComponent<Rigidbody2D>();
-        sr = players.GetComponent<SpriteRenderer>();
-        //fix = players.GetComponent<BoxCollider2D>();
-        
-        SpriteFlip = players.GetComponent<PlayerMovement>();
+
+        Player1 = GameObject.Find("_Player1");
+        if (Player1 == null)
+        {
+            Debug.Log("NO PLAYER found");
+        }
+        rigid = Player1.GetComponent<Rigidbody2D>();
+        sr = Player1.GetComponent<SpriteRenderer>();
+        SpriteFlip = Player1.GetComponent<PlayerMovement>();
+
+        //for (int i = 0; i < players.Count; i++)
+        //{
+        //    rigid = players[i].GetComponent<Rigidbody2D>();
+        //    sr = players[i].GetComponent<SpriteRenderer>();
+        //    //fix = players.GetComponent<BoxCollider2D>();
+
+        //    SpriteFlip = players[i].GetComponent<PlayerMovement>();
+        //}
+        StartCoroutine(HidMe());
 
     }
 
@@ -30,8 +46,17 @@ public class GravityPowerup : MonoBehaviour {
             GravityFX();
             StartCoroutine(FlipTimer());
         }
-        
+       
     }
+
+    public IEnumerator HidMe()
+    {
+        yield return new WaitForSeconds(LifeSpan);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        Destroy(gameObject,duration+10);
+    }
+
     void GravityFX()
     {
         SpriteFlip.Flipped = true;

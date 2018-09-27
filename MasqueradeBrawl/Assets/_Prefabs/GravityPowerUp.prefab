@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522064339778364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.95, y: 12.199999, z: 0}
+  m_LocalPosition: {x: 13.66, y: -3.84, z: 0}
   m_LocalScale: {x: 0.34917998, y: 0.34917998, z: 0.34917998}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,10 +80,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GravityOFF: 0
-  players: {fileID: 0}
-  duration: 5
+  duration: 3
   ReverseGravityScale: -2.57
   OriginalGravity: 5
+  LifeSpan: 5
 --- !u!114 &114958277831681770
 MonoBehaviour:
   m_ObjectHideFlags: 1
