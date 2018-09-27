@@ -5,7 +5,7 @@ using UnityEngine;
 public class AimTest : MonoBehaviour {
 
     // Use this for initialization
-    public float rotationOffset = 0;
+    //public float rotationOffset = 0;
     public GameObject ParentPlayer;
    // private SpriteRenderer sr;
     
@@ -26,7 +26,7 @@ public class AimTest : MonoBehaviour {
         NewInput.Normalize();
         float Heading = Vector3.Dot(Vector3.up, NewInput);
         Vector3 NewRotation = transform.rotation.eulerAngles;
-        NewRotation.z = Heading * rotationOffset;
+        NewRotation.z = Heading * 90;
         
         if (NewInput.x >= 0)
         {

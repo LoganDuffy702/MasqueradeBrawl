@@ -6,16 +6,21 @@ public class GravityPowerup : MonoBehaviour {
     public bool GravityOFF;
     public GameObject players;
     public float duration;
+    public float ReverseGravityScale;
+    public float OriginalGravity;
     Rigidbody2D rigid;
     SpriteRenderer sr;
-    BoxCollider2D fix;
-    CharacterMovement SpriteFlip;
+    //BoxCollider2D fix;
+    PlayerMovement SpriteFlip;
     // Use this for initialization
     void Start () {
+       
         rigid = players.GetComponent<Rigidbody2D>();
         sr = players.GetComponent<SpriteRenderer>();
-        fix = players.GetComponent<BoxCollider2D>();
-        SpriteFlip = players.GetComponent<CharacterMovement>();
+        //fix = players.GetComponent<BoxCollider2D>();
+        
+        SpriteFlip = players.GetComponent<PlayerMovement>();
+
     }
 
     void Update()
@@ -25,20 +30,21 @@ public class GravityPowerup : MonoBehaviour {
             GravityFX();
             StartCoroutine(FlipTimer());
         }
+        
     }
     void GravityFX()
     {
-        SpriteFlip.I_flipped = true;
-        fix.offset = new Vector2(-0.08f, -0.09f);
+        SpriteFlip.Flipped = true;
+        //fix.offset = new Vector2(-0.08f, -0.09f);
         sr.flipY = true;
-        rigid.gravityScale = -1;
+        rigid.gravityScale = ReverseGravityScale;
     }
     void GravityFIX()
     {
-        SpriteFlip.I_flipped = false;
-        fix.offset = new Vector2(-0.08f, .1f);
+        SpriteFlip.Flipped = false;
+        //fix.offset = new Vector2(-0.08f, .1f);
         sr.flipY = false;
-        rigid.gravityScale = 2;
+        rigid.gravityScale = OriginalGravity;
         Destroy(gameObject);
     }
     public IEnumerator FlipTimer()
@@ -49,7 +55,7 @@ public class GravityPowerup : MonoBehaviour {
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag.Equals("Player"))
+        if (col.gameObject.tag.Equals("Players"))
         {
            
             gameObject.GetComponent<SpriteRenderer>().enabled = false;

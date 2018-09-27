@@ -7,6 +7,7 @@ TagManager:
   - Portal start
   - Players
   - Walls
+  - Portals
   layers:
   - Default
   - TransparentFX
@@ -44,9 +45,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Portals
+    uniqueID: 2977716397
+    locked: 0
   - name: Weapons
     uniqueID: 3310816649
     locked: 0
   - name: Sights
     uniqueID: 3557848203
+    locked: 0
+  - name: Players
+    uniqueID: 1854685309
+    locked: 0
+  - name: powerups
+    uniqueID: 2998845765
     locked: 0

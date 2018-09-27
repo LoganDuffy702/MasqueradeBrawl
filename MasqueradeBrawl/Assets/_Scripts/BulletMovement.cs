@@ -7,7 +7,8 @@ public class BulletMovement : MonoBehaviour {
 	public float DestroyFade = 1;
 	public GameObject OnContact; 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+
 		//Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y); //Supposedly binds firepoint to screen/mouse aspect:ratio...
 		transform.Translate (Vector3.left * Time.deltaTime * MoveSpeed);
 		Destroy (this.gameObject, DestroyFade);

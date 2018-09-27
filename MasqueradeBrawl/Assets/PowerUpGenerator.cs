@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloorGenerator : MonoBehaviour {
-
-    public List<GameObject> groundObjects = new List<GameObject>();
+public class PowerUpGenerator : MonoBehaviour {
+    public List<GameObject> PowerUpsObject = new List<GameObject>();
     private GameObject lastGroundObject;
-    public float maxOffset = 3f;
+    public bool UseSpeed;
+    public bool Touched = false;
+    public float maxOffsetX = 3f;
+    public float maxOffsetY = 3f;
     private Vector3 lastSpawnPosition;
-    public float duration;
+    public float LifeSpan;
+    public float SpawnTimer;
     private bool spawnfloor = true;
     public float speed;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         //If you want instant spawn, but not needed.
         //lastGroundObject = Instantiate(RandomGroundObject());
         //lastGroundObject.transform.position = transform.position;//+ Vector2.down * 2f + Vector2.forward * 2f
         //lastSpawnPosition = lastGroundObject.transform.Find("EndPoint").position;
         //StartCoroutine(SpeedUpTimer());
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    // Update is called once per frame
+    void Update()
+    {
+
         if (spawnfloor == true) //Change to timer (old)Vector3.Distance(lastSpawnPosition, player.transform.position) < genDistance
         {
             SpawnNewGroundObject();
@@ -31,27 +36,32 @@ public class FloorGenerator : MonoBehaviour {
             StartCoroutine(Timer());
             spawnfloor = false;
         }
+
         
+        
+
+
 
     }
 
     private GameObject RandomGroundObject()
     {
-        int r = Mathf.FloorToInt(Random.value * groundObjects.Count);
-        return groundObjects[r];
+        int r = Mathf.FloorToInt(Random.value * PowerUpsObject.Count);
+        return PowerUpsObject[r];
     }
     public IEnumerator Timer()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(SpawnTimer);
         spawnfloor = true;
     }
-    public IEnumerator SpeedUpTimer()
+    public IEnumerator HidMe()
     {
-        yield return new WaitForSeconds(10f);
-        StartCoroutine(SpeedUpTimer());
-        speed = speed + .5f;
-        duration = duration - .2f;
+        yield return new WaitForSeconds(LifeSpan);
+        lastGroundObject.GetComponent<SpriteRenderer>().enabled = false;
+        lastGroundObject.GetComponent<BoxCollider2D>().enabled = false;
+        Destroy(lastGroundObject, 30);
     }
+
     private void SpawnNewGroundObject()
     {
         //var lastEndPoint = lastGroundObject.transform.Find("EndPoint");
@@ -66,7 +76,11 @@ public class FloorGenerator : MonoBehaviour {
         lastGroundObject.transform.position = transform.position;
 
         // translate the new game object by a random amount left or right
-        lastGroundObject.transform.position += Vector3.right * maxOffset * (Random.value * 2f - 1f);
-        lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.up*speed);
+        lastGroundObject.transform.position += new Vector3(maxOffsetX* (Random.value * 2f - 1f), maxOffsetY * (Random.value * 2f - 1f),0f);
+        if (UseSpeed == true)
+        {
+            lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.up * speed);
+        }
+        StartCoroutine(HidMe());
     }
 }
