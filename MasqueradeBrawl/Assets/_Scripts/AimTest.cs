@@ -11,11 +11,12 @@ public class AimTest : MonoBehaviour {
     
     // Update is called once per frame
     void Start () {
-
+        
     }
 
     // Update is called once per frame
     void Update () {
+        gameObject.transform.localPosition = new Vector3(0f, -.108f, 0f);
         Vector3 NewInput = new Vector3(Input.GetAxis("HorAim"), Input.GetAxis("VerAim"), 0f);
         
         if (NewInput.sqrMagnitude < 0.1f)

@@ -16,9 +16,9 @@ public class Portal_Factory : MonoBehaviour {
 
        
 	}
-	
-	// Update is called once per frame
-	void Update () {
+   
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -27,6 +27,7 @@ public class Portal_Factory : MonoBehaviour {
         if (other.gameObject.CompareTag("Players"))
         {
             other.gameObject.transform.position = EndPoint;
+            
         }
     }
 }

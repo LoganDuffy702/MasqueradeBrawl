@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     public float Maxspeed;
     public bool Flipped;
 
+    Animator anim;
     public GameObject WeaponSprite;
     Transform WSTrans;
     SpriteRenderer WSsr;
@@ -21,13 +22,23 @@ public class PlayerMovement : MonoBehaviour {
         //sr = Character.GetComponent<SpriteRenderer>();
         WSTrans = WeaponSprite.GetComponent<Transform>();
         WSsr = WeaponSprite.GetComponent<SpriteRenderer>();
+        anim = gameObject.GetComponent<Animator>();
     }
 	void FixedUpdate()
     {
 
         transform.Translate(new Vector3(Input.GetAxis(MovementControls) * speed * Time.deltaTime, 0,0));
+        var run = Input.GetAxis(MovementControls);
+        
         //rb.AddForce(new Vector3(translation * Time.deltaTime, 0, 0));
-
+        if (run > 0 || run < 0)
+        {
+            anim.enabled = true;
+        }
+        else if (run == 0)
+        {
+            anim.enabled = false;
+        }
         //rb.velocity = Vector3.ClampMagnitude(rb.velocity, Maxspeed);
 
         if (Flipped == true)
