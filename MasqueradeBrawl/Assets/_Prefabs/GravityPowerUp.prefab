@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 212268784519996210}
   - component: {fileID: 114693381262698924}
   - component: {fileID: 114958277831681770}
+  - component: {fileID: 95623449526742288}
   m_Layer: 0
   m_Name: GravityPowerUp
   m_TagString: Untagged
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522064339778364}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.66, y: -3.84, z: 0}
-  m_LocalScale: {x: 0.34917998, y: 0.34917998, z: 0.34917998}
+  m_LocalPosition: {x: 30.332563, y: 2.4566076, z: 0}
+  m_LocalScale: {x: 4.6956434, y: 4.695644, z: 4.695644}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,15 +60,33 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.24, y: 2.24}
+    oldSize: {x: 0.37, y: 0.31}
     newSize: {x: 2.24, y: 2.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.24, y: 2.24}
+  m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+--- !u!95 &95623449526742288
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522064339778364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01c1112597fb46b4e906ba2cc013baac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114693381262698924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,6 +101,7 @@ MonoBehaviour:
   GravityOFF: 0
   duration: 3
   ReverseGravityScale: -2.57
+  OnContact: {fileID: 1762451610089496, guid: 071be215b9d65d243b7f924daf363128, type: 2}
   OriginalGravity: 5
   LifeSpan: 5
 --- !u!114 &114958277831681770
@@ -90,15 +110,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522064339778364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b4aa500e7fbb6d459991991e7b519b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   XRotationSpeed: 0
   YRotationSpeed: 0
-  ZRotationSpeed: 2
-  RotationTimer: 1
+  ZRotationSpeed: 0
+  RotationTimer: 0
   touched: 0
 --- !u!212 &212268784519996210
 SpriteRenderer:
@@ -135,7 +155,7 @@ SpriteRenderer:
   m_SortingLayerID: -1296121531
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c5e8a686fbf87d24aa2707d8211099be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a98cd46b5153db4bba6df197f9f8eb4, type: 3}
   m_Color: {r: 0.44313726, g: 0.7647059, b: 0.7218301, a: 1}
   m_FlipX: 0
   m_FlipY: 0

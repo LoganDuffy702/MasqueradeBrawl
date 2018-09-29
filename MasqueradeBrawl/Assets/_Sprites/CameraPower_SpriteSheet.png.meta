@@ -1,11 +1,17 @@
 fileFormatVersion: 2
-guid: 114b7f74ebc6c384483cf88ccfff021b
+guid: ea5fc2b3223eede49945f2287a375b9f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MM_SpriteSheet_0
-    21300002: MM_SpriteSheet_1
-    21300004: MM_SpriteSheet_2
-    21300006: MM_SpriteSheet_3
+    21300000: CameraPower_SpriteSheet_0
+    21300002: CameraPower_SpriteSheet_1
+    21300004: CameraPower_SpriteSheet_2
+    21300006: CameraPower_SpriteSheet_3
+    21300008: CameraPower_SpriteSheet_4
+    21300010: CameraPower_SpriteSheet_5
+    21300012: CameraPower_SpriteSheet_6
+    21300014: CameraPower_SpriteSheet_7
+    21300016: CameraPower_SpriteSheet_8
+    21300018: CameraPower_SpriteSheet_9
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -86,81 +92,121 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MM_SpriteSheet_0
+      name: CameraPower_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 305
-        width: 122
-        height: 131
+        x: 9
+        y: 293
+        width: 87
+        height: 76
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.49037355, y: 0.60908026}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9cd0559e7397774aadb429df1e41717
+      spriteID: 4004bbffe7f6d40499e14d97cd3e7db7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MM_SpriteSheet_1
+      name: CameraPower_SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 159
-        y: 305
-        width: 122
-        height: 131
+        x: 122
+        y: 293
+        width: 87
+        height: 75
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.40926018, y: 0.6040511}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0394acc226febfa4d9e239a3f1dec20e
+      spriteID: 68286f872f48cbf43980b97c41519b2d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MM_SpriteSheet_2
+      name: CameraPower_SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 299
-        y: 305
-        width: 122
-        height: 131
+        x: 235
+        y: 294
+        width: 82
+        height: 89
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.29828364, y: 0.41060337}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c78e458714aaee240ae95d849b2de6d8
+      spriteID: 3eda7f0567061d54490c0ed21342a1f9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MM_SpriteSheet_3
+      name: CameraPower_SpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 429
-        y: 305
-        width: 122
-        height: 131
+        x: 343
+        y: 297
+        width: 87
+        height: 79
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.41095498, y: 0.29857433}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a0a1de7c8aed784893f79017477d80e
+      spriteID: 12aa5a872605da942b62fb0da87c3f9b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CameraPower_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 288
+        width: 73
+        height: 85
+      alignment: 9
+      pivot: {x: 0.62619936, y: 0.37191054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963908b8b483e844c9fa92228f1037a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CameraPower_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 285
+        width: 74
+        height: 84
+      alignment: 9
+      pivot: {x: 0.6252153, y: 0.54076606}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8697a78b66c36848905de8e7d35b08d
       vertices: []
       indices: 
       edges: []
@@ -168,7 +214,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 693a5774b4538324bbd1f113ec889880
+    spriteID: 04d287eced807f94a9b446043102603d
     vertices: []
     indices: 
     edges: []

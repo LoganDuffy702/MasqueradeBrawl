@@ -63,3 +63,6 @@ TagManager:
   - name: Bullets
     uniqueID: 949335589
     locked: 0
+  - name: FX
+    uniqueID: 4110657299
+    locked: 0

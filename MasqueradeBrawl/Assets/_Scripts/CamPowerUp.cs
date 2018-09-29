@@ -6,25 +6,30 @@ public class CamPowerUp : MonoBehaviour {
     private Camera Camera1;
     public bool flipMe;
     public float duration;
+    public GameObject OnContact;
     public float LifeSpan;
     // Use this for initialization
 
     void Start()
     {
         Camera1 = GameObject.Find("Main Camera").GetComponent<Camera>();
-        if (Camera1 == null)
+        
+        if (Camera1 == false)
         {
             Debug.Log("NO Camera FOund");
         }
+        
         StartCoroutine(HidMe());
     }
     void Update()
     {
+        
         if (flipMe == true)
         {
             CamFlip();
             StartCoroutine(FlipTimer());
         }
+        
     }
 
     void CamFlip()
@@ -46,8 +51,11 @@ public class CamPowerUp : MonoBehaviour {
     public IEnumerator HidMe()
     {
         yield return new WaitForSeconds(LifeSpan);
+        
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        
+
         Destroy(gameObject, duration + 10);
     }
 
@@ -57,6 +65,7 @@ public class CamPowerUp : MonoBehaviour {
         {
             
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            Instantiate(OnContact, transform.localPosition, transform.localRotation);
             flipMe = true;
            
         }
