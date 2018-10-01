@@ -2252,8 +2252,8 @@ MonoBehaviour:
   Touched: 0
   maxOffsetX: 23
   maxOffsetY: 18
-  SpawnTimer: 0.5
-  speed: 0
+  SpawnTimer: 2
+  speed: 0.72
 --- !u!4 &563887719
 Transform:
   m_ObjectHideFlags: 0
