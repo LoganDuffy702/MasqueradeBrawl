@@ -20,9 +20,10 @@ public class PlayerMovement : MonoBehaviour {
     void Start () {
         //rb = Character.GetComponent<Rigidbody2D>();
         //sr = Character.GetComponent<SpriteRenderer>();
+        Character = GameObject.Find("_Player1_Anim");
         WSTrans = WeaponSprite.GetComponent<Transform>();
         WSsr = WeaponSprite.GetComponent<SpriteRenderer>();
-        anim = gameObject.GetComponent<Animator>();
+        anim = Character.GetComponent<Animator>();
     }
 	void FixedUpdate()
     {

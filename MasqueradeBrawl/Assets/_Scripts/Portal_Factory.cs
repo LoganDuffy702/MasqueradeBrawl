@@ -5,6 +5,7 @@ using UnityEngine;
 public class Portal_Factory : MonoBehaviour {
 
     public GameObject Portals;
+    public bool Special;
     //private List<Transform> Ptrans = new List<Transform>();
     private Vector3 EndPoint; 
 	void Start () {
@@ -26,7 +27,16 @@ public class Portal_Factory : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Players"))
         {
-            other.gameObject.transform.position = EndPoint;
+            if (Special == true)
+            {
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up*2);
+                other.gameObject.transform.position = EndPoint;
+            }
+            else
+            {
+                other.gameObject.transform.position = EndPoint;
+            }
+                
             
         }
     }

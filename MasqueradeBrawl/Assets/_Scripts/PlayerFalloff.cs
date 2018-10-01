@@ -46,7 +46,7 @@ public class PlayerFalloff : MonoBehaviour {
     void LeftSpawn()
     {
         rb.velocity = new Vector2(0, 0);
-        transform.position = new Vector2(-transform.position.x+.5f, transform.position.y);
+        transform.position = new Vector2(-transform.position.x, transform.position.y);
     }
     void RightSpawn()
     {

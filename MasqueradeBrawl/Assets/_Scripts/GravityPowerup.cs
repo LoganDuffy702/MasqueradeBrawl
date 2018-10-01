@@ -7,6 +7,7 @@ public class GravityPowerup : MonoBehaviour {
     public bool GravityOFF;
     //public List<GameObject> players = new List<GameObject>();
     private GameObject Player1;
+    private GameObject PlayerSprite;
     public float duration;
     public float ReverseGravityScale;
     public GameObject OnContact;
@@ -20,12 +21,13 @@ public class GravityPowerup : MonoBehaviour {
     void Start () {
 
         Player1 = GameObject.Find("_Player1");
+        PlayerSprite = GameObject.Find("_Player1_Anim");
         if (Player1 == null)
         {
             Debug.Log("NO PLAYER found");
         }
         rigid = Player1.GetComponent<Rigidbody2D>();
-        sr = Player1.GetComponent<SpriteRenderer>();
+        sr = PlayerSprite.GetComponent<SpriteRenderer>();
         SpriteFlip = Player1.GetComponent<PlayerMovement>();
 
         StartCoroutine(HidMe());

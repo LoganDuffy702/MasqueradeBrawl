@@ -7,11 +7,12 @@ public class AimTest : MonoBehaviour {
     // Use this for initialization
     //public float rotationOffset = 0;
     public GameObject ParentPlayer;
+    GameObject PlayerSprite;
    // private SpriteRenderer sr;
     
     // Update is called once per frame
     void Start () {
-        
+        PlayerSprite = GameObject.Find("_Player1_Anim");
     }
 
     // Update is called once per frame
@@ -32,14 +33,14 @@ public class AimTest : MonoBehaviour {
         if (NewInput.x >= 0)
         {
             NewRotation.y = 180f;
-            ParentPlayer.GetComponent<SpriteRenderer>().flipX = true;
+            PlayerSprite.GetComponent<SpriteRenderer>().flipX = true;
 
 
         }
         if (NewInput.x <= 0)
         {
             NewRotation.y = 0f;
-            ParentPlayer.GetComponent<SpriteRenderer>().flipX = false;
+            PlayerSprite.GetComponent<SpriteRenderer>().flipX = false;
 
         }
 
