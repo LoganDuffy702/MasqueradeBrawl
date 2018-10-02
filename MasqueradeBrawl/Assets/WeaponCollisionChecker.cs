@@ -16,5 +16,6 @@ public class WeaponCollisionChecker : MonoBehaviour {
         {
             Player.GetComponent<PlayerHealth>().TakeDamage(1);
         }
+        
     }
 }

@@ -5,7 +5,10 @@ using UnityEngine;
 public class Portal_Factory : MonoBehaviour {
 
     public GameObject Portals;
-    public bool Special;
+    public bool ReleaseUp;
+    public bool ReleaseRight;
+    public bool ReleaseLeft;
+    public float ExitSpeed;
     //private List<Transform> Ptrans = new List<Transform>();
     private Vector3 EndPoint; 
 	void Start () {
@@ -27,9 +30,22 @@ public class Portal_Factory : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Players"))
         {
-            if (Special == true)
+            if (ReleaseUp == true)
             {
+                other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up*2);
+                other.gameObject.transform.position = EndPoint;
+            }
+            else if (ReleaseRight == true)
+            {
+                other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right*ExitSpeed);
+                other.gameObject.transform.position = EndPoint;
+            }
+            else if (ReleaseLeft == true)
+            {
+                other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * ExitSpeed);
                 other.gameObject.transform.position = EndPoint;
             }
             else

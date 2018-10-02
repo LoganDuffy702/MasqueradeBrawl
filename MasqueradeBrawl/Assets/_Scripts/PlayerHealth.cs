@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour {
         CurrentHealth = PlayerHP;
 	}
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         CurrentHealth -= amount;
         if (CurrentHealth <= 0 )
@@ -20,6 +20,10 @@ public class PlayerHealth : MonoBehaviour {
             CurrentHealth = 0;
             //add player objects name with a public
             Debug.Log("PLAYER DEAD");
+        }
+        if (CurrentHealth > 100)
+        {
+            CurrentHealth = 100;
         }
         healtBar.sizeDelta = new Vector2(healtBar.sizeDelta.x, CurrentHealth);
        
