@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     //SpriteRenderer sr;
     public float speed;
     public float Maxspeed;
+    public float KeyBoardSpeed;
     public bool Flipped;
 
     Animator anim;
@@ -30,6 +31,17 @@ public class PlayerMovement : MonoBehaviour {
 
         transform.Translate(new Vector3(Input.GetAxis(MovementControls) * speed * Time.deltaTime, 0,0));
         var run = Input.GetAxis(MovementControls);
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(new Vector3(-KeyBoardSpeed * Time.deltaTime, 0, 0));
+            run = 1;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(new Vector3(KeyBoardSpeed * Time.deltaTime, 0, 0));
+            run = 1;
+        }
         
         //rb.AddForce(new Vector3(translation * Time.deltaTime, 0, 0));
         if (run > 0 || run < 0)

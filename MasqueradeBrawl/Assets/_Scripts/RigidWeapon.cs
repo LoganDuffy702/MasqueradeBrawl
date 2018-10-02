@@ -20,8 +20,9 @@ public class RigidWeapon : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         var fire = Input.GetAxis("Fire1");
+        Input.GetKeyDown(KeyCode.Space);
 
-		if (fire > 0)
+		if (Input.GetKeyDown(KeyCode.Space))//fire > 0
         {
 			if (CanShoot == true) {
 				StartCoroutine (Fire());
