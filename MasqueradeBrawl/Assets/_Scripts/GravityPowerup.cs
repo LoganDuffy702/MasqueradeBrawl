@@ -15,7 +15,7 @@ public class GravityPowerup : MonoBehaviour {
     public float LifeSpan;
     Rigidbody2D rigid;
     SpriteRenderer sr;
-    //BoxCollider2D fix;
+    CapsuleCollider2D PlayerBox;
     PlayerMovement SpriteFlip;
     // Use this for initialization
     void Start () {
@@ -29,6 +29,7 @@ public class GravityPowerup : MonoBehaviour {
         rigid = Player1.GetComponent<Rigidbody2D>();
         sr = PlayerSprite.GetComponent<SpriteRenderer>();
         SpriteFlip = Player1.GetComponent<PlayerMovement>();
+        PlayerBox = Player1.GetComponent<CapsuleCollider2D>();
 
         StartCoroutine(HidMe());
 
@@ -55,14 +56,14 @@ public class GravityPowerup : MonoBehaviour {
     void GravityFX()
     {
         SpriteFlip.Flipped = true;
-        //fix.offset = new Vector2(-0.08f, -0.09f);
         sr.flipY = true;
         rigid.gravityScale = ReverseGravityScale;
+        PlayerBox.offset = new Vector2(0f, 0.15f);
     }
     void GravityFIX()
     {
         SpriteFlip.Flipped = false;
-        //fix.offset = new Vector2(-0.08f, .1f);
+        PlayerBox.offset = new Vector2(0f, -0.12f);
         sr.flipY = false;
         rigid.gravityScale = OriginalGravity;
         Destroy(gameObject);
@@ -79,6 +80,7 @@ public class GravityPowerup : MonoBehaviour {
         {
            
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             Instantiate(OnContact, transform.localPosition, transform.localRotation);
             GravityOFF = true;
         }

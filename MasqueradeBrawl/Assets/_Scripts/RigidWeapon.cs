@@ -32,7 +32,7 @@ public class RigidWeapon : MonoBehaviour {
             else if (CanShoot == false)
             {
 				if (showText==true) {
-					Debug.Log ("Reloading");
+					//Debug.Log ("Reloading");
 					//StartCoroutine(ReloadFX());
 				}
             } 

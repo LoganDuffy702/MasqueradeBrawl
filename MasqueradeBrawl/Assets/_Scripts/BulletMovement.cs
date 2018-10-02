@@ -14,18 +14,17 @@ public class BulletMovement : MonoBehaviour {
 		Destroy (this.gameObject, DestroyFade);
 	}
 
-	void OnCollisionEnter2D(Collision2D col){
+	void OnTriggerEnter2D(Collider2D col){
 
 		if (col.gameObject.CompareTag("Walls")){
 			Instantiate (OnContact, transform.localPosition,transform.localRotation);
 			Destroy (gameObject);
 		}
-			
-		
+        if (col.gameObject.CompareTag("Players"))
+        {
+            Instantiate(OnContact, transform.localPosition, transform.localRotation);
+            Destroy(gameObject);
+        }
 
 	}
-	//void OnTriggerEnter2D(Collider2D other){
-		//if (other.gameObject.CompareTag("Untagged")) {
-			//DestroyImmediate (this.gameObject, true );
-		//}
 }
