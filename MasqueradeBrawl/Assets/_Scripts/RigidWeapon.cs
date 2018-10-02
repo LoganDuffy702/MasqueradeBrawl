@@ -22,7 +22,7 @@ public class RigidWeapon : MonoBehaviour {
         var fire = Input.GetAxis("Fire1");
         Input.GetKeyDown(KeyCode.Space);
 
-		if (Input.GetKeyDown(KeyCode.Space))//fire > 0
+		if (fire > 0)
         {
 			if (CanShoot == true) {
 				StartCoroutine (Fire());
