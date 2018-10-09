@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58877242921540430}
   - component: {fileID: 114723385957833878}
   m_Layer: 0
-  m_Name: HealthPowerUP
+  m_Name: SuperHealthPowerUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,9 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b50cec16fac8846af885cc35897fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AddHealth: 25
+  AddHealth: 75
   OnContact: {fileID: 1758789153137206, guid: 0af4d7d24e07a244ebf4dc336451022e, type: 2}
-  LifeSpan: 7
+  LifeSpan: 4
 --- !u!114 &114723385957833878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4aa500e7fbb6d459991991e7b519b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XRotationSpeed: 0
-  YRotationSpeed: 0
+  XRotationSpeed: 5
+  YRotationSpeed: 3
   ZRotationSpeed: 9
   RotationTimer: 1
   touched: 0
@@ -124,7 +124,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c5e8a686fbf87d24aa2707d8211099be, type: 3}
-  m_Color: {r: 0.9528302, g: 0.05842829, b: 0.05842829, a: 1}
+  m_Color: {r: 0.7075472, g: 0.60874003, b: 0.25698647, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

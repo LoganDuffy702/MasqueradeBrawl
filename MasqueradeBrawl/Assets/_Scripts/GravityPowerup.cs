@@ -8,7 +8,7 @@ public class GravityPowerup : MonoBehaviour {
     //public List<GameObject> players = new List<GameObject>();
     private GameObject Player1;
     private GameObject PlayerSprite;
-    public float duration;
+    public float Effect_duration;
     public float ReverseGravityScale;
     public GameObject OnContact;
     public float OriginalGravity;
@@ -50,7 +50,7 @@ public class GravityPowerup : MonoBehaviour {
         yield return new WaitForSeconds(LifeSpan);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        Destroy(gameObject,duration+10);
+        Destroy(gameObject,Effect_duration+10);
     }
 
     void GravityFX()
@@ -70,7 +70,7 @@ public class GravityPowerup : MonoBehaviour {
     }
     public IEnumerator FlipTimer()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(Effect_duration);
         GravityOFF = false;
         GravityFIX();
     }

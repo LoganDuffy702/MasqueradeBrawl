@@ -5,7 +5,7 @@ public class CamPowerUp : MonoBehaviour {
 
     private Camera Camera1;
     public bool flipMe;
-    public float duration;
+    public float Effect_duration;
     public GameObject OnContact;
     public float LifeSpan;
     // Use this for initialization
@@ -42,7 +42,7 @@ public class CamPowerUp : MonoBehaviour {
     }
     public IEnumerator FlipTimer()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(Effect_duration);
         flipMe = false;
         CamFix();
         Destroy(gameObject);
@@ -56,7 +56,7 @@ public class CamPowerUp : MonoBehaviour {
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         
 
-        Destroy(gameObject, duration + 10);
+        Destroy(gameObject, Effect_duration + 10);
     }
 
     void OnTriggerEnter2D(Collider2D other)

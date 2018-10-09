@@ -14,7 +14,7 @@ public class WeaponCollisionChecker : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("PistolBullet"))
         {
-            Player.GetComponent<PlayerHealth>().TakeDamage(1);
+            Player.GetComponent<PlayerHealth>().TakeDamage(3);
         }
         
     }

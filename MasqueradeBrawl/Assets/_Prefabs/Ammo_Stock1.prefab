@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114219419971977236}
   m_Layer: 0
   m_Name: Ammo_Stock1
-  m_TagString: Untagged
+  m_TagString: AmmoClips
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,13 +69,13 @@ RectTransform:
   m_GameObject: {fileID: 1375605048804476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.001422412, y: -0.0038759056, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.1, y: 0.09}
+  m_AnchoredPosition: {x: 9.2384, y: 6.3092594}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

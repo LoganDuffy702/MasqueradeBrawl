@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine.UI;
+
 public class RigidWeapon : MonoBehaviour {
 
 	public int burstSize = 5;
 	public float FireDelay=12;
     public float Damage;
+    
 	
 	public float ReloadSpeed = 1;
 	bool CanShoot = true;
@@ -17,6 +20,31 @@ public class RigidWeapon : MonoBehaviour {
 
 	public GameObject GunText;
 
+    public int Ammo = 16;
+    public GameObject AmmoPrefab;
+    GameObject[] AmmoOBJ;
+    GameObject AmmoPos;
+    private Image Clips;
+    private int AmmoClips = 16;
+    public int removeAmount = 1;
+
+    void Start()
+    {
+
+        AmmoPos = GameObject.Find("Ammo Section");
+        //Debug.Log(AmmoPos.name);
+        for (int i = 0; i < AmmoClips; i++)
+        {
+            var AmmoClone = Instantiate(AmmoPrefab);
+            AmmoClone.transform.SetParent(AmmoPos.transform);
+            AmmoClone.transform.localScale = new Vector2(0.015f, .12f);
+            AmmoClone.transform.position = new Vector2(AmmoPos.transform.position.x + (0.2f * i), AmmoPos.transform.position.y);
+
+        }
+
+    }
+
+
 	// Update is called once per frame
 	void FixedUpdate () {
         var fire = Input.GetAxis("Fire1");
@@ -25,22 +53,45 @@ public class RigidWeapon : MonoBehaviour {
 		if (fire > 0)
         {
 			if (CanShoot == true) {
-				StartCoroutine (Fire());
-				CanShoot = false;
-				StartCoroutine (Reload ());	
-			}
+                if (Ammo > 0)
+                {
+                    StartCoroutine (Fire());
+				    CanShoot = false;
+				    StartCoroutine (Reload ());
+
+                    for (int i = 0; i < removeAmount; i++)
+                    {
+                        Ammo -= 1;
+                        RemoveClip(1);
+                    }
+
+                    if (Ammo == 0)
+                    {
+                        Debug.Log("OUT OF Ammo");
+                    }
+                }
+            }
+           
             else if (CanShoot == false)
             {
 				if (showText==true) {
 					//Debug.Log ("Reloading");
 					//StartCoroutine(ReloadFX());
 				}
-            } 
-		}
+            }
+            
+        }
 	}
 
-	//timer for reload speed 
-	public IEnumerator Reload(){
+    public void RemoveClip(int amount)
+    {
+        AmmoOBJ = GameObject.FindGameObjectsWithTag("AmmoClips");
+        //Debug.Log(Ammo + " " + AmmoOBJ[Ammo]);
+        Destroy(AmmoOBJ[Ammo]);
+    }
+
+    //timer for reload speed 
+    public IEnumerator Reload(){
 		yield return new WaitForSeconds(ReloadSpeed);
 		CanShoot = true;
 	}
