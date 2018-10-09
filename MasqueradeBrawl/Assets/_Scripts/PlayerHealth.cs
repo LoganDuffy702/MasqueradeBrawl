@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
     public float PlayerHP = 100;
-    public RectTransform healtBar;
+    public RectTransform healthBar;
     private float CurrentHealth;
 	// Use this for initialization
 	void Start () {
@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             CurrentHealth = 100;
         }
-        healtBar.sizeDelta = new Vector2(healtBar.sizeDelta.x, CurrentHealth);
+        healthBar.sizeDelta = new Vector2(CurrentHealth, healthBar.sizeDelta.y);
        
     }
 }
