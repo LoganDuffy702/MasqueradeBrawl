@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Portal start
-  - Players
   - Walls
   - Portals
   - RightBoarder
@@ -16,7 +15,9 @@ TagManager:
   - Player2
   - Player3
   - Player4
-  - AmmoClips
+  - AmmoClips2
+  - AmmoClips1
+  - Player1
   layers:
   - Default
   - TransparentFX

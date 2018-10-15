@@ -12,46 +12,24 @@ public class Ammo_PP : MonoBehaviour {
     private RigidWeapon PlayerAmmo;
     private Image AmmoIMG;
     public int AmmoAmmount = 16;
-    private int AddedAmmo;
     GameObject AmmoPos;
     public GameObject AmmoPrefab;
 
+
     // Use this for initialization
     void Start () {
-        //AmmoOBJ = GameObject.Find("AmmoUI1");
-        AmmoPos = GameObject.Find("Ammo Section");
-        PlayerAmmo = GameObject.Find("GunTip1").GetComponent<RigidWeapon>();
-        //Debug.Log(PlayerAmmo.name);
+        
+       // AmmoPos = GameObject.Find("Ammo Section");
+        //PlayerAmmo = GameObject.Find("GunTip1").GetComponent<RigidWeapon>();
         StartCoroutine(HidMe());
 
     }
 
-    public void AddAmmo()
+    public void AddAmmo(GameObject PlayerName)
     {
-        GameObject[] AmmoOBJ = GameObject.FindGameObjectsWithTag("AmmoClips");
-        for (int i = 0; i < PlayerAmmo.Ammo; i++)
-        {
-            Destroy(AmmoOBJ[i]);
-        }
-
-        if (AmmoAmmount >= 16)
-        {
-            AddedAmmo = AmmoAmmount;
-            PlayerAmmo.Ammo = AddedAmmo;
-            //line that sends the ammo to the rigid weapon
-            int temp = 16;
-
-            //Debug.Log(AmmoPos.name);
-            for (int i = 0; i < temp; i++)
-            {
-                var AmmoClone = Instantiate(AmmoPrefab);
-                AmmoClone.transform.SetParent(AmmoPos.transform);
-                AmmoClone.transform.localScale = new Vector2(0.015f, .12f);
-                AmmoClone.transform.position = new Vector2(AmmoPos.transform.position.x + (0.2f * i), AmmoPos.transform.position.y);
-
-            }
-
-        }
+        //PlayerAmmo.AddClip(AmmoAmmount,Player);    
+        GameObject PlayerObject = GameObject.Find(PlayerName.name);
+        PlayerObject.GetComponent<PlayerAmmo>().AddClip();
         
     }
 
@@ -65,15 +43,13 @@ public class Ammo_PP : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Players"))
+        if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
         {
 
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            AddAmmo();
+            AddAmmo(other.gameObject);
             Instantiate(OnContact, transform.localPosition, transform.localRotation);
-            
-
         }
 
     }

@@ -7,9 +7,11 @@ public class RigidWeapon : MonoBehaviour {
 
 	public int burstSize = 5;
 	public float FireDelay=12;
-    public float Damage;
+    //public float Damage;
     
-	
+	public enum Player { Player1,Player2,Player3,Player4}
+    public Player choosePlayr;
+
 	public float ReloadSpeed = 1;
 	bool CanShoot = true;
 	bool showText = false;
@@ -18,77 +20,97 @@ public class RigidWeapon : MonoBehaviour {
 
     public bool single = true;
 
-	public GameObject GunText;
+	//public GameObject GunText;
 
     public int Ammo = 16;
     public GameObject AmmoPrefab;
     GameObject[] AmmoOBJ;
-    GameObject AmmoPos;
+    public GameObject AmmoPos;
     private Image Clips;
     private int AmmoClips = 16;
     public int removeAmount = 1;
 
+    float fire;
+
     void Start()
     {
 
-        AmmoPos = GameObject.Find("Ammo Section");
-        //Debug.Log(AmmoPos.name);
-        for (int i = 0; i < AmmoClips; i++)
-        {
-            var AmmoClone = Instantiate(AmmoPrefab);
-            AmmoClone.transform.SetParent(AmmoPos.transform);
-            AmmoClone.transform.localScale = new Vector2(0.015f, .12f);
-            AmmoClone.transform.position = new Vector2(AmmoPos.transform.position.x + (0.2f * i), AmmoPos.transform.position.y);
-
-        }
-
     }
-
 
 	// Update is called once per frame
 	void FixedUpdate () {
-        var fire = Input.GetAxis("Fire1");
-        Input.GetKeyDown(KeyCode.Space);
 
-		if (fire > 0)
+        switch (choosePlayr)
         {
-			if (CanShoot == true) {
-                if (Ammo > 0)
+            case Player.Player1:
+                fire = Input.GetAxis("Fire1");
+                if (fire > 0)
                 {
-                    StartCoroutine (Fire());
-				    CanShoot = false;
-				    StartCoroutine (Reload ());
-
-                    for (int i = 0; i < removeAmount; i++)
+                    if (CanShoot == true)
                     {
-                        Ammo -= 1;
-                        RemoveClip(1);
+                        if (Ammo > 0)
+                        {
+                            StartCoroutine(Fire());
+                            CanShoot = false;
+                            StartCoroutine(Reload());
+
+                            if (Ammo == 0)
+                            {
+                                Debug.Log("OUT OF Ammo");
+                            }
+                        }
                     }
-
-                    if (Ammo == 0)
+                    else if (CanShoot == false)
                     {
-                        Debug.Log("OUT OF Ammo");
+                        if (showText == true)
+                        {
+                            //Debug.Log ("Reloading");
+                            //StartCoroutine(ReloadFX());
+                        }
                     }
                 }
-            }
-           
-            else if (CanShoot == false)
-            {
-				if (showText==true) {
-					//Debug.Log ("Reloading");
-					//StartCoroutine(ReloadFX());
-				}
-            }
-            
-        }
-	}
+                break;
+            case Player.Player2:
+                fire = Input.GetAxis("Fire2");
+                if (fire > 0)
+                {
+                    if (CanShoot == true)
+                    {
+                        if (Ammo > 0)
+                        {
+                            StartCoroutine(Fire());
+                            CanShoot = false;
+                            StartCoroutine(Reload());
 
-    public void RemoveClip(int amount)
-    {
-        AmmoOBJ = GameObject.FindGameObjectsWithTag("AmmoClips");
-        //Debug.Log(Ammo + " " + AmmoOBJ[Ammo]);
-        Destroy(AmmoOBJ[Ammo]);
-    }
+                            
+
+                            if (Ammo == 0)
+                            {
+                                Debug.Log("OUT OF Ammo");
+                            }
+                        }
+                    }
+
+                    else if (CanShoot == false)
+                    {
+                        if (showText == true)
+                        {
+                            //Debug.Log ("Reloading");
+                            //StartCoroutine(ReloadFX());
+                        }
+                    }
+                }
+                break;
+            case Player.Player3:
+                break;
+            case Player.Player4:
+                break;
+            default:
+                break;
+        }
+
+        
+	}
 
     //timer for reload speed 
     public IEnumerator Reload(){
@@ -109,6 +131,13 @@ public class RigidWeapon : MonoBehaviour {
 		for (int i = 0; i < burstSize; i++)
 		{
 			if (single==true) {
+                //Add sound effect here
+                for (int x = 0; x < removeAmount; x++)
+                {
+                    gameObject.GetComponentInParent<PlayerAmmo>().RemoveClip(1);
+                    Ammo -= 1;
+                    
+                }
                 var bullet = Instantiate(TypeOfBullet);//Basic firing of bullet
                 bullet.transform.position = transform.position;
                 bullet.transform.rotation = transform.rotation;

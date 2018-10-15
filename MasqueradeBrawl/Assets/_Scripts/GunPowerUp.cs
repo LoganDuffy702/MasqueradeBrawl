@@ -34,7 +34,7 @@ public class GunPowerUp : MonoBehaviour {
         {
             Bullet.TypeOfBullet = BulletType;
             Bullet.burstSize = roundSize;
-            Bullet.Damage = damage;
+            //Bullet.Damage = damage;
             Bullet.single = No_shotgun;
             Bullet.ReloadSpeed = reloadspeed;
             Bullet.ShotGunBullets = numberOfBullets;
