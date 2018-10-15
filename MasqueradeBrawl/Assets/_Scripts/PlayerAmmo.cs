@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAmmo : MonoBehaviour {
 
-    public int Ammo = 16;
+    public int Count = 16;
     public GameObject AmmoPrefab;
     GameObject[] AmmoOBJ;
     public GameObject GunName;
@@ -33,12 +33,12 @@ public class PlayerAmmo : MonoBehaviour {
 
     public void RemoveClip(int amount)
     {
-        if (Ammo > 0)
+        if (Count > 0)
         {
             //GameObject Gun = GameObject.Find(GunName.name);
             AmmoOBJ = GameObject.FindGameObjectsWithTag(AmmoClip);
-            Destroy(AmmoOBJ[Ammo - 1]);
-            Ammo -= amount;
+            Destroy(AmmoOBJ[Count - 1]);
+            Count -= amount;
         }
         else
         {
@@ -53,12 +53,12 @@ public class PlayerAmmo : MonoBehaviour {
         AmmoOBJ = GameObject.FindGameObjectsWithTag(AmmoClip);
         GameObject Gun = GameObject.Find(GunName.name);
 
-        for (int x = 0; x < Ammo; x++)
+        for (int x = 0; x < Count; x++)
         {
             Destroy(AmmoOBJ[x]);
         }
         Gun.GetComponent<RigidWeapon>().Ammo = 16;
-        Ammo = 16;
+        Count = 16;
         Start();
         
         

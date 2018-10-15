@@ -10,12 +10,8 @@ public class HealthPowerup : MonoBehaviour {
     public float LifeSpan = 5;
     
     // Use this for initialization
-    void Start () {
-        Player1 = GameObject.Find("_Player1");
-        if (Player1 == null)
-        {
-            Debug.Log("NO PLAYER found");
-        }
+    void Start ()
+    {
         StartCoroutine(HidMe());
     }
 
@@ -27,14 +23,21 @@ public class HealthPowerup : MonoBehaviour {
         Destroy(gameObject, LifeSpan + 10);
     }
 
+    public void FindHealth(GameObject PlayerName)
+    {
+        GameObject PlayerObject = GameObject.Find(PlayerName.name);
+        PlayerObject.GetComponent<PlayerHealth>().TakeDamage(-AddHealth);
+    }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            FindHealth(other.gameObject);
             Instantiate(OnContact, transform.localPosition, transform.localRotation);
-            Player1.GetComponent<PlayerHealth>().TakeDamage(-AddHealth);
+            
         }
     }
 }

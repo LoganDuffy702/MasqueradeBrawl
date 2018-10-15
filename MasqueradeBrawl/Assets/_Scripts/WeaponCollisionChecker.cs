@@ -16,6 +16,10 @@ public class WeaponCollisionChecker : MonoBehaviour {
         {
             Player.GetComponent<PlayerHealth>().TakeDamage(3);
         }
+        if (other.gameObject.CompareTag("LobShot"))
+        {
+            Player.GetComponent<PlayerHealth>().TakeDamage(10);
+        }
         
     }
 }

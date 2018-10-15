@@ -18,6 +18,7 @@ TagManager:
   - AmmoClips2
   - AmmoClips1
   - Player1
+  - LobShot
   layers:
   - Default
   - TransparentFX
