@@ -26,8 +26,7 @@ public class RigidWeapon : MonoBehaviour {
     public GameObject AmmoPrefab;
     GameObject[] AmmoOBJ;
     public GameObject AmmoPos;
-    private Image Clips;
-    private int AmmoClips = 16;
+    //private Image Clips;
     public int removeAmount = 1;
 
     float fire;

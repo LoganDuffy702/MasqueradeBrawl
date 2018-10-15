@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GravityOFF: 0
+  Player1: {fileID: 0}
   Effect_duration: 5.02
   ReverseGravityScale: -2.57
   OnContact: {fileID: 1762451610089496, guid: 071be215b9d65d243b7f924daf363128, type: 2}

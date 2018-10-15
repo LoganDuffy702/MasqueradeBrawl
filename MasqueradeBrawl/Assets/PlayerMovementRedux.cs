@@ -12,20 +12,46 @@ public class PlayerMovementRedux : MonoBehaviour {
     public int Speed;
     public bool Flipped;
     Vector3 currVel;
+    
     float MoveNum;
 
     GameObject Character;
     Animator anim;
     public GameObject Weapon;
     Transform WSTrans;
+
     SpriteRenderer WSsr;
+    SpriteRenderer PlayerSprite;
+
+    Rigidbody2D rb2;
+    CapsuleCollider2D CC2D;
 
     void Start()
     {
-        Character = GameObject.Find("_Player1_Anim");
+        switch (choosePlayr)
+        {
+            case Player.Player1:
+                Character = GameObject.Find("_Player1_Anim");
+                break;
+            case Player.Player2:
+                Character = GameObject.Find("_Player2_Anim");
+                break;
+            case Player.Player3:
+                break;
+            case Player.Player4:
+                break;
+            default:
+                break;
+        }
+        
+        rb2 = gameObject.GetComponent<Rigidbody2D>();
+        CC2D = gameObject.GetComponent<CapsuleCollider2D>();
         WSTrans = Weapon.GetComponent<Transform>();
         WSsr = Weapon.GetComponent<SpriteRenderer>();
         anim = Character.GetComponent<Animator>();
+        PlayerSprite = Character.GetComponent<SpriteRenderer>();
+
+
     }
 
     void Update()
@@ -46,7 +72,7 @@ public class PlayerMovementRedux : MonoBehaviour {
 
                 break;
             case Player.Player2:
-                direction.x = Input.GetAxis("Horizontal2");
+                direction.x = Input.GetAxis("Horizontal");
 
                 if (Input.GetKey(KeyCode.A))
                 {
@@ -108,6 +134,36 @@ public class PlayerMovementRedux : MonoBehaviour {
             currVel = (prevPos - transform.position) / Time.deltaTime;
             MoveNum = currVel.x;
         }
+
+    }
+
+    public void Gravity_PP()
+    {
+        rb2.gravityScale = -2.5f;
+        CC2D.offset = new Vector2(0f, 0.15f);
+        WSTrans.transform.localPosition = new Vector2(0.007f, -0.32f);
+        WSsr.flipY = true;
+        PlayerSprite.flipY = true;
+        Debug.Log("FLIP TIMER STARTED");
+        StartCoroutine(FlipTimer());
+
+    }
+
+    public IEnumerator FlipTimer()
+    {
+        yield return new WaitForSeconds(3f);
+        Gravity_PP_Fix();
+    }
+
+    public void Gravity_PP_Fix()
+    {
+        Debug.Log("FLIP TIMER ENDED");
+        rb2.gravityScale = 5f;
+        CC2D.offset = new Vector2(0f, -0.12f);
+        WSTrans.transform.localPosition = new Vector2(0.007f, 0.32f);
+        WSsr.flipY = false;
+        PlayerSprite.flipY = false;
+
     }
 
 }

@@ -17,20 +17,15 @@ public class Ammo_PP : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
-        
-       // AmmoPos = GameObject.Find("Ammo Section");
-        //PlayerAmmo = GameObject.Find("GunTip1").GetComponent<RigidWeapon>();
+    void Start ()
+    {
         StartCoroutine(HidMe());
-
     }
 
     public void AddAmmo(GameObject PlayerName)
-    {
-        //PlayerAmmo.AddClip(AmmoAmmount,Player);    
+    {   
         GameObject PlayerObject = GameObject.Find(PlayerName.name);
-        PlayerObject.GetComponent<PlayerAmmo>().AddClip();
-        
+        PlayerObject.GetComponent<PlayerAmmo>().AddClip();  
     }
 
     public IEnumerator HidMe()
