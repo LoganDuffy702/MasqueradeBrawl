@@ -69,7 +69,7 @@ public class AimTest : MonoBehaviour {
                 break;
             case Player.Player2:
                 gameObject.transform.localPosition = new Vector3(0f, -.108f, 0f);
-                NewInput = new Vector3(Input.GetAxis("HorAim"), Input.GetAxis("VerAim"), 0f);
+                NewInput = new Vector3(Input.GetAxis("HorAim2"), Input.GetAxis("VerAim2"), 0f);
 
                 if (NewInput.sqrMagnitude < 0.1f)
                 {

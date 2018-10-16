@@ -72,7 +72,7 @@ public class PlayerMovementRedux : MonoBehaviour {
 
                 break;
             case Player.Player2:
-                direction.x = Input.GetAxis("Horizontal");
+                direction.x = Input.GetAxis("Horizontal2");
 
                 if (Input.GetKey(KeyCode.A))
                 {
