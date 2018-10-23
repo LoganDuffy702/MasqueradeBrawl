@@ -29,7 +29,7 @@ public class Weapon_Drop : MonoBehaviour {
 
         //Ammo Section-------------------------------------------------
         PlayerObject.GetComponent<PlayerAmmo>().AddClip();
-        P_Gun.Ammo = 16;
+        P_Gun.Ammo = 22;
         //Gun Properties Section---------------------------------------
         P_Gun.TypeOfBullet = Weapon;
         P_Gun.burstSize = BurstSize;

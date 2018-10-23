@@ -19,6 +19,7 @@ TagManager:
   - AmmoClips1
   - Player1
   - LobShot
+  - FlameThrower
   layers:
   - Default
   - TransparentFX

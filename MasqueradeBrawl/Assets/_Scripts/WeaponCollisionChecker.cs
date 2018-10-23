@@ -20,6 +20,9 @@ public class WeaponCollisionChecker : MonoBehaviour {
         {
             Player.GetComponent<PlayerHealth>().TakeDamage(10);
         }
-        
+        if (other.gameObject.CompareTag("FlameThrower"))
+        {
+            Player.GetComponent<PlayerHealth>().TakeDamage(2);
+        }
     }
 }

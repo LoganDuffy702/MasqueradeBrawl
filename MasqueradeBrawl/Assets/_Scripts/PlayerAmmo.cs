@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerAmmo : MonoBehaviour {
 
-    public int Count = 16;
+    public int Count = 22;
     public GameObject AmmoPrefab;
     GameObject[] AmmoOBJ;
     public GameObject GunName;
     public GameObject AmmoPos;
-    private int AmmoClips = 16;
+    public int AmmoClips = 22;
     public int removeAmount = 1;
     public string AmmoClip;
 
@@ -57,8 +57,8 @@ public class PlayerAmmo : MonoBehaviour {
         {
             Destroy(AmmoOBJ[x]);
         }
-        Gun.GetComponent<RigidWeapon>().Ammo = 16;
-        Count = 16;
+        Gun.GetComponent<RigidWeapon>().Ammo = 22;
+        Count = 22;
         Start();
         
         

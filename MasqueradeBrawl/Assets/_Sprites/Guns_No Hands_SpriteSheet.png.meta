@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 55ed919376b022a4f825c5d99fa4ede6
+guid: 633d5654e8a18fa4cb88afcf74c91dba
 TextureImporter:
   fileIDToRecycleName:
-    21300000: PixelTexture_Sheet_0
-    21300002: PixelTexture_Sheet_1
-    21300004: PixelTexture_Sheet_2
-    21300006: PixelTexture_Sheet_3
+    21300000: Guns_No Hands_SpriteSheet_0
+    21300002: Guns_No Hands_SpriteSheet_1
+    21300004: Guns_No Hands_SpriteSheet_2
+    21300006: Guns_No Hands_SpriteSheet_3
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -86,13 +86,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PixelTexture_Sheet_0
+      name: Guns_No Hands_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 187
-        width: 288
-        height: 173
+        x: 68
+        y: 196
+        width: 180
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,19 +100,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1201e4cc57f8b4545a98fbdc6282853e
+      spriteID: 63223224c8f64bb4ea735ab8a7516359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelTexture_Sheet_1
+      name: Guns_No Hands_SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 14
-        y: 84
-        width: 64
-        height: 64
+        x: 328
+        y: 216
+        width: 190
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,19 +120,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f95eab83fc5290b43830b0d140e13cd2
+      spriteID: 3449d308301d04846b9f84169a6877d7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelTexture_Sheet_2
+      name: Guns_No Hands_SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 84
-        width: 64
-        height: 64
+        x: 38
+        y: 69
+        width: 240
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49fe71fa3e44f3e4dad1d3381186eb30
+      spriteID: cc21658fe0cdc1c4dbc9d4c4fe5dd423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PixelTexture_Sheet_3
+      name: Guns_No Hands_SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 183
-        y: 93
-        width: 64
-        height: 45
+        x: 405
+        y: 74
+        width: 76
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,7 +160,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf0391babaf45634eb47fb16516c031c
+      spriteID: 83dee6c0f47225b489d4fbf39bef3a3c
       vertices: []
       indices: 
       edges: []
@@ -168,7 +168,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0594374d11a65b949bd19d03b6c0d3b4
+    spriteID: e8e6e18c4e6988041bed226587c4c2a7
     vertices: []
     indices: 
     edges: []

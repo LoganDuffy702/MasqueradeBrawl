@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114456959878107810}
   - component: {fileID: 58348352926772156}
   m_Layer: 0
-  m_Name: Weapon1PowerUp
+  m_Name: Weapon3PowerUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1591023760951860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.27969, y: -0.8546642, z: -0.39900455}
-  m_LocalScale: {x: 1.3757983, y: 1.3757992, z: 1.3757992}
+  m_LocalPosition: {x: 23.939137, y: -1.4243068, z: -0.39900455}
+  m_LocalScale: {x: 1.4217225, y: 1.4217234, z: 1.4217234}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -86,9 +86,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnContact: {fileID: 1330272458496566, guid: 7c676f322dd64534bb950a2fbb36e890, type: 2}
-  BurstSize: 3
-  reload_speed: 0.7
-  Weapon: {fileID: 1467269267407004, guid: eceedb20c97b4294181c01fbe5b67471, type: 2}
+  BurstSize: 1
+  reload_speed: 0.02
+  Weapon: {fileID: 1467269267407004, guid: c1d8835ad3e85af4b9f6d164d2e4c23f, type: 2}
   LifeSpan: 5
 --- !u!212 &212515445590665284
 SpriteRenderer:
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_SortingLayerID: -1296121531
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 633d5654e8a18fa4cb88afcf74c91dba, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 633d5654e8a18fa4cb88afcf74c91dba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

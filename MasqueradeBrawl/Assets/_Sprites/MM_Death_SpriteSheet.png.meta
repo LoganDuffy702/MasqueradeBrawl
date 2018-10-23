@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 5efa16c595a22534c903d2beec6a695d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MM_Death_SpriteSheet_0
+    21300002: MM_Death_SpriteSheet_1
+    21300004: MM_Death_SpriteSheet_3
+    21300006: MM_Death_SpriteSheet_4
+    21300008: MM_Death_SpriteSheet_5
+    21300010: MM_Death_SpriteSheet_6
+    21300012: MM_Death_SpriteSheet_7
+    21300014: MM_Death_SpriteSheet_8
+    21300016: MM_Death_SpriteSheet_9
+    21300018: MM_Death_SpriteSheet_10
+    21300020: MM_Death_SpriteSheet_11
+    21300022: MM_Death_SpriteSheet_12
+    21300024: MM_Death_SpriteSheet_13
+    21300026: MM_Death_SpriteSheet_14
+    21300028: MM_Death_SpriteSheet_15
+    21300030: MM_Death_SpriteSheet_16
+    21300032: MM_Death_SpriteSheet_17
+    21300034: MM_Death_SpriteSheet_18
+    21300036: MM_Death_SpriteSheet_19
+    21300038: MM_Death_SpriteSheet_20
+    21300040: MM_Death_SpriteSheet_21
+    21300042: MM_Death_SpriteSheet_22
+    21300044: MM_Death_SpriteSheet_23
+    21300046: MM_Death_SpriteSheet_24
+    21300048: MM_Death_SpriteSheet_25
+    21300050: MM_Death_SpriteSheet_26
+    21300052: MM_Death_SpriteSheet_27
+    21300054: MM_Death_SpriteSheet_28
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MM_Death_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 720
+        width: 170
+        height: 311
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e2f78ef6785074dbc8dc9b0ac5c4a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MM_Death_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 722
+        width: 270
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfe95860c68f81488b1984fb0cc61f4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MM_Death_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 720
+        width: 412
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6007e03ccd211794c831108581e9b126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MM_Death_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 720
+        width: 360
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110756c629b638b459c8f438256df51a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MM_Death_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 720
+        width: 372
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e66f9bb15c96fc4786fc8425006db1d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MM_Death_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 333
+        width: 373
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba96606608c7ce4a813ad31fa5da37e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MM_Death_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 333
+        width: 370
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b776f618a1f06f84a94edddaf8052115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MM_Death_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 333
+        width: 381
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550f705a1c0e10a4e88fbf4c83852a53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: deaff3a7de6df3e48b1633f06cc0ba34
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
