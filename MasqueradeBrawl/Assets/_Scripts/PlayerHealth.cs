@@ -47,8 +47,10 @@ public class PlayerHealth : MonoBehaviour {
         if (CurrentHealth <= 0 )
         {
             CurrentHealth = 0;
-            //add player objects name with a public
-            //Need to set up a way to disable the weapons sprite renderer/overall weapon.
+
+
+            anim.SetBool("Dead", true);
+            Debug.Log(gameObject.name + " Died");
             gameObject.GetComponent<PlayerMovementRedux>().enabled = false;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0f, 0f, 0f);
@@ -56,9 +58,8 @@ public class PlayerHealth : MonoBehaviour {
             Weapon.GetComponent<SpriteRenderer>().enabled = false;
             Gun.GetComponent<RigidWeapon>().enabled = false;
             Gun.GetComponent<LineRenderer>().enabled = false;
-            anim.SetBool("Dead", true);
+
             PlayerStock -= 1;
-            Debug.Log("PLAYER DEAD");
             StartCoroutine(Respawn());
         }
         if (CurrentHealth > 100)
@@ -83,6 +84,7 @@ public class PlayerHealth : MonoBehaviour {
         Gun.GetComponent<RigidWeapon>().enabled = true;
         Gun.GetComponent<LineRenderer>().enabled = true;
         anim.SetBool("Dead", false);
+
         CurrentHealth = 100;
         healthBar.sizeDelta = new Vector2(CurrentHealth, healthBar.sizeDelta.y);
     }

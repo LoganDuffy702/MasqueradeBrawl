@@ -71,9 +71,11 @@ public class PlayerMovementRedux : MonoBehaviour {
                 {
                     case PlayerPos.Player1:
                         direction.x = Input.GetAxis("Horizontal");
+                        anim.SetFloat("MM_Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player2:
                         direction.x = Input.GetAxis("Horizontal2");
+                        anim.SetFloat("MM_Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player3:
                         //direction.x = Input.GetAxis("Horizontal");
@@ -95,6 +97,7 @@ public class PlayerMovementRedux : MonoBehaviour {
                         break;
                     case PlayerPos.Player2:
                         direction.x = Input.GetAxis("Horizontal2");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player3:
                         //direction.x = Input.GetAxis("Horizontal");
@@ -162,12 +165,6 @@ public class PlayerMovementRedux : MonoBehaviour {
             case Player.MoonMan:
                 StartCoroutine(CalcVelocity());
                 transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
-                //run = direction.x;
-
-                if (MoveNum > 0 || MoveNum < 0)
-                    anim.enabled = true;
-                else if (MoveNum == 0)
-                    anim.enabled = false;
 
                
                 break;
