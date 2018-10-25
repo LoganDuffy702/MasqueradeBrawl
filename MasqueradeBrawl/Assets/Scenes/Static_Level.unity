@@ -541,7 +541,7 @@ Animator:
   m_GameObject: {fileID: 20501532}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4cc4c9956fbe1fb4aae84cbc3527a4f6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4c4435cbb761353418b223c2479c3a75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -585,7 +585,7 @@ SpriteRenderer:
   m_SortingLayerID: 1854685309
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300014, guid: c892255e0cb079c4db83bb26a4934e85, type: 3}
+  m_Sprite: {fileID: 21300030, guid: 10d5a1f187dde364c9ed151fbb7188f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16183,12 +16183,12 @@ GameObject:
   - component: {fileID: 1048068912}
   - component: {fileID: 1048068908}
   m_Layer: 0
-  m_Name: _Player2
+  m_Name: _ButtLady
   m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1048068906
 Transform:
   m_ObjectHideFlags: 0
@@ -16196,8 +16196,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1048068905}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.03, y: 9.81, z: 0}
-  m_LocalScale: {x: 2.3, y: 2.3, z: 0}
+  m_LocalPosition: {x: -5.89, y: 15.79, z: 0}
+  m_LocalScale: {x: 2.1227229, y: 2.1227236, z: 0}
   m_Children:
   - {fileID: 20501533}
   - {fileID: 303334366}
@@ -18984,7 +18984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1465908475
 Transform:
   m_ObjectHideFlags: 0
