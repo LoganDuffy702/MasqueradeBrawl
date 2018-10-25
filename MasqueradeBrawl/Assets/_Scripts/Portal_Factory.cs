@@ -10,6 +10,7 @@ public class Portal_Factory : MonoBehaviour {
     public bool RandomExit;
     public float ExitSpeed = 2;
     public int tempSpeed;
+    
 
     public List<GameObject> exitList = new List<GameObject>();
     public float delay;
@@ -19,7 +20,9 @@ public class Portal_Factory : MonoBehaviour {
 
 	void Start () {
         cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-	}
+        gameObject.GetComponent<Animator>().enabled = false;
+
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -47,6 +50,7 @@ public class Portal_Factory : MonoBehaviour {
                 other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 tempSpeed = other.gameObject.GetComponent<PlayerMovementRedux>().Speed;
                 other.gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
+                gameObject.GetComponent<Animator>().enabled = true;
                 int r = Mathf.Abs(Random.Range(0, exitList.Count));
                 Vector3 temp = exitList[r].transform.position;
                 
@@ -70,12 +74,14 @@ public class Portal_Factory : MonoBehaviour {
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * ExitSpeed);
             other.gameObject.transform.position = exitList[Rnum].transform.position;
             other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
+            //gameObject.GetComponent<Animator>().enabled = false;
             cam.touched = false;
         }
         else
         {
             other.gameObject.transform.position = exitList[Rnum].transform.position;
             other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
+            //gameObject.GetComponent<Animator>().enabled = false;
             cam.touched = false;
         }
     }

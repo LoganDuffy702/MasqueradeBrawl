@@ -79,6 +79,9 @@ TagManager:
   - name: Weapons
     uniqueID: 3310816649
     locked: 0
+  - name: Doors
+    uniqueID: 3481788553
+    locked: 0
   - name: powerups
     uniqueID: 2998845765
     locked: 0
