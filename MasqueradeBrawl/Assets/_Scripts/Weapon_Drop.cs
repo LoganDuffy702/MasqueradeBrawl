@@ -12,6 +12,9 @@ public class Weapon_Drop : MonoBehaviour {
     public float LifeSpan;
     // Use this for initialization
     void Start () {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        StartCoroutine(ShowMe());
         StartCoroutine(HidMe());
     }
 	
@@ -19,6 +22,12 @@ public class Weapon_Drop : MonoBehaviour {
 	void Update () {
 		
 	}
+    public IEnumerator ShowMe()
+    {
+        yield return new WaitForSeconds(1);
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+    }
 
     public void ChangeWeapon(GameObject P_Weapon_Name)
     {
@@ -48,7 +57,7 @@ public class Weapon_Drop : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
+        if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan"))
         {
 
             gameObject.GetComponent<SpriteRenderer>().enabled = false;

@@ -31,7 +31,7 @@ public class HealthPowerup : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
+        if (other.gameObject.CompareTag("MoonMan") || other.gameObject.CompareTag("Penguin"))
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<CircleCollider2D>().enabled = false;

@@ -27,8 +27,8 @@ public class CameraMovement : MonoBehaviour {
         switch (PlayerCount)
         {
             case Player.Two_Players:
-                Player1 = GameObject.Find("_Player1");
-                Player2 = GameObject.Find("_Player2");
+                Player1 = GameObject.Find("_MoonMan");
+                Player2 = GameObject.Find("_Penguin");
                 break;
             case Player.Three_Players:
                 Player1 = GameObject.Find("_Player1");

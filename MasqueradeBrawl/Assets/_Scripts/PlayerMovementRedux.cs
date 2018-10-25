@@ -5,18 +5,21 @@ using UnityEngine;
 
 public class PlayerMovementRedux : MonoBehaviour {
 
-    public enum Player { Player1,Player2,Player3,Player4}
+    public enum Player { MoonMan, Penguin, Girl, FoxMan }
+    public enum PlayerPos { Player1, Player2, Player3, Player4 }
+    public PlayerPos PlayerController;
 
     public Player choosePlayr;
     Vector3 direction;
     public int Speed;
-    public bool Flipped;
     Vector3 currVel;
     
     float MoveNum;
 
     GameObject Character;
+
     Animator anim;
+
     public GameObject Weapon;
     Transform WSTrans;
 
@@ -30,15 +33,15 @@ public class PlayerMovementRedux : MonoBehaviour {
     {
         switch (choosePlayr)
         {
-            case Player.Player1:
-                Character = GameObject.Find("_Player1_Anim");
+            case Player.MoonMan:
+                Character = GameObject.Find("_MoonMan_Anim");
                 break;
-            case Player.Player2:
-                Character = GameObject.Find("_Player2_Anim");
+            case Player.Penguin:
+                Character = GameObject.Find("_Penguin_Anim");
                 break;
-            case Player.Player3:
+            case Player.Girl:
                 break;
-            case Player.Player4:
+            case Player.FoxMan:
                 break;
             default:
                 break;
@@ -51,75 +54,141 @@ public class PlayerMovementRedux : MonoBehaviour {
         anim = Character.GetComponent<Animator>();
         PlayerSprite = Character.GetComponent<SpriteRenderer>();
 
+        
+    }
 
+    public void Recreate()
+    {
+        gameObject.transform.position = new Vector3(-10f,10f, 0f);
     }
 
     void Update()
     {
         switch (choosePlayr)
         {
-            case Player.Player1:
-                direction.x = Input.GetAxis("Horizontal");
-
-                if (Input.GetKey(KeyCode.A))
+            case Player.MoonMan:
+                switch (PlayerController)
                 {
-                    transform.Translate(-Speed * Time.deltaTime, 0, 0);
+                    case PlayerPos.Player1:
+                        direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    case PlayerPos.Player2:
+                        direction.x = Input.GetAxis("Horizontal2");
+                        break;
+                    case PlayerPos.Player3:
+                        //direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    case PlayerPos.Player4:
+                        //direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    default:
+                        break;
                 }
-                else if (Input.GetKey(KeyCode.D))
+                break;
+
+            case Player.Penguin:
+                switch (PlayerController)
                 {
-                    transform.Translate(Speed * Time.deltaTime, 0, 0);
+                    case PlayerPos.Player1:
+                        direction.x = Input.GetAxis("Horizontal");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
+                        break;
+                    case PlayerPos.Player2:
+                        direction.x = Input.GetAxis("Horizontal2");
+                        break;
+                    case PlayerPos.Player3:
+                        //direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    case PlayerPos.Player4:
+                        //direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case Player.Girl:
+                switch (PlayerController)
+                {
+                    case PlayerPos.Player1:
+                        direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    case PlayerPos.Player2:
+                        direction.x = Input.GetAxis("Horizontal2");
+                        break;
+                    case PlayerPos.Player3:
+                        //direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    case PlayerPos.Player4:
+                        //direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    default:
+                        break;
                 }
 
                 break;
-            case Player.Player2:
-                direction.x = Input.GetAxis("Horizontal2");
+            case Player.FoxMan:
 
-                if (Input.GetKey(KeyCode.A))
+                switch (PlayerController)
                 {
-                    transform.Translate(-Speed * Time.deltaTime, 0, 0);
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    transform.Translate(Speed * Time.deltaTime, 0, 0);
+                    case PlayerPos.Player1:
+                        direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    case PlayerPos.Player2:
+                        direction.x = Input.GetAxis("Horizontal2");
+                        break;
+                    case PlayerPos.Player3:
+                        //direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    case PlayerPos.Player4:
+                        //direction.x = Input.GetAxis("Horizontal");
+                        break;
+                    default:
+                        break;
                 }
 
-                break;
-            case Player.Player3:
-                direction.x = Input.GetAxis("Horizontal3");
-                
-                break;
-            case Player.Player4:
-                direction.x = Input.GetAxis("Horizontal4");
-                
                 break;
             default:
                 break;
         }
+
         Move();
     }
 	
     void Move()
     {
-
-        StartCoroutine(CalcVelocity());
-        transform.Translate(direction.x*Speed * Time.deltaTime, 0, 0);
-        //run = direction.x;
-
-        if (MoveNum > 0 || MoveNum < 0) 
-            anim.enabled = true;
-        else if (MoveNum == 0)
-            anim.enabled = false;
-
-        if (Flipped == true)
+        switch (choosePlayr)
         {
-            WSTrans.transform.localPosition = new Vector2(0.007f, -0.32f);
-            WSsr.flipY = true;
+            case Player.MoonMan:
+                StartCoroutine(CalcVelocity());
+                transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
+                //run = direction.x;
+
+                if (MoveNum > 0 || MoveNum < 0)
+                    anim.enabled = true;
+                else if (MoveNum == 0)
+                    anim.enabled = false;
+
+               
+                break;
+            case Player.Penguin:
+                StartCoroutine(CalcVelocity());
+                transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
+
+                break;
+            case Player.Girl:
+
+                break;
+            case Player.FoxMan:
+
+                break;
+            default:
+                break;
         }
-        else if (Flipped == false)
-        {
-            WSTrans.transform.localPosition = new Vector2(0.007f, 0.32f);
-            WSsr.flipY = false;
-        }
+
+
+
+        
     }
 
     public IEnumerator CalcVelocity()
@@ -140,11 +209,11 @@ public class PlayerMovementRedux : MonoBehaviour {
     public void Gravity_PP()
     {
         rb2.gravityScale = -2.5f;
-        CC2D.offset = new Vector2(0f, 0.15f);
+        //CC2D.offset = new Vector2(0f, 0.15f);
         WSTrans.transform.localPosition = new Vector2(0.007f, -0.32f);
         WSsr.flipY = true;
         PlayerSprite.flipY = true;
-        Debug.Log("FLIP TIMER STARTED");
+       
         StartCoroutine(FlipTimer());
 
     }
@@ -157,9 +226,9 @@ public class PlayerMovementRedux : MonoBehaviour {
 
     public void Gravity_PP_Fix()
     {
-        Debug.Log("FLIP TIMER ENDED");
+        
         rb2.gravityScale = 5f;
-        CC2D.offset = new Vector2(0f, -0.12f);
+        //CC2D.offset = new Vector2(0f, -0.12f);
         WSTrans.transform.localPosition = new Vector2(0.007f, 0.32f);
         WSsr.flipY = false;
         PlayerSprite.flipY = false;

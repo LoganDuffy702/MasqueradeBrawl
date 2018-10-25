@@ -9,22 +9,25 @@ public class AimTest : MonoBehaviour {
     private Vector3 NewInput;
     private float Heading;
     private Vector3 NewRotation;
-    public enum Player { Player1, Player2, Player3, Player4 }
+
+    public enum Player { MoonMan, Penguin, Girl, FoxMan }
+    public enum PlayerPos { Player1,Player2,Player3,Player4}
+    public PlayerPos PlayerController;
     public Player choosePlayr;
   
     void Start () {
 
         switch (choosePlayr)
         {
-            case Player.Player1:
-                PlayerSprite = GameObject.Find("_Player1_Anim");
+            case Player.MoonMan:
+                PlayerSprite = GameObject.Find("_MoonMan_Anim");
                 break;
-            case Player.Player2:
-                PlayerSprite = GameObject.Find("_Player2_Anim");
+            case Player.Penguin:
+                PlayerSprite = GameObject.Find("_Penguin_Anim");
                 break;
-            case Player.Player3:
+            case Player.Girl:
                 break;
-            case Player.Player4:
+            case Player.FoxMan:
                 break;
             default:
                 break;
@@ -37,9 +40,26 @@ public class AimTest : MonoBehaviour {
 
         switch (choosePlayr)
         {
-            case Player.Player1:
+            case Player.MoonMan:
                 gameObject.transform.localPosition = new Vector3(0f, -.108f, 0f);
-                NewInput = new Vector3(Input.GetAxis("HorAim"), Input.GetAxis("VerAim"), 0f);
+                switch (PlayerController)
+                {
+                    case PlayerPos.Player1:
+                        NewInput = new Vector3(Input.GetAxis("HorAim"), Input.GetAxis("VerAim"), 0f);
+                        break;
+                    case PlayerPos.Player2:
+                        NewInput = new Vector3(Input.GetAxis("HorAim2"), Input.GetAxis("VerAim2"), 0f);
+                        break;
+                    case PlayerPos.Player3:
+                       // NewInput = new Vector3(Input.GetAxis("HorAim3"), Input.GetAxis("VerAim3"), 0f);
+                        break;
+                    case PlayerPos.Player4:
+                       // NewInput = new Vector3(Input.GetAxis("HorAim4"), Input.GetAxis("VerAim4"), 0f);
+                        break;
+                    default:
+                        break;
+                }
+                
 
                 if (NewInput.sqrMagnitude < 0.1f)
                 {
@@ -67,10 +87,26 @@ public class AimTest : MonoBehaviour {
 
                 transform.rotation = Quaternion.Euler(NewRotation);
                 break;
-            case Player.Player2:
-                gameObject.transform.localPosition = new Vector3(0f, -.108f, 0f);
-                NewInput = new Vector3(Input.GetAxis("HorAim2"), Input.GetAxis("VerAim2"), 0f);
-
+            case Player.Penguin:
+                
+                switch (PlayerController)
+                {
+                    case PlayerPos.Player1:
+                        NewInput = new Vector3(Input.GetAxis("HorAim"), Input.GetAxis("VerAim"), 0f);
+                        break;
+                    case PlayerPos.Player2:
+                        NewInput = new Vector3(Input.GetAxis("HorAim2"), Input.GetAxis("VerAim2"), 0f);
+                        break;
+                    case PlayerPos.Player3:
+                        // NewInput = new Vector3(Input.GetAxis("HorAim3"), Input.GetAxis("VerAim3"), 0f);
+                        break;
+                    case PlayerPos.Player4:
+                        // NewInput = new Vector3(Input.GetAxis("HorAim4"), Input.GetAxis("VerAim4"), 0f);
+                        break;
+                    default:
+                        break;
+                }
+                
                 if (NewInput.sqrMagnitude < 0.1f)
                 {
                     return;
@@ -85,21 +121,24 @@ public class AimTest : MonoBehaviour {
                 {
                     NewRotation.y = 180f;
                     PlayerSprite.GetComponent<SpriteRenderer>().flipX = true;
+                    gameObject.transform.localPosition = new Vector3(-.12f, 0.09f, 0);
 
 
                 }
                 if (NewInput.x <= 0)
                 {
+                    
                     NewRotation.y = 0f;
                     PlayerSprite.GetComponent<SpriteRenderer>().flipX = false;
+                    gameObject.transform.localPosition = new Vector3(.12f, 0.09f, 0);
 
                 }
 
                 transform.rotation = Quaternion.Euler(NewRotation);
                 break;
-            case Player.Player3:
+            case Player.Girl:
                 break;
-            case Player.Player4:
+            case Player.FoxMan:
                 break;
             default:
                 break;

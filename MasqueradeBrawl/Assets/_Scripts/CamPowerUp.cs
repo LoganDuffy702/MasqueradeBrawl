@@ -61,7 +61,7 @@ public class CamPowerUp : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
+        if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan"))
         {
             
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
