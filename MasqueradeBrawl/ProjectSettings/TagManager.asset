@@ -22,8 +22,10 @@ TagManager:
   - FlameThrower
   - Penguin
   - MoonMan
-  - Girl
   - FoxMan
+  - ButtLady
+  - MG_Bullet
+  - AmmoClips3
   layers:
   - Default
   - TransparentFX

@@ -24,7 +24,9 @@ public class RigidWeapon : MonoBehaviour {
 
     public int Ammo = 22;
     public GameObject AmmoPrefab;
+    private Vector3 temp;
     GameObject[] AmmoOBJ;
+    public GameObject PlayerGun;
     public GameObject AmmoPos;
     //private Image Clips;
     public int removeAmount = 1;
@@ -33,6 +35,7 @@ public class RigidWeapon : MonoBehaviour {
 
     void Start()
     {
+        Debug.Log(PlayerGun.name);
 
     }
 
@@ -47,9 +50,11 @@ public class RigidWeapon : MonoBehaviour {
                 {
                     if (CanShoot == true)
                     {
+                        
                         if (Ammo > 0)
                         {
                             StartCoroutine(Fire());
+                            
                             CanShoot = false;
                             StartCoroutine(Reload());
 
@@ -101,6 +106,35 @@ public class RigidWeapon : MonoBehaviour {
                 }
                 break;
             case Player.Player3:
+                fire = Input.GetAxis("Fire3");
+                if (fire > 0)
+                {
+                    if (CanShoot == true)
+                    {
+                        if (Ammo > 0)
+                        {
+                            StartCoroutine(Fire());
+                            CanShoot = false;
+                            StartCoroutine(Reload());
+
+
+
+                            if (Ammo == 0)
+                            {
+                                Debug.Log("OUT OF Ammo");
+                            }
+                        }
+                    }
+
+                    else if (CanShoot == false)
+                    {
+                        if (showText == true)
+                        {
+                            //Debug.Log ("Reloading");
+                            //StartCoroutine(ReloadFX());
+                        }
+                    }
+                }
                 break;
             case Player.Player4:
                 break;
@@ -126,10 +160,12 @@ public class RigidWeapon : MonoBehaviour {
 
 	//Burst fire 
 	public IEnumerator Fire(){
-		float bulletDelay = 1 / FireDelay; //Decides the delay between each shot
+        temp = PlayerGun.transform.localPosition;
+        float bulletDelay = 1 / FireDelay; //Decides the delay between each shot
 		for (int i = 0; i < burstSize; i++)
 		{
-			if (single==true) {
+            PlayerGun.transform.localPosition = new Vector3(Mathf.Abs(temp.x / 3), temp.y, temp.z);
+            if (single==true) {
                 //Add sound effect here
                 for (int x = 0; x < removeAmount; x++)
                 {
@@ -140,6 +176,7 @@ public class RigidWeapon : MonoBehaviour {
                 var bullet = Instantiate(TypeOfBullet);//Basic firing of bullet
                 bullet.transform.position = transform.position;
                 bullet.transform.rotation = transform.rotation;
+                
             }
             else if (single == false) {
                 for (int x = 0; x < ShotGunBullets; x++)
@@ -149,8 +186,11 @@ public class RigidWeapon : MonoBehaviour {
 
                 }
             }
-			yield return new WaitForSeconds(bulletDelay); //Waits so many seconds before firing
-		}
+            yield return new WaitForSeconds(bulletDelay); //Waits so many seconds before firing
+            PlayerGun.transform.localPosition = temp;
+            yield return new WaitForSeconds(bulletDelay);
+            
+        }
 		showText = true;
 	}
 

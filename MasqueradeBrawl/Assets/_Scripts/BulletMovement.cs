@@ -21,7 +21,7 @@ public class BulletMovement : MonoBehaviour {
             Instantiate(OnContact, transform.localPosition, transform.localRotation);
             Destroy(gameObject);
         }
-        if (col.gameObject.CompareTag("Penguin") || col.gameObject.CompareTag("MoonMan"))
+        if (col.gameObject.CompareTag("Penguin") || col.gameObject.CompareTag("MoonMan") || col.gameObject.CompareTag("ButtLady"))
         {
             Instantiate(OnContact, transform.localPosition, transform.localRotation);
             Destroy(gameObject);

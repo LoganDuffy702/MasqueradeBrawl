@@ -20,13 +20,14 @@ public class Portal_Factory : MonoBehaviour {
 
 	void Start () {
         cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-        gameObject.GetComponent<Animator>().enabled = false;
+        //gameObject.GetComponent<Animator>().enabled = false;
 
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan"))
+        if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") ||
+            other.gameObject.CompareTag("ButtLady"))
         {
             if (ReleaseUp == true && RandomExit == true)
             {
@@ -50,7 +51,7 @@ public class Portal_Factory : MonoBehaviour {
                 other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 tempSpeed = other.gameObject.GetComponent<PlayerMovementRedux>().Speed;
                 other.gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
-                gameObject.GetComponent<Animator>().enabled = true;
+                //gameObject.GetComponent<Animator>().enabled = true;
                 int r = Mathf.Abs(Random.Range(0, exitList.Count));
                 Vector3 temp = exitList[r].transform.position;
                 

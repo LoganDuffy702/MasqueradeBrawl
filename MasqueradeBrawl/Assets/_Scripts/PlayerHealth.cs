@@ -31,6 +31,9 @@ public class PlayerHealth : MonoBehaviour {
                 Gun = GameObject.Find("_MoonMan_Gun");
                 break;
             case Players.G:
+                Player = GameObject.Find("_ButtLady_Anim");
+                Weapon = GameObject.Find("_ButtLady_Weapon");
+                Gun = GameObject.Find("_ButtLady_Gun");
                 break;
             case Players.K:
                 break;

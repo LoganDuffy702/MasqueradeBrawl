@@ -10,7 +10,7 @@ public class AimTest : MonoBehaviour {
     private float Heading;
     private Vector3 NewRotation;
 
-    public enum Player { MoonMan, Penguin, Girl, FoxMan }
+    public enum Player { MoonMan, Penguin, ButtLady, FoxMan }
     public enum PlayerPos { Player1,Player2,Player3,Player4}
     public PlayerPos PlayerController;
     public Player choosePlayr;
@@ -25,7 +25,8 @@ public class AimTest : MonoBehaviour {
             case Player.Penguin:
                 PlayerSprite = GameObject.Find("_Penguin_Anim");
                 break;
-            case Player.Girl:
+            case Player.ButtLady:
+                PlayerSprite = GameObject.Find("_ButtLady_Anim");
                 break;
             case Player.FoxMan:
                 break;
@@ -136,7 +137,52 @@ public class AimTest : MonoBehaviour {
 
                 transform.rotation = Quaternion.Euler(NewRotation);
                 break;
-            case Player.Girl:
+            case Player.ButtLady:
+                //gameObject.transform.localPosition = new Vector3(0f, -.108f, 0f);
+                switch (PlayerController)
+                {
+                    case PlayerPos.Player1:
+                        NewInput = new Vector3(Input.GetAxis("HorAim"), Input.GetAxis("VerAim"), 0f);
+                        break;
+                    case PlayerPos.Player2:
+                        NewInput = new Vector3(Input.GetAxis("HorAim2"), Input.GetAxis("VerAim2"), 0f);
+                        break;
+                    case PlayerPos.Player3:
+                        NewInput = new Vector3(Input.GetAxis("HorAim3"), Input.GetAxis("VerAim3"), 0f);
+                        break;
+                    case PlayerPos.Player4:
+                        // NewInput = new Vector3(Input.GetAxis("HorAim4"), Input.GetAxis("VerAim4"), 0f);
+                        break;
+                    default:
+                        break;
+                }
+
+
+                if (NewInput.sqrMagnitude < 0.1f)
+                {
+                    return;
+                }
+
+                NewInput.Normalize();
+                Heading = Vector3.Dot(Vector3.up, NewInput);
+                NewRotation = transform.rotation.eulerAngles;
+                NewRotation.z = Heading * 90;
+
+                if (NewInput.x >= 0)
+                {
+                    NewRotation.y = 180f;
+                    PlayerSprite.GetComponent<SpriteRenderer>().flipX = true;
+
+
+                }
+                if (NewInput.x <= 0)
+                {
+                    NewRotation.y = 0f;
+                    PlayerSprite.GetComponent<SpriteRenderer>().flipX = false;
+
+                }
+
+                transform.rotation = Quaternion.Euler(NewRotation);
                 break;
             case Player.FoxMan:
                 break;

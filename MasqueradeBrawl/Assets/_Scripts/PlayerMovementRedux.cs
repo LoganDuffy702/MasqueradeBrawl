@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovementRedux : MonoBehaviour {
 
-    public enum Player { MoonMan, Penguin, Girl, FoxMan }
+    public enum Player { MoonMan, Penguin, ButtLady, FoxMan }
     public enum PlayerPos { Player1, Player2, Player3, Player4 }
     public PlayerPos PlayerController;
 
@@ -14,7 +14,7 @@ public class PlayerMovementRedux : MonoBehaviour {
     public int Speed;
     Vector3 currVel;
     
-    float MoveNum;
+    //float MoveNum;
 
     GameObject Character;
 
@@ -27,7 +27,7 @@ public class PlayerMovementRedux : MonoBehaviour {
     SpriteRenderer PlayerSprite;
 
     Rigidbody2D rb2;
-    CapsuleCollider2D CC2D;
+    //CapsuleCollider2D CC2D;
 
     void Start()
     {
@@ -39,7 +39,8 @@ public class PlayerMovementRedux : MonoBehaviour {
             case Player.Penguin:
                 Character = GameObject.Find("_Penguin_Anim");
                 break;
-            case Player.Girl:
+            case Player.ButtLady:
+                Character = GameObject.Find("_ButtLady_Anim");
                 break;
             case Player.FoxMan:
                 break;
@@ -48,7 +49,7 @@ public class PlayerMovementRedux : MonoBehaviour {
         }
         
         rb2 = gameObject.GetComponent<Rigidbody2D>();
-        CC2D = gameObject.GetComponent<CapsuleCollider2D>();
+        //CC2D = gameObject.GetComponent<CapsuleCollider2D>();
         WSTrans = Weapon.GetComponent<Transform>();
         WSsr = Weapon.GetComponent<SpriteRenderer>();
         anim = Character.GetComponent<Animator>();
@@ -78,7 +79,8 @@ public class PlayerMovementRedux : MonoBehaviour {
                         anim.SetFloat("MM_Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player3:
-                        //direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal3");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player4:
                         //direction.x = Input.GetAxis("Horizontal");
@@ -100,7 +102,8 @@ public class PlayerMovementRedux : MonoBehaviour {
                         anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player3:
-                        //direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal3");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player4:
                         //direction.x = Input.GetAxis("Horizontal");
@@ -110,17 +113,20 @@ public class PlayerMovementRedux : MonoBehaviour {
                 }
                 break;
 
-            case Player.Girl:
+            case Player.ButtLady:
                 switch (PlayerController)
                 {
                     case PlayerPos.Player1:
                         direction.x = Input.GetAxis("Horizontal");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player2:
                         direction.x = Input.GetAxis("Horizontal2");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player3:
-                        //direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal3");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player4:
                         //direction.x = Input.GetAxis("Horizontal");
@@ -141,7 +147,7 @@ public class PlayerMovementRedux : MonoBehaviour {
                         direction.x = Input.GetAxis("Horizontal2");
                         break;
                     case PlayerPos.Player3:
-                        //direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal3");
                         break;
                     case PlayerPos.Player4:
                         //direction.x = Input.GetAxis("Horizontal");
@@ -163,18 +169,13 @@ public class PlayerMovementRedux : MonoBehaviour {
         switch (choosePlayr)
         {
             case Player.MoonMan:
-                StartCoroutine(CalcVelocity());
                 transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
-
-               
                 break;
             case Player.Penguin:
-                StartCoroutine(CalcVelocity());
                 transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
-
                 break;
-            case Player.Girl:
-
+            case Player.ButtLady:
+                transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
                 break;
             case Player.FoxMan:
 
@@ -188,20 +189,20 @@ public class PlayerMovementRedux : MonoBehaviour {
         
     }
 
-    public IEnumerator CalcVelocity()
-    {
-        while (Application.isPlaying)
-        {
-            // Position at frame start
-            Vector3 prevPos = transform.position;
-            // Wait till it the end of the frame
-            yield return new WaitForEndOfFrame();
-            // Calculate velocity: Velocity = DeltaPosition / DeltaTime
-            currVel = (prevPos - transform.position) / Time.deltaTime;
-            MoveNum = currVel.x;
-        }
+    //public IEnumerator CalcVelocity()
+    //{
+    //    while (Application.isPlaying)
+    //    {
+    //        // Position at frame start
+    //        Vector3 prevPos = transform.position;
+    //        // Wait till it the end of the frame
+    //        yield return new WaitForEndOfFrame();
+    //        // Calculate velocity: Velocity = DeltaPosition / DeltaTime
+    //        currVel = (prevPos - transform.position) / Time.deltaTime;
+    //        MoveNum = currVel.x;
+    //    }
 
-    }
+    //}
 
     public void Gravity_PP()
     {

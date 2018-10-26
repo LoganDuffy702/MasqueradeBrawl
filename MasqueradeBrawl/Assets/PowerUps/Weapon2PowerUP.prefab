@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1042400025676736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4907314590376104}
   m_RootOrder: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnContact: {fileID: 1330272458496566, guid: 7c676f322dd64534bb950a2fbb36e890, type: 2}
   BurstSize: 1
-  reload_speed: 1
+  reload_speed: 0.5
   Weapon: {fileID: 1536313167912140, guid: 73fdfa74500ba0f4aaf055349cd3d2d2, type: 2}
   LifeSpan: 7
 --- !u!114 &114740413666896322
@@ -4750,7 +4750,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1296121531
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: 633d5654e8a18fa4cb88afcf74c91dba, type: 3}
   m_Color: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}

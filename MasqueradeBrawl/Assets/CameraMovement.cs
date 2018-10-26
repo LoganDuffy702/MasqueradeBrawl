@@ -31,9 +31,9 @@ public class CameraMovement : MonoBehaviour {
                 Player2 = GameObject.Find("_Penguin");
                 break;
             case Player.Three_Players:
-                Player1 = GameObject.Find("_Player1");
-                Player2 = GameObject.Find("_Player2");
-                Player3 = GameObject.Find("_Player3");
+                Player1 = GameObject.Find("_MoonMan");
+                Player2 = GameObject.Find("_Penguin");
+                Player3 = GameObject.Find("_ButtLady");
                 break;
             case Player.Four_Players:
                 Player1 = GameObject.Find("_Player1");
@@ -49,9 +49,9 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
         if (touched == true)
         {
-
             Newx = ((tempX + Player2.transform.position.x) / 2);
             NewY = ((tempY+ Player2.transform.position.y) / 2);
             Vector3 difference = (Player1.transform.position - Player2.transform.position);
