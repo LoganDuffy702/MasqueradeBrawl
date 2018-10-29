@@ -81,6 +81,9 @@ TagManager:
   - name: Weapons
     uniqueID: 3310816649
     locked: 0
+  - name: BackgroundPlats
+    uniqueID: 3454924487
+    locked: 0
   - name: Doors
     uniqueID: 3481788553
     locked: 0
@@ -92,4 +95,7 @@ TagManager:
     locked: 0
   - name: FX
     uniqueID: 4110657299
+    locked: 0
+  - name: Platforms
+    uniqueID: 3594797943
     locked: 0
