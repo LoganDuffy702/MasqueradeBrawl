@@ -61,9 +61,9 @@ public class CameraMovement : MonoBehaviour {
             if (Mathf.Abs(difference.x) >= 70f || Mathf.Abs(difference.y) >= 30f)
             {
                 MyCam.orthographicSize = MyCam.orthographicSize + (Time.deltaTime * 10);
-                if (MyCam.orthographicSize >= 27f)
+                if (MyCam.orthographicSize >= 29f)
                 {
-                    MyCam.orthographicSize = 27f;
+                    MyCam.orthographicSize = 29f;
                 }
             }
             else

@@ -63,6 +63,12 @@ TagManager:
   - name: Background
     uniqueID: 3618966913
     locked: 0
+  - name: Rain
+    uniqueID: 2904219899
+    locked: 0
+  - name: Clouds
+    uniqueID: 299376881
+    locked: 0
   - name: Ground
     uniqueID: 2743432903
     locked: 0
@@ -72,6 +78,9 @@ TagManager:
   - name: Portals
     uniqueID: 2977716397
     locked: 0
+  - name: BackgroundPlats
+    uniqueID: 3454924487
+    locked: 0
   - name: Sights
     uniqueID: 3557848203
     locked: 0
@@ -80,9 +89,6 @@ TagManager:
     locked: 0
   - name: Weapons
     uniqueID: 3310816649
-    locked: 0
-  - name: BackgroundPlats
-    uniqueID: 3454924487
     locked: 0
   - name: Doors
     uniqueID: 3481788553
