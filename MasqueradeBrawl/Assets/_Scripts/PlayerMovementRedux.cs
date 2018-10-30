@@ -22,6 +22,7 @@ public class PlayerMovementRedux : MonoBehaviour {
 
     public GameObject Weapon;
     Transform WSTrans;
+    public float PlayerX, PlayerY;
 
     SpriteRenderer WSsr;
     SpriteRenderer PlayerSprite;
@@ -60,7 +61,7 @@ public class PlayerMovementRedux : MonoBehaviour {
 
     public void Recreate()
     {
-        gameObject.transform.position = new Vector3(-10f,10f, 0f);
+        gameObject.transform.position = new Vector3(PlayerX,PlayerY,0);
     }
 
     void Update()

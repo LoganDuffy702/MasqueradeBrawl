@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
     public enum Players { P,M,G,K}
     public Players P_HP;
     public float PlayerHP = 100;
-    public float PlayerStock = 3;
+    public float PlayerStock = 1;
     public RectTransform healthBar;
     GameObject Weapon;
     GameObject Gun;
@@ -74,8 +75,10 @@ public class PlayerHealth : MonoBehaviour {
         {
             //Game Over...
             Debug.Log("Game Over");
+            StartCoroutine(RestartScene());
         }
     }
+   
     public IEnumerator Respawn()
     {
         yield return new WaitForSeconds(respawnTime);
@@ -90,5 +93,11 @@ public class PlayerHealth : MonoBehaviour {
 
         CurrentHealth = 100;
         healthBar.sizeDelta = new Vector2(CurrentHealth, healthBar.sizeDelta.y);
+    }
+
+    public IEnumerator RestartScene()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Static_Level", LoadSceneMode.Single);
     }
 }

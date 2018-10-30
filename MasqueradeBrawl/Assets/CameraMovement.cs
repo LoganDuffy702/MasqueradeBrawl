@@ -69,9 +69,9 @@ public class CameraMovement : MonoBehaviour {
             else
             {
                 MyCam.orthographicSize = MyCam.orthographicSize - (Time.deltaTime * 10);
-                if (MyCam.orthographicSize <= 24f)
+                if (MyCam.orthographicSize <= 23f)
                 {
-                    MyCam.orthographicSize = 24f;
+                    MyCam.orthographicSize = 23f;
                 }
             }
         }
