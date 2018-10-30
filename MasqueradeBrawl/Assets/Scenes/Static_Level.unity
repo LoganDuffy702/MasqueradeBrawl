@@ -25833,8 +25833,8 @@ MonoBehaviour:
   burstSize: 1
   FireDelay: 18
   choosePlayr: 1
-  ReloadSpeed: 0.02
-  TypeOfBullet: {fileID: 1467269267407004, guid: c1d8835ad3e85af4b9f6d164d2e4c23f,
+  ReloadSpeed: 0.3
+  TypeOfBullet: {fileID: 1536313167912140, guid: 73fdfa74500ba0f4aaf055349cd3d2d2,
     type: 2}
   ShotGunBullets: 1
   single: 1
@@ -37091,7 +37091,7 @@ MonoBehaviour:
   burstSize: 1
   FireDelay: 18.27
   choosePlayr: 0
-  ReloadSpeed: 0.5
+  ReloadSpeed: 0.3
   TypeOfBullet: {fileID: 1536313167912140, guid: 73fdfa74500ba0f4aaf055349cd3d2d2,
     type: 2}
   ShotGunBullets: 4
