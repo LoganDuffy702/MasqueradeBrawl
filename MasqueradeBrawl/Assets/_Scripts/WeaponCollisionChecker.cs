@@ -26,7 +26,7 @@ public class WeaponCollisionChecker : MonoBehaviour {
         }
         if (other.gameObject.CompareTag("MG_Bullet"))
         {
-            Player.GetComponent<PlayerHealth>().TakeDamage(4);
+            Player.GetComponent<PlayerHealth>().TakeDamage(15);
         }
     }
 }

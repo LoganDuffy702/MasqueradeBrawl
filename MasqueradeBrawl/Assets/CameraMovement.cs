@@ -58,7 +58,7 @@ public class CameraMovement : MonoBehaviour {
             NewPosition = new Vector3(Newx,NewY, 0);
             gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, NewPosition, ref velocity, speed);
 
-            if (Mathf.Abs(difference.x) >= 70f || Mathf.Abs(difference.y) >= 30f)
+            if (Mathf.Abs(difference.x) >= 60f || Mathf.Abs(difference.y) >= 20f)
             {
                 MyCam.orthographicSize = MyCam.orthographicSize + (Time.deltaTime * 10);
                 if (MyCam.orthographicSize >= 29f)
@@ -69,9 +69,9 @@ public class CameraMovement : MonoBehaviour {
             else
             {
                 MyCam.orthographicSize = MyCam.orthographicSize - (Time.deltaTime * 10);
-                if (MyCam.orthographicSize <= 23f)
+                if (MyCam.orthographicSize <= 24f)
                 {
-                    MyCam.orthographicSize = 23f;
+                    MyCam.orthographicSize = 24f;
                 }
             }
         }

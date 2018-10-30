@@ -113,9 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4aa500e7fbb6d459991991e7b519b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XRotationSpeed: 5
+  XRotationSpeed: 0
   YRotationSpeed: 3
-  ZRotationSpeed: 9
+  ZRotationSpeed: 0
   RotationTimer: 1
   touched: 0
 --- !u!212 &212093214956673856
