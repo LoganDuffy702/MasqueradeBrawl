@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85002d5ab957f654f96759ef3be9551b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 25
+  MoveSpeed: 45
   DestroyFade: 1.5
   TimedDeath: 0
   OnContact: {fileID: 1330272458496566, guid: 7c676f322dd64534bb950a2fbb36e890, type: 2}
@@ -4773,7 +4773,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 949335589
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0

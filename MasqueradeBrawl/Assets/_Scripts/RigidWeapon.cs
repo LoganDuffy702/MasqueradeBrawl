@@ -182,7 +182,7 @@ public class RigidWeapon : MonoBehaviour {
                 for (int x = 0; x < ShotGunBullets; x++)
                 {
                     var bullet1 = Instantiate(TypeOfBullet, transform.position, transform.rotation);//Basic firing of bullet
-                    bullet1.transform.Rotate(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+                    bullet1.transform.Rotate(0, 0, Random.Range(-15, 15));
                     //bullet1.GetComponent<Rigidbody2D>().velocity = bullet1.transform.TransformDirection(new Vector2(0, x));
 
                 }
