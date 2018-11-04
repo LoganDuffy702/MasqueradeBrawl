@@ -166,7 +166,7 @@ public class RigidWeapon : MonoBehaviour {
 		{
             PlayerGun.transform.localPosition = new Vector3(Mathf.Abs(temp.x / 3), temp.y, temp.z);
             if (single==true) {
-                //Add sound effect here
+                
                 for (int x = 0; x < removeAmount; x++)
                 {
                     gameObject.GetComponentInParent<PlayerAmmo>().RemoveClip(1);
@@ -182,11 +182,13 @@ public class RigidWeapon : MonoBehaviour {
                 for (int x = 0; x < ShotGunBullets; x++)
                 {
                     var bullet1 = Instantiate(TypeOfBullet, transform.position, transform.rotation);//Basic firing of bullet
-                    bullet1.GetComponent<Rigidbody2D>().velocity = bullet1.transform.TransformDirection(new Vector2(0, x));
+                    bullet1.transform.Rotate(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+                    //bullet1.GetComponent<Rigidbody2D>().velocity = bullet1.transform.TransformDirection(new Vector2(0, x));
 
                 }
             }
             yield return new WaitForSeconds(bulletDelay); //Waits so many seconds before firing
+            //Add sound effect here
             PlayerGun.transform.localPosition = temp;
             yield return new WaitForSeconds(bulletDelay);
             
