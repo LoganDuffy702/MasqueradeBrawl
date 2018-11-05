@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 61684886703657378}
   - component: {fileID: 114231835173731724}
   m_Layer: 0
-  m_Name: testBullet
-  m_TagString: MG_Bullet
+  m_Name: ShotgunBullet
+  m_TagString: ShotgunBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536313167912140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.749308, y: 0.28817368, z: 0}
+  m_LocalPosition: {x: -16.749308, y: 1.28, z: 0}
   m_LocalScale: {x: 0.2351631, y: 0.13545887, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85002d5ab957f654f96759ef3be9551b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 45
-  DestroyFade: 1
+  MoveSpeed: 55
+  DestroyFade: 0.2
   TimedDeath: 0
   OnContact: {fileID: 1330272458496566, guid: 7c676f322dd64534bb950a2fbb36e890, type: 2}
 --- !u!212 &212535062622643184

@@ -18,7 +18,7 @@ public class RigidWeapon : MonoBehaviour {
 	public GameObject TypeOfBullet;
     public int ShotGunBullets=4;
 
-    public bool single = true;
+    public bool ShotGunMode = true;
 
 	//public GameObject GunText;
 
@@ -165,7 +165,7 @@ public class RigidWeapon : MonoBehaviour {
 		for (int i = 0; i < burstSize; i++)
 		{
             PlayerGun.transform.localPosition = new Vector3(Mathf.Abs(temp.x / 3), temp.y, temp.z);
-            if (single==true) {
+            if (ShotGunMode==false) {
                 
                 for (int x = 0; x < removeAmount; x++)
                 {
@@ -178,9 +178,15 @@ public class RigidWeapon : MonoBehaviour {
                 bullet.transform.rotation = transform.rotation;
                 
             }
-            else if (single == false) {
-                for (int x = 0; x < ShotGunBullets; x++)
+            else if (ShotGunMode == true) {
+                for (int w = 0; w < ShotGunBullets; w++)
                 {
+                    for (int x = 0; x < removeAmount; x++)
+                    {
+                        gameObject.GetComponentInParent<PlayerAmmo>().RemoveClip(1);
+                        Ammo -= 1;
+
+                    }
                     var bullet1 = Instantiate(TypeOfBullet, transform.position, transform.rotation);//Basic firing of bullet
                     bullet1.transform.Rotate(0, 0, Random.Range(-15, 15));
                     //bullet1.GetComponent<Rigidbody2D>().velocity = bullet1.transform.TransformDirection(new Vector2(0, x));

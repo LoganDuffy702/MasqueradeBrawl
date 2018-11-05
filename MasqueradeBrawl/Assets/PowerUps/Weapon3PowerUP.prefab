@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1591023760951860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.793586, y: -5.285929, z: -0.39900455}
+  m_LocalPosition: {x: 10.438747, y: -4.3301144, z: -0.39900455}
   m_LocalScale: {x: 1.4217225, y: 1.4217234, z: 1.4217234}
   m_Children:
   - {fileID: 4428661177436986}
@@ -88,7 +88,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.21499999
+  m_Radius: 0.66
 --- !u!114 &114507896415926988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,6 +119,7 @@ MonoBehaviour:
   OnContact: {fileID: 1330272458496566, guid: 7c676f322dd64534bb950a2fbb36e890, type: 2}
   BurstSize: 1
   reload_speed: 0.02
+  ShotGunMode: 0
   Weapon: {fileID: 1467269267407004, guid: c1d8835ad3e85af4b9f6d164d2e4c23f, type: 2}
   LifeSpan: 7
 --- !u!198 &198641277318892702

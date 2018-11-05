@@ -26,6 +26,7 @@ TagManager:
   - ButtLady
   - MG_Bullet
   - AmmoClips3
+  - ShotgunBullet
   layers:
   - Default
   - TransparentFX

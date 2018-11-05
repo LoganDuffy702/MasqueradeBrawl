@@ -84,8 +84,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XRotationSpeed: 0
-  YRotationSpeed: 0
-  ZRotationSpeed: 3
+  YRotationSpeed: 3
+  ZRotationSpeed: 0
   RotationTimer: 1
   touched: 0
 --- !u!212 &212417968247183720

@@ -8,6 +8,7 @@ public class Weapon_Drop : MonoBehaviour {
 
     public int BurstSize;
     public float reload_speed;
+    public bool ShotGunMode;
     public GameObject Weapon;
     public float LifeSpan;
     // Use this for initialization
@@ -43,6 +44,7 @@ public class Weapon_Drop : MonoBehaviour {
         P_Gun.TypeOfBullet = Weapon;
         P_Gun.burstSize = BurstSize;
         P_Gun.ReloadSpeed = reload_speed;
+        P_Gun.ShotGunMode = ShotGunMode;
 
         
     }

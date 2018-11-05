@@ -35,6 +35,7 @@ public class Portal_Factory : MonoBehaviour {
             {
                 other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 tempSpeed = other.gameObject.GetComponent<PlayerMovementRedux>().Speed;
+                other.gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
                 int r = Mathf.Abs(Random.Range(-1, 2));
                 if (r == 2)
                     r = 0;
@@ -55,8 +56,8 @@ public class Portal_Factory : MonoBehaviour {
                 other.gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
                 gameObject.GetComponent<Animator>().enabled = true;
                 int r = Mathf.Abs(Random.Range(0, exitList.Count));
+
                 Vector3 temp = exitList[r].transform.position;
-                
                 cam.touched = true;
                 cam.tempX = temp.x;
                 cam.tempY = temp.y;
