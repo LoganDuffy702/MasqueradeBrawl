@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
     public enum Players { P,M,G,K}
     public Players P_HP;
-    public float PlayerHP = 100;
+    public float PlayerHP;
     public float PlayerStock = 1;
     public RectTransform healthBar;
     GameObject Weapon;
@@ -91,7 +91,7 @@ public class PlayerHealth : MonoBehaviour {
         Gun.GetComponent<LineRenderer>().enabled = true;
         anim.SetBool("Dead", false);
 
-        CurrentHealth = 100;
+        CurrentHealth = PlayerHP;
         healthBar.sizeDelta = new Vector2(CurrentHealth, healthBar.sizeDelta.y);
     }
 

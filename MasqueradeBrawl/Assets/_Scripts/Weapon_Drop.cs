@@ -66,7 +66,7 @@ public class Weapon_Drop : MonoBehaviour {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             ChangeWeapon(other.gameObject);
-            Instantiate(OnContact, transform.localPosition, transform.localRotation);
+            Instantiate(OnContact, transform.position, transform.rotation);
         }
 
     }

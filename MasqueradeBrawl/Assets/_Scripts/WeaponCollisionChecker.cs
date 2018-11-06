@@ -9,7 +9,7 @@ public class WeaponCollisionChecker : MonoBehaviour {
 	void Start () {
 		
 	}
-
+    //case1 use these stats
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PistolBullet"))

@@ -49,13 +49,13 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
+        
         if (touched == true)
         {
             Newx = ((tempX + Player2.transform.position.x) / 2);
             NewY = ((tempY+ Player2.transform.position.y) / 2);
             Vector3 difference = (Player1.transform.position - Player2.transform.position);
-            NewPosition = new Vector3(Newx,NewY, 0);
+            NewPosition = new Vector3(Newx,NewY, -64);
             gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, NewPosition, ref velocity, speed);
             
             if (Mathf.Abs(difference.x) >= 70f || Mathf.Abs(difference.y) >= 30f)
@@ -80,7 +80,7 @@ public class CameraMovement : MonoBehaviour {
             Newx = ((Player1.transform.position.x + Player2.transform.position.x) / 2);
             NewY = ((Player1.transform.position.y + Player2.transform.position.y) / 2);
             Vector3 difference = (Player1.transform.position - Player2.transform.position);
-            NewPosition = new Vector3(Newx , NewY, 0);
+            NewPosition = new Vector3(Newx, NewY, -64);
             gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, NewPosition, ref velocity, speed);
 
             if (Mathf.Abs(difference.x) >= 70f || Mathf.Abs(difference.y) >= 30f)

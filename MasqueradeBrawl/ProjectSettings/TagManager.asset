@@ -27,6 +27,7 @@ TagManager:
   - MG_Bullet
   - AmmoClips3
   - ShotgunBullet
+  - DeathWall
   layers:
   - Default
   - TransparentFX
