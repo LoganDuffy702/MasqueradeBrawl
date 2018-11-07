@@ -21,9 +21,8 @@ public class Portal_Factory : MonoBehaviour {
 
 	void Start () {
         cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
-        
-        gameObject.GetComponent<Animator>().enabled = false;
 
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,6 +30,7 @@ public class Portal_Factory : MonoBehaviour {
         if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") ||
             other.gameObject.CompareTag("ButtLady"))
         {
+            anim.SetBool("Open", true);
             if (ReleaseUp == true && RandomExit == true)
             {
                 other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
@@ -54,7 +54,7 @@ public class Portal_Factory : MonoBehaviour {
                 other.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 tempSpeed = other.gameObject.GetComponent<PlayerMovementRedux>().Speed;
                 other.gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
-                gameObject.GetComponent<Animator>().enabled = true;
+                
                 int r = Mathf.Abs(Random.Range(0, exitList.Count));
 
                 Vector3 temp = exitList[r].transform.position;
@@ -78,7 +78,6 @@ public class Portal_Factory : MonoBehaviour {
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * ExitSpeed);
             other.gameObject.transform.position = exitList[Rnum].transform.position;
             other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
-            gameObject.GetComponent<Animator>().enabled = false;
             cam.touched = false;
         }
         else
@@ -86,9 +85,11 @@ public class Portal_Factory : MonoBehaviour {
            
             other.gameObject.transform.position = exitList[Rnum].transform.position;
             other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
-            gameObject.GetComponent<Animator>().enabled = false;
             cam.touched = false;
         }
+
+        yield return new WaitForSeconds(.5f);
+        anim.SetBool("Open", false);
     }
 }
 
