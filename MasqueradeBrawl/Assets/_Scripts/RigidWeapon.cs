@@ -35,7 +35,7 @@ public class RigidWeapon : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log(PlayerGun.name);
+        //Debug.Log(PlayerGun.name);
 
     }
 

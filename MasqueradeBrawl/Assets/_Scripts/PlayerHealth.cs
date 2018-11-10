@@ -37,6 +37,9 @@ public class PlayerHealth : MonoBehaviour {
                 Gun = GameObject.Find("_ButtLady_Gun");
                 break;
             case Players.K:
+                Player = GameObject.Find("_Foxy_Anim");
+                Weapon = GameObject.Find("_Foxy_Weapon");
+                Gun = GameObject.Find("_Foxy_Gun");
                 break;
             default:
                 break;

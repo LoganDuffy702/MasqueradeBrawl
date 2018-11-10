@@ -59,8 +59,8 @@ public class Portal_Factory : MonoBehaviour {
 
                 Vector3 temp = exitList[r].transform.position;
                 cam.touched = true;
-                cam.tempX = temp.x;
-                cam.tempY = temp.y;
+                cam.tempX = temp.x/2;
+                cam.tempY = temp.y/2;
 
                 StartCoroutine(DelayExit(other.gameObject, r));
                 
@@ -78,18 +78,19 @@ public class Portal_Factory : MonoBehaviour {
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * ExitSpeed);
             other.gameObject.transform.position = exitList[Rnum].transform.position;
             other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
-            cam.touched = false;
+            
         }
         else
         {
            
             other.gameObject.transform.position = exitList[Rnum].transform.position;
             other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
-            cam.touched = false;
+          
         }
 
         yield return new WaitForSeconds(.5f);
         anim.SetBool("Open", false);
+        cam.touched = false;
     }
 }
 

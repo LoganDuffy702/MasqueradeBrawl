@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 61b70c98032d3654e8ffc2f8018a8256
+guid: 1d44b3de7e89ff543a807b45cc30eb70
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: BackgroundBrawl_redux_0
-    21300002: BackgroundBrawl_redux_1
-    21300004: BackgroundBrawl_redux_2
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -41,7 +38,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -83,71 +80,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: BackgroundBrawl_redux_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1600
-        height: 900
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26ac1d3be329f7048a211c2e2aa83f4f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BackgroundBrawl_redux_1
-      rect:
-        serializedVersion: 2
-        x: 1019
-        y: 773
-        width: 122
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 639756249e496034ebe091f563d73a22
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BackgroundBrawl_redux_2
-      rect:
-        serializedVersion: 2
-        x: 486
-        y: 774
-        width: 141
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d200bf1a4dcc475418343ed1844fe370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c412ab99a3d649447ba1de174ec835ca
+    spriteID: ee883bf8a19f7cf41aa4313ba14837f7
     vertices: []
     indices: 
     edges: []

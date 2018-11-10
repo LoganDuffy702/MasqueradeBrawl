@@ -9,6 +9,7 @@ public class Ammo_PP : MonoBehaviour {
     public GameObject OnContact;
     public float LifeSpan;
     GameObject AmmoOBJ;
+    public GameObject AmmoSprite;
     private RigidWeapon PlayerAmmo;
     private Image AmmoIMG;
     public int AmmoAmmount = 16;
@@ -20,6 +21,7 @@ public class Ammo_PP : MonoBehaviour {
     void Start ()
     {
         StartCoroutine(HidMe());
+        
     }
 
     public void AddAmmo(GameObject PlayerName)
@@ -31,7 +33,7 @@ public class Ammo_PP : MonoBehaviour {
     public IEnumerator HidMe()
     {
         yield return new WaitForSeconds(LifeSpan);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        AmmoSprite.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         Destroy(gameObject, LifeSpan + 10);
     }
@@ -41,10 +43,12 @@ public class Ammo_PP : MonoBehaviour {
         if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") || other.gameObject.CompareTag("ButtLady"))
         {
 
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            AmmoSprite.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
+           
             AddAmmo(other.gameObject);
             Instantiate(OnContact, transform.localPosition, transform.localRotation);
+            Destroy(gameObject);
         }
 
     }

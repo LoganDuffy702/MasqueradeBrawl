@@ -44,6 +44,7 @@ public class PlayerMovementRedux : MonoBehaviour {
                 Character = GameObject.Find("_ButtLady_Anim");
                 break;
             case Player.FoxMan:
+                Character = GameObject.Find("_Foxy_Anim");
                 break;
             default:
                 break;
@@ -84,7 +85,8 @@ public class PlayerMovementRedux : MonoBehaviour {
                         anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player4:
-                        //direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal4");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     default:
                         break;
@@ -107,7 +109,8 @@ public class PlayerMovementRedux : MonoBehaviour {
                         anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player4:
-                        //direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal4");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     default:
                         break;
@@ -130,7 +133,8 @@ public class PlayerMovementRedux : MonoBehaviour {
                         anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player4:
-                        //direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal4");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     default:
                         break;
@@ -151,7 +155,8 @@ public class PlayerMovementRedux : MonoBehaviour {
                         direction.x = Input.GetAxis("Horizontal3");
                         break;
                     case PlayerPos.Player4:
-                        //direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal4");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     default:
                         break;
@@ -179,7 +184,7 @@ public class PlayerMovementRedux : MonoBehaviour {
                 transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
                 break;
             case Player.FoxMan:
-
+                transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
                 break;
             default:
                 break;

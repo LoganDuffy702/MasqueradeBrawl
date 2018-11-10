@@ -10,6 +10,7 @@ public class FloorGenerator : MonoBehaviour {
     private Vector3 lastSpawnPosition;
     public float duration;
     private bool spawnfloor = true;
+    public bool GoLeft = false;
     public float speed;
 
     // Use this for initialization
@@ -26,7 +27,7 @@ public class FloorGenerator : MonoBehaviour {
         
         if (spawnfloor == true) //Change to timer (old)Vector3.Distance(lastSpawnPosition, player.transform.position) < genDistance
         {
-            SpawnNewGroundObject();
+           // SpawnNewGroundObject();
             //lastSpawnPosition = lastGroundObject.transform.Find("EndPoint").position;
             StartCoroutine(Timer());
             spawnfloor = false;
@@ -67,6 +68,16 @@ public class FloorGenerator : MonoBehaviour {
 
         // translate the new game object by a random amount left or right
         lastGroundObject.transform.position += Vector3.right * maxOffset * (Random.value * 2f - 1f);
-        lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.up*speed);
+        if (GoLeft == true)
+        {
+            lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.left * speed);
+            
+        }
+        else
+        {
+            lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.up * speed);
+        }
+        
+        
     }
 }

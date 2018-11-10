@@ -4,109 +4,88 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
-    public GameObject Player1, Player2, Player3, Player4;
-
-    public enum Player { Two_Players, Three_Players, Four_Players }
-    public Player PlayerCount;
-    public float Newx;
+    //public GameObject Player1, Player2, Player3, Player4;
+    public List<Transform> Players;
+    public float MoveSpeed = 1;
+    //public enum Player { Two_Players, Three_Players, Four_Players }
+    //public Player PlayerCount;
+    
     public float tempX;
     public float tempY;
-    public float NewY;
+    
     Vector3 NewPosition;
     public bool touched;
 
     Camera MyCam;
     private Vector3 velocity = Vector3.zero;
 
-    Vector3 P1, P2, P3, P4;
-    public float Xoffset,Yoffset;
+    public float MaxZoom = 30f;
+    public float MinZoom = 23f;
+    public int TotalPlayer = 0;
+    public float DistanceTrigVal = 90f;
+    
     public float speed;
     // Use this for initialization
     void Start () {
         MyCam = gameObject.GetComponent<Camera>();
-        switch (PlayerCount)
-        {
-            case Player.Two_Players:
-                Player1 = GameObject.Find("_MoonMan");
-                Player2 = GameObject.Find("_Penguin");
-                break;
-            case Player.Three_Players:
-                Player1 = GameObject.Find("_MoonMan");
-                Player2 = GameObject.Find("_Penguin");
-                Player3 = GameObject.Find("_ButtLady");
-                break;
-            case Player.Four_Players:
-                Player1 = GameObject.Find("_Player1");
-                Player2 = GameObject.Find("_Player2");
-                Player3 = GameObject.Find("_Player3");
-                Player4 = GameObject.Find("_Player4");
-                break;
-            default:
-                break;
-        }
         
     }
-	
+   
+    Vector3 FindCenter()
+    {
+        if (Players.Count == 1)
+        {
+            Debug.Log("OnePlayer found");
+            return new Vector3(0,0,0);
+        }
+        var bounds = new Bounds(Players[0].position, Vector3.zero);
+        for (int i = 0; i < Players.Count; i++)
+        {
+            bounds.Encapsulate(Players[i].position);
+        }
+        return bounds.center;
+    }
+
+    float GetGreatestDistance()
+    {
+        
+        var bounds = new Bounds(Players[0].position, Vector3.zero);
+        for (int i = 0; i < Players.Count; i++)
+        {
+            bounds.Encapsulate(Players[i].position);
+        }
+        return bounds.size.x;
+    }
 	// Update is called once per frame
 	void FixedUpdate () {
         
+        
         if (touched == true)
         {
-            Newx = ((tempX + Player2.transform.position.x) / 2);
-            NewY = ((tempY+ Player2.transform.position.y) / 2);
-            Vector3 difference = (Player1.transform.position - Player2.transform.position);
-            NewPosition = new Vector3(Newx,NewY, -64);
-            gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, NewPosition, ref velocity, speed);
+           
+            Vector3 TempPos = new Vector3(tempX,tempY, -64f);
+            gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, TempPos, ref velocity, MoveSpeed);
+
+            float newZoom = Mathf.Lerp(MaxZoom, MinZoom, GetGreatestDistance() / DistanceTrigVal);
             
-            if (Mathf.Abs(difference.x) >= 70f || Mathf.Abs(difference.y) >= 30f)
-            {
-                MyCam.orthographicSize = MyCam.orthographicSize + (Time.deltaTime * 10);
-                if (MyCam.orthographicSize >= 29f)
-                {
-                    MyCam.orthographicSize = 29f;
-                }
-            }
-            else
-            {
-                MyCam.orthographicSize = MyCam.orthographicSize - (Time.deltaTime * 10);
-                if (MyCam.orthographicSize <= 24f)
-                {
-                    MyCam.orthographicSize = 24f;
-                }
-            }
+            MyCam.orthographicSize = Mathf.Lerp(newZoom, MyCam.orthographicSize, Time.deltaTime*speed+2);
+           
+
+
         }
         else if (touched == false)
         {
-            Newx = ((Player1.transform.position.x + Player2.transform.position.x) / 2);
-            NewY = ((Player1.transform.position.y + Player2.transform.position.y) / 2);
-            Vector3 difference = (Player1.transform.position - Player2.transform.position);
-            NewPosition = new Vector3(Newx, NewY, -64);
-            gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, NewPosition, ref velocity, speed);
+            
+            NewPosition = new Vector3(FindCenter().x, FindCenter().y,-64f);
+            gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, NewPosition, ref velocity, MoveSpeed+.3f);
 
-            if (Mathf.Abs(difference.x) >= 70f || Mathf.Abs(difference.y) >= 30f)
-            {
-                MyCam.orthographicSize = MyCam.orthographicSize + (Time.deltaTime * 10);
-                if (MyCam.orthographicSize >= 29f)
-                {
-                    MyCam.orthographicSize = 29f;
-                }
-            }
-            else
-            {
-                MyCam.orthographicSize = MyCam.orthographicSize - (Time.deltaTime * 10);
-                if (MyCam.orthographicSize <= 24f)
-                {
-                    MyCam.orthographicSize = 24f;
-                }
-            }
+            float newZoom = Mathf.Lerp(MaxZoom, MinZoom, GetGreatestDistance() / DistanceTrigVal);
+            MyCam.orthographicSize = Mathf.Lerp(MyCam.orthographicSize, newZoom, Time.deltaTime*speed);
+            
+
         }
 
-       
-      
-        //if (gameObject.transform.position.y <= 1f)
-        //{
-        //    gameObject.transform.position = new Vector3(Newx + Xoffset, (NewY + (Time.deltaTime*(3*Yoffset))), 0);
-        //}
 	}
-   
+    
+
 }
