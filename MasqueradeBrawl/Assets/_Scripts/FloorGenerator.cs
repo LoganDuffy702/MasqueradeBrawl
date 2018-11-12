@@ -27,7 +27,7 @@ public class FloorGenerator : MonoBehaviour {
         
         if (spawnfloor == true) //Change to timer (old)Vector3.Distance(lastSpawnPosition, player.transform.position) < genDistance
         {
-           // SpawnNewGroundObject();
+            SpawnNewGroundObject();
             //lastSpawnPosition = lastGroundObject.transform.Find("EndPoint").position;
             StartCoroutine(Timer());
             spawnfloor = false;

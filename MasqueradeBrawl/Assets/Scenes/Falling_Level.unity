@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65582094}
   - component: {fileID: 65582093}
+  - component: {fileID: 65582095}
   m_Layer: 0
   m_Name: FloorMaker
   m_TagString: Untagged
@@ -148,6 +149,7 @@ MonoBehaviour:
   - {fileID: 1227622814795768, guid: 39e3f64ed24ccd645913a3394f8336bf, type: 2}
   maxOffset: 40
   duration: 0.67
+  GoLeft: 0
   speed: 0
 --- !u!4 &65582094
 Transform:
@@ -162,6 +164,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &65582095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 65582092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c744d84a998d13e4996b5ef4f381f7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 0
+  DestroyFade: 1
+  TimedDeath: 0
 --- !u!1 &310247769
 GameObject:
   m_ObjectHideFlags: 0

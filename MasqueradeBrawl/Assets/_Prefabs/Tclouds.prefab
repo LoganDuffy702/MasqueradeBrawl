@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50136236652261654}
   - component: {fileID: 114746178238899708}
   m_Layer: 5
-  m_Name: clouds (1) 2
+  m_Name: Tclouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784840561106034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: -7.059999, y: 7.6599994, z: 0}
+  m_LocalScale: {x: 0.8382812, y: 0.8337277, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b1bf54f408e704192975722e2a15b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroySpeed: 30
+  DestroySpeed: 15
+  CloudSpeed: 20
   cloud: 1
 --- !u!212 &212794503128690292
 SpriteRenderer:

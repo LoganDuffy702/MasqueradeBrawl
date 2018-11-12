@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Static_Level.unity
     guid: 258b3a61674973a4e869eecd154e6294
+  - enabled: 1
+    path: Assets/Scenes/Falling_Level.unity
+    guid: 641d03e59204c7b409fe6b69d0d19f7e
   m_configObjects: {}

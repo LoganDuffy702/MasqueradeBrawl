@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Portal_Factory : MonoBehaviour {
 
-    public bool ReleaseUp;
+    public bool ReleaseUp,Laundry;
     //public bool ReleaseRight;
     //public bool ReleaseLeft;
     public bool RandomExit;
@@ -56,7 +56,7 @@ public class Portal_Factory : MonoBehaviour {
                 other.gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
                 
                 int r = Mathf.Abs(Random.Range(0, exitList.Count));
-
+                Debug.Log(r);
                 Vector3 temp = exitList[r].transform.position;
                 cam.touched = true;
                 cam.tempX = temp.x/2;
@@ -82,10 +82,23 @@ public class Portal_Factory : MonoBehaviour {
         }
         else
         {
-           
             other.gameObject.transform.position = exitList[Rnum].transform.position;
             other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
-          
+            if (Rnum == 0 && Laundry)
+            {
+                Debug.Log("go left");
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.right * ExitSpeed);
+                //other.gameObject.transform.position = exitList[Rnum].transform.position;
+                //other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
+            }
+            else if (Rnum == 1 && Laundry)
+            {
+                Debug.Log("go right");
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.left * ExitSpeed);
+                //other.gameObject.transform.position = exitList[Rnum].transform.position;
+               // other.gameObject.GetComponent<PlayerMovementRedux>().Speed = tempSpeed;
+            }
+           
         }
 
         yield return new WaitForSeconds(.5f);

@@ -101,12 +101,12 @@ TagManager:
   - name: Bullets
     uniqueID: 949335589
     locked: 0
-  - name: FX
-    uniqueID: 4110657299
-    locked: 0
   - name: Platforms
     uniqueID: 3594797943
     locked: 0
   - name: PlayerUI
     uniqueID: 1637981021
+    locked: 0
+  - name: FX
+    uniqueID: 4110657299
     locked: 0
