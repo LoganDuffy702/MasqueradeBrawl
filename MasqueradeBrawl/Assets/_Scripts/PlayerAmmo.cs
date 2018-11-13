@@ -21,8 +21,8 @@ public class PlayerAmmo : MonoBehaviour {
             var AmmoClone = Instantiate(AmmoPrefab);
 
             AmmoClone.transform.SetParent(AmmoPos.transform);
-            AmmoClone.transform.localScale = new Vector2(0.015f, .12f);
-            AmmoClone.transform.position = new Vector2(AmmoPos.transform.position.x + (0.2f * i), AmmoPos.transform.position.y);
+            AmmoClone.transform.localScale = new Vector2(0.013f, .12f);
+            AmmoClone.transform.position = new Vector2(AmmoPos.transform.position.x + (0.27f * i), AmmoPos.transform.position.y);
         }
     }
 	
