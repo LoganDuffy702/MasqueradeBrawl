@@ -8,10 +8,14 @@ public class PlayerHealth : MonoBehaviour {
     public enum Players { P,M,G,K}
     public Players P_HP;
     public float PlayerHP;
-    public float PlayerStock = 1;
+    public float PlayerStock = 2;
+    public int PlayerMarker = 0;
     public RectTransform healthBar;
+    public GameObject MainCanvas;
     GameObject Weapon;
+   
     GameObject Gun;
+    
     public float respawnTime;
     GameObject Player;
     Animator anim;
@@ -25,21 +29,25 @@ public class PlayerHealth : MonoBehaviour {
                 Player = GameObject.Find("_Penguin_Anim");
                 Weapon = GameObject.Find("_Penguin_Weapon");
                 Gun = GameObject.Find("_Penguin_Gun");
+                PlayerMarker = 1;
                 break;
             case Players.M:
                 Player = GameObject.Find("_MoonMan_Anim");
                 Weapon = GameObject.Find("_MoonMan_Weapon");
                 Gun = GameObject.Find("_MoonMan_Gun");
+                PlayerMarker = 2;
                 break;
             case Players.G:
                 Player = GameObject.Find("_ButtLady_Anim");
                 Weapon = GameObject.Find("_ButtLady_Weapon");
                 Gun = GameObject.Find("_ButtLady_Gun");
+                PlayerMarker = 3;
                 break;
             case Players.K:
                 Player = GameObject.Find("_Foxy_Anim");
                 Weapon = GameObject.Find("_Foxy_Weapon");
                 Gun = GameObject.Find("_Foxy_Gun");
+                PlayerMarker = 4;
                 break;
             default:
                 break;
@@ -51,10 +59,10 @@ public class PlayerHealth : MonoBehaviour {
     public void TakeDamage(float amount)
     {
         CurrentHealth -= amount;
+        anim.SetBool("Damage", true);
         if (CurrentHealth <= 0 )
         {
             CurrentHealth = 0;
-
 
             anim.SetBool("Dead", true);
             Debug.Log(gameObject.name + " Died");
@@ -67,19 +75,28 @@ public class PlayerHealth : MonoBehaviour {
             Gun.GetComponent<LineRenderer>().enabled = false;
 
             PlayerStock -= 1;
-            StartCoroutine(Respawn());
+            if (PlayerStock <= 0)
+            {
+                MainCanvas.GetComponent<WinnerScript>().WinNum = PlayerMarker;
+                gameObject.SetActive(false);
+                
+            }
+            else if (PlayerStock > 0)
+            {
+                StartCoroutine(Respawn());
+ 
+            }
+            
+
         }
         if (CurrentHealth > 100)
         {
             CurrentHealth = 100;
         }
+
+       
+
         healthBar.sizeDelta = new Vector2(CurrentHealth, healthBar.sizeDelta.y);
-        if (PlayerStock <= 0)
-        {
-            //Game Over...
-            Debug.Log("Game Over");
-            StartCoroutine(RestartScene());
-        }
     }
    
     public IEnumerator Respawn()
@@ -98,9 +115,5 @@ public class PlayerHealth : MonoBehaviour {
         healthBar.sizeDelta = new Vector2(CurrentHealth, healthBar.sizeDelta.y);
     }
 
-    public IEnumerator RestartScene()
-    {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("Static_Level", LoadSceneMode.Single);
-    }
+
 }
