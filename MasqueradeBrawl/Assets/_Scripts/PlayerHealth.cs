@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour {
     public void TakeDamage(float amount)
     {
         CurrentHealth -= amount;
-        anim.SetBool("Damage", true);
+        StartCoroutine(dmg());
         if (CurrentHealth <= 0 )
         {
             CurrentHealth = 0;
@@ -78,7 +78,7 @@ public class PlayerHealth : MonoBehaviour {
             if (PlayerStock <= 0)
             {
                 MainCanvas.GetComponent<WinnerScript>().WinNum = PlayerMarker;
-                gameObject.SetActive(false);
+                StartCoroutine(Dead());
                 
             }
             else if (PlayerStock > 0)
@@ -114,6 +114,19 @@ public class PlayerHealth : MonoBehaviour {
         CurrentHealth = PlayerHP;
         healthBar.sizeDelta = new Vector2(CurrentHealth, healthBar.sizeDelta.y);
     }
-
-
+    
+    public IEnumerator dmg()
+    {
+        anim.SetBool("Damage", true);
+        int temp = gameObject.GetComponent<PlayerMovementRedux>().Speed;
+        gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
+        yield return new WaitForSeconds(.5f);///This will need some polish
+        gameObject.GetComponent<PlayerMovementRedux>().Speed = temp;
+        anim.SetBool("Damage", false);
+    }
+    public IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
+    }
 }
