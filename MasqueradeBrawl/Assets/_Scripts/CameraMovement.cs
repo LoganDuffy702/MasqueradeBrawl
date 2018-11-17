@@ -5,8 +5,10 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour {
 
     //public GameObject Player1, Player2, Player3, Player4;
-    public List<Transform> Players;
+
+    public List<GameObject> Players;
     public float MoveSpeed = 1;
+    public float Yoffset = 0;
     //public enum Player { Two_Players, Three_Players, Four_Players }
     //public Player PlayerCount;
     
@@ -35,13 +37,13 @@ public class CameraMovement : MonoBehaviour {
     {
         if (Players.Count == 1)
         {
-            Debug.Log("OnePlayer found");
+            //Debug.Log("OnePlayer found");
             return new Vector3(0,0,0);
         }
-        var bounds = new Bounds(Players[0].position, Vector3.zero);
+        var bounds = new Bounds(Players[0].GetComponent<Transform>().position, Vector3.zero);
         for (int i = 0; i < Players.Count; i++)
         {
-            bounds.Encapsulate(Players[i].position);
+            bounds.Encapsulate(Players[i].GetComponent<Transform>().position);
         }
         return bounds.center;
     }
@@ -49,10 +51,10 @@ public class CameraMovement : MonoBehaviour {
     float GetGreatestDistance()
     {
         
-        var bounds = new Bounds(Players[0].position, Vector3.zero);
+        var bounds = new Bounds(Players[0].GetComponent<Transform>().position, Vector3.zero);
         for (int i = 0; i < Players.Count; i++)
         {
-            bounds.Encapsulate(Players[i].position);
+            bounds.Encapsulate(Players[i].GetComponent<Transform>().position);
         }
         return bounds.size.x;
     }
@@ -63,7 +65,7 @@ public class CameraMovement : MonoBehaviour {
         if (touched == true)
         {
            
-            Vector3 TempPos = new Vector3(tempX,tempY, -64f);
+            Vector3 TempPos = new Vector3(tempX,tempY+Yoffset, -64f);
             gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, TempPos, ref velocity, MoveSpeed);
 
             float newZoom = Mathf.Lerp(MaxZoom, MinZoom, GetGreatestDistance() / DistanceTrigVal);
@@ -76,7 +78,7 @@ public class CameraMovement : MonoBehaviour {
         else if (touched == false)
         {
             
-            NewPosition = new Vector3(FindCenter().x, FindCenter().y,-64f);
+            NewPosition = new Vector3(FindCenter().x, FindCenter().y+Yoffset,-64f);
             gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, NewPosition, ref velocity, MoveSpeed+.3f);
 
             float newZoom = Mathf.Lerp(MaxZoom, MinZoom, GetGreatestDistance() / DistanceTrigVal);
@@ -86,6 +88,18 @@ public class CameraMovement : MonoBehaviour {
         }
 
 	}
-    
-
+    public void DeleteUpdate(string PlayerName)
+    {
+       
+        //Debug.Log("DeleteUpdate " + PlayerName);
+        for (int i = 0; i < Players.Count; i++)
+        {
+            if (Players[i].name == PlayerName)
+            {
+                Debug.Log("DeleteUpdate " + PlayerName);
+                Players.RemoveAt(i);
+            }
+        }
+       
+    }
 }

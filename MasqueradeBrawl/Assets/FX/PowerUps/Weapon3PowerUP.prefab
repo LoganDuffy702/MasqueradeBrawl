@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1631129027094106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9401177, y: 0.9401177, z: 0.7834314}
+  m_LocalScale: {x: 1.2674805, y: 1.2674805, z: 1.0562338}
   m_Children: []
   m_Father: {fileID: 4907314590376104}
   m_RootOrder: 0
@@ -67,8 +67,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1591023760951860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4217225, y: 1.4217234, z: 1.4217234}
+  m_LocalPosition: {x: -2.272459, y: -61.14163, z: 0}
+  m_LocalScale: {x: 1.8766737, y: 1.8766743, z: 1.8766743}
   m_Children:
   - {fileID: 4428661177436986}
   m_Father: {fileID: 0}
@@ -201,7 +201,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.68
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1340,9 +1340,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0.31026816, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.5686275, g: 0.09019608, b: 0.2784314, a: 1}
+        key1: {r: 0.77647066, g: 0.3019608, b: 0.41960788, a: 1}
+        key2: {r: 1, g: 0.8915094, b: 0.9184079, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1350,7 +1350,7 @@ ParticleSystem:
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
         ctime1: 29876
-        ctime2: 0
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
@@ -1365,7 +1365,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -4696,8 +4696,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -184309997
-  m_SortingLayer: 9
+  m_SortingLayerID: -1224753939
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
@@ -4751,7 +4751,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1296121531
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: a7012f2b2ad82f04cb503006cfbf97b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

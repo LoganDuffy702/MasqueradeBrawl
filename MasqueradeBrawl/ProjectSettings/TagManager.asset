@@ -95,6 +95,9 @@ TagManager:
   - name: Doors
     uniqueID: 3481788553
     locked: 0
+  - name: PowerUpParticals
+    uniqueID: 3070213357
+    locked: 0
   - name: powerups
     uniqueID: 2998845765
     locked: 0

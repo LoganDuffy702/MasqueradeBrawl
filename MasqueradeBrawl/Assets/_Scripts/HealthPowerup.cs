@@ -26,7 +26,7 @@ public class HealthPowerup : MonoBehaviour {
     public void FindHealth(GameObject PlayerName)
     {
         GameObject PlayerObject = GameObject.Find(PlayerName.name);
-        PlayerObject.GetComponent<PlayerHealth>().TakeDamage(-AddHealth);
+        PlayerObject.GetComponent<PlayerHealth>().TakeDamage(AddHealth);
     }
 
     public void OnTriggerEnter2D(Collider2D other)

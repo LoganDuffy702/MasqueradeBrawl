@@ -56,7 +56,7 @@ public class PlayerMovementRedux : MonoBehaviour {
         WSsr = Weapon.GetComponent<SpriteRenderer>();
         anim = Character.GetComponent<Animator>();
         PlayerSprite = Character.GetComponent<SpriteRenderer>();
-
+        Recreate();
         
     }
 
@@ -147,12 +147,15 @@ public class PlayerMovementRedux : MonoBehaviour {
                 {
                     case PlayerPos.Player1:
                         direction.x = Input.GetAxis("Horizontal");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player2:
                         direction.x = Input.GetAxis("Horizontal2");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player3:
                         direction.x = Input.GetAxis("Horizontal3");
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player4:
                         direction.x = Input.GetAxis("Horizontal4");

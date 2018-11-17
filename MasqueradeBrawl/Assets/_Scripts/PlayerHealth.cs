@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour {
     public float PlayerStock = 2;
     public int PlayerMarker = 0;
     public RectTransform healthBar;
+    public bool PlayerDead = false;
     public GameObject MainCanvas;
     GameObject Weapon;
    
@@ -58,14 +59,17 @@ public class PlayerHealth : MonoBehaviour {
 
     public void TakeDamage(float amount)
     {
-        CurrentHealth -= amount;
-        StartCoroutine(dmg());
+        CurrentHealth += amount;
+        if (amount < 0)
+        {
+            StartCoroutine(dmg());
+        }
         if (CurrentHealth <= 0 )
         {
             CurrentHealth = 0;
 
             anim.SetBool("Dead", true);
-            Debug.Log(gameObject.name + " Died");
+            //Debug.Log(gameObject.name + " Died");
             gameObject.GetComponent<PlayerMovementRedux>().enabled = false;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0f, 0f, 0f);
@@ -77,8 +81,10 @@ public class PlayerHealth : MonoBehaviour {
             PlayerStock -= 1;
             if (PlayerStock <= 0)
             {
-                MainCanvas.GetComponent<WinnerScript>().WinNum = PlayerMarker;
-                StartCoroutine(Dead());
+                PlayerDead = true;
+                MainCanvas.GetComponent<WinnerScript>().WinChecker();
+                StartCoroutine(HideMe());
+                
                 
             }
             else if (PlayerStock > 0)
@@ -124,9 +130,9 @@ public class PlayerHealth : MonoBehaviour {
         gameObject.GetComponent<PlayerMovementRedux>().Speed = temp;
         anim.SetBool("Damage", false);
     }
-    public IEnumerator Dead()
+    public IEnumerator HideMe()
     {
-        yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
     }
 }
