@@ -93232,18 +93232,13 @@ MonoBehaviour:
   P2_win: {fileID: 1225874305}
   P3_win: {fileID: 968764995}
   P4_win: {fileID: 1667811519}
-  Players:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  PlayersAlive: []
   PlayerList:
   - _MoonMan(Clone)
   - _Penguin(Clone)
   - _Foxy(Clone)
-  - _ButtLady(Clone)
   MainCam: {fileID: 266472512}
-  totalPlayers: 4
+  totalPlayersAlive: 4
   KillChecker: 0
 --- !u!1 &1846593088
 GameObject:
