@@ -85,15 +85,15 @@ public class WeaponCollisionChecker : MonoBehaviour {
             case PlayerSelect.Lady:
                 if (other.gameObject.CompareTag("PistolBullet"))
                 {
-                    Player.GetComponent<PlayerHealth>().TakeDamage(-15);
+                    Player.GetComponent<PlayerHealth>().TakeDamage(-10);
                 }
                 if (other.gameObject.CompareTag("LobShot"))
                 {
-                    Player.GetComponent<PlayerHealth>().TakeDamage(-15);
+                    Player.GetComponent<PlayerHealth>().TakeDamage(-10);
                 }
                 if (other.gameObject.CompareTag("FlameThrower"))
                 {
-                    Player.GetComponent<PlayerHealth>().TakeDamage(0);
+                    Player.GetComponent<PlayerHealth>().TakeDamage(-1);
                 }
                 if (other.gameObject.CompareTag("MG_Bullet"))
                 {

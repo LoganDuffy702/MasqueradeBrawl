@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class WinnerScript : MonoBehaviour {
 
     public Image P1_win, P2_win, P3_win, P4_win;
-    public List<GameObject> Players;
+    public List<GameObject> PlayersAlive;
+    public List<string> PlayerList;
     public GameObject MainCam;
-    public int totalPlayers = 4;
+    public int totalPlayersAlive = 4;
     public int KillChecker = 0;
 
 	// Use this for initialization
@@ -18,6 +19,14 @@ public class WinnerScript : MonoBehaviour {
         P2_win.enabled = false;
         P3_win.enabled = false;
         P4_win.enabled = false;
+        //PlayerList is made from PlayerInfoSheet.cs  
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            PlayersAlive.Add(GameObject.Find(PlayerList[i]));
+        }
+        
+        MainCam.GetComponent<CameraMovement>().Players = PlayersAlive;
+
 	}
 	
 	
@@ -30,35 +39,35 @@ public class WinnerScript : MonoBehaviour {
     public void WinChecker()
     {
        
-        for (int i = 0; i < Players.Count; i++)
+        for (int i = 0; i < PlayersAlive.Count; i++)
         {
-            if (Players[i].GetComponent<PlayerHealth>().PlayerDead == true)
+            if (PlayersAlive[i].GetComponent<PlayerHealth>().PlayerDead == true)
             {
-                MainCam.GetComponent<CameraMovement>().DeleteUpdate(Players[i].name);
-                Players.RemoveAt(i);
+                MainCam.GetComponent<CameraMovement>().DeleteUpdate(PlayersAlive[i].name);
+                PlayersAlive.RemoveAt(i);
                 
 
             }
         }
-        if (Players.Count < 2)
+        if (PlayersAlive.Count < 2)
         {
-            Debug.Log(Players[0].name);
-            if (Players[0].name == "_Penguin")
+            Debug.Log(PlayersAlive[0].name);
+            if (PlayersAlive[0].name == "_Penguin(Clone)")
             {
                 P1_win.enabled = true;
                 StartCoroutine(RestartScene());
             }
-            if (Players[0].name == "_ButtLady")
+            if (PlayersAlive[0].name == "_ButtLady(Clone)")
             {
                 P2_win.enabled = true;
                 StartCoroutine(RestartScene());
             }
-            if (Players[0].name == "_Foxy")
+            if (PlayersAlive[0].name == "_Foxy(Clone)")
             {
                 P3_win.enabled = true;
                 StartCoroutine(RestartScene());
             }
-            if (Players[0].name == "_MoonMan")
+            if (PlayersAlive[0].name == "_MoonMan(Clone)")
             {
                 P4_win.enabled = true;
                 StartCoroutine(RestartScene());

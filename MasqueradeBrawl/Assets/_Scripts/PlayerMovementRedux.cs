@@ -74,11 +74,11 @@ public class PlayerMovementRedux : MonoBehaviour {
                 {
                     case PlayerPos.Player1:
                         direction.x = Input.GetAxis("Horizontal");
-                        anim.SetFloat("MM_Speed", Mathf.Abs(direction.x));
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player2:
                         direction.x = Input.GetAxis("Horizontal2");
-                        anim.SetFloat("MM_Speed", Mathf.Abs(direction.x));
+                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player3:
                         direction.x = Input.GetAxis("Horizontal3");
@@ -198,20 +198,7 @@ public class PlayerMovementRedux : MonoBehaviour {
         
     }
 
-    //public IEnumerator CalcVelocity()
-    //{
-    //    while (Application.isPlaying)
-    //    {
-    //        // Position at frame start
-    //        Vector3 prevPos = transform.position;
-    //        // Wait till it the end of the frame
-    //        yield return new WaitForEndOfFrame();
-    //        // Calculate velocity: Velocity = DeltaPosition / DeltaTime
-    //        currVel = (prevPos - transform.position) / Time.deltaTime;
-    //        MoveNum = currVel.x;
-    //    }
-
-    //}
+    
 
     public void Gravity_PP()
     {

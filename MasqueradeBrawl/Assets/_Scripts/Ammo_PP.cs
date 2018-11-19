@@ -26,8 +26,8 @@ public class Ammo_PP : MonoBehaviour {
 
     public void AddAmmo(GameObject PlayerName)
     {   
-        GameObject PlayerObject = GameObject.Find(PlayerName.name);
-        PlayerObject.GetComponent<PlayerAmmo>().AddClip();  
+        //GameObject PlayerObject = GameObject.Find(PlayerName.name);
+        PlayerName.GetComponent<PlayerAmmo>().AddClip();  
     }
 
     public IEnumerator HidMe()
@@ -40,7 +40,8 @@ public class Ammo_PP : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") || other.gameObject.CompareTag("ButtLady"))
+        if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") 
+            || other.gameObject.CompareTag("ButtLady")|| other.gameObject.CompareTag("Foxy"))
         {
 
             AmmoSprite.GetComponent<SpriteRenderer>().enabled = false;

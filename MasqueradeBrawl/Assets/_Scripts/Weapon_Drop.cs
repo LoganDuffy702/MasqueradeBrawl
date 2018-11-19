@@ -32,10 +32,13 @@ public class Weapon_Drop : MonoBehaviour {
 
     public void ChangeWeapon(GameObject P_Weapon_Name)
     {
-        
-        GameObject PlayerGun = GameObject.Find(P_Weapon_Name.name+"_Gun");
+        string remove = "(Clone)";
+        string Original = P_Weapon_Name.name;
+        string result = Original.Replace(remove,"");
+        GameObject PlayerGun = GameObject.Find(result+"_Gun");
         GameObject PlayerObject = GameObject.Find(P_Weapon_Name.name);
-        RigidWeapon P_Gun = PlayerGun.GetComponent<RigidWeapon>();
+        Debug.Log(PlayerObject.name);
+        RigidWeapon P_Gun = PlayerGun.GetComponent<RigidWeapon>();//Butt lady throws error here
 
         //Ammo Section-------------------------------------------------
         PlayerObject.GetComponent<PlayerAmmo>().AddClip();
@@ -60,7 +63,7 @@ public class Weapon_Drop : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") || 
-            other.gameObject.CompareTag("ButtLady"))
+            other.gameObject.CompareTag("ButtLady")|| other.gameObject.CompareTag("Foxy"))
         {
 
             gameObject.GetComponent<SpriteRenderer>().enabled = false;

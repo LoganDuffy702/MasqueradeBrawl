@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114219419971977236}
   m_Layer: 0
   m_Name: Ammo_Stock4
-  m_TagString: AmmoClips3
+  m_TagString: AmmoClips4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

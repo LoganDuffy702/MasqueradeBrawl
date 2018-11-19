@@ -28,9 +28,9 @@ public class CameraMovement : MonoBehaviour {
     
     public float speed;
     // Use this for initialization
-    void Start () {
+    void Start() {
         MyCam = gameObject.GetComponent<Camera>();
-        
+
     }
    
     Vector3 FindCenter()
@@ -97,7 +97,7 @@ public class CameraMovement : MonoBehaviour {
             if (Players[i].name == PlayerName)
             {
                 Debug.Log("DeleteUpdate " + PlayerName);
-                Players.RemoveAt(i);
+                //Players.RemoveAt(i);
             }
         }
        

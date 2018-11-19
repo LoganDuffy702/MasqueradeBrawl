@@ -28,7 +28,7 @@ public class Portal_Factory : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") ||
-            other.gameObject.CompareTag("ButtLady"))
+            other.gameObject.CompareTag("ButtLady")|| other.gameObject.CompareTag("Foxy"))
         {
             anim.SetBool("Open", true);
             if (ReleaseUp == true && RandomExit == true)

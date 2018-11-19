@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour {
     private float CurrentHealth;
 	// Use this for initialization
 	void Start () {
+        MainCanvas = GameObject.Find("Main_Canvas");
         CurrentHealth = PlayerHP;
         switch (P_HP)
         {
@@ -42,6 +43,8 @@ public class PlayerHealth : MonoBehaviour {
                 Player = GameObject.Find("_ButtLady_Anim");
                 Weapon = GameObject.Find("_ButtLady_Weapon");
                 Gun = GameObject.Find("_ButtLady_Gun");
+                RigidWeapon thigny = Gun.GetComponent<RigidWeapon>();
+                thigny.enabled = false;
                 PlayerMarker = 3;
                 break;
             case Players.K:
@@ -69,19 +72,20 @@ public class PlayerHealth : MonoBehaviour {
             CurrentHealth = 0;
 
             anim.SetBool("Dead", true);
-            //Debug.Log(gameObject.name + " Died");
+            Debug.Log(gameObject.name + " Died");
             gameObject.GetComponent<PlayerMovementRedux>().enabled = false;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0f, 0f, 0f);
             gameObject.GetComponent<Rigidbody2D>().gravityScale = 0f;
             Weapon.GetComponent<SpriteRenderer>().enabled = false;
-            Gun.GetComponent<RigidWeapon>().enabled = false;
+            //Gun.GetComponent<RigidWeapon>().enabled = false;//Butt lady is throws error here
             Gun.GetComponent<LineRenderer>().enabled = false;
 
             PlayerStock -= 1;
             if (PlayerStock <= 0)
             {
                 PlayerDead = true;
+                Debug.Log("PLayer out of stocks");
                 MainCanvas.GetComponent<WinnerScript>().WinChecker();
                 StartCoroutine(HideMe());
                 

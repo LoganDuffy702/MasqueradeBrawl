@@ -23,7 +23,7 @@ public class RigidWeapon : MonoBehaviour {
 	//public GameObject GunText;
 
     public int Ammo = 22;
-    public GameObject AmmoPrefab;
+    //public GameObject AmmoPrefab;
     private Vector3 temp;
     GameObject[] AmmoOBJ;
     public GameObject PlayerGun;

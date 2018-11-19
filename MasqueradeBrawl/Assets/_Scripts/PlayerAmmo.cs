@@ -16,6 +16,7 @@ public class PlayerAmmo : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
         for (int i = 0; i < AmmoClips; i++)
         {
             var AmmoClone = Instantiate(AmmoPrefab);
@@ -51,13 +52,13 @@ public class PlayerAmmo : MonoBehaviour {
     public void AddClip()
     {
         AmmoOBJ = GameObject.FindGameObjectsWithTag(AmmoClip);
-        GameObject Gun = GameObject.Find(GunName.name);
+        //GameObject Gun = GameObject.Find(GunName.name);
 
         for (int x = 0; x < Count; x++)
         {
             Destroy(AmmoOBJ[x]);
         }
-        Gun.GetComponent<RigidWeapon>().Ammo = 22;
+        GunName.GetComponent<RigidWeapon>().Ammo = 22;
         Count = 22;
         Start();
         

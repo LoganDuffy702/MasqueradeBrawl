@@ -31,7 +31,8 @@ public class GravityPowerup : MonoBehaviour
    
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag.Equals("Penguin") || col.gameObject.tag.Equals("MoonMan") || col.gameObject.tag.Equals("ButtLady"))
+        if (col.gameObject.tag.Equals("Penguin") || col.gameObject.tag.Equals("MoonMan") 
+            || col.gameObject.tag.Equals("ButtLady")|| col.gameObject.tag.Equals("Foxy"))
         {
            
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
