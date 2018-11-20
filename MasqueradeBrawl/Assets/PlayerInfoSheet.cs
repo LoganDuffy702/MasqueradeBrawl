@@ -8,7 +8,7 @@ public class PlayerInfoSheet : MonoBehaviour {
 
     PlayerHealth HealthSelector;
     public List<GameObject> Characters;
-    //public string MoonMan, Penguin, ButtLady, Foxy;
+    public bool LoadMoonMan, LoadButtLady, LoadPenguin, LoadFoxy;
     public int PlayerNumber;
 
     public void P_Health_Info()
@@ -22,6 +22,10 @@ public class PlayerInfoSheet : MonoBehaviour {
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        LoadMoonMan = false;
+        LoadFoxy = false;
+        LoadPenguin = false;
+        LoadButtLady = false;
         ActivePlayers();
         
     }
@@ -40,6 +44,22 @@ public class PlayerInfoSheet : MonoBehaviour {
     {
         //In here we will instantate the number charactsrs, then add the names of the players to the winner scripts 
         //PlayerList List so it can send player info to the camera and other stuff.
+        if (LoadMoonMan == true)
+        {
+
+        }
+        if (LoadButtLady == true)
+        {
+
+        }
+        if (LoadFoxy == true)
+        {
+
+        }
+        if (LoadPenguin == true)
+        {
+
+        }
         GameObject Player1 = Instantiate(Characters[0]);
         //Player1.GetComponent<PlayerMovementRedux>().PlayerController = 0;
         GameObject Player2 = Instantiate(Characters[1]);

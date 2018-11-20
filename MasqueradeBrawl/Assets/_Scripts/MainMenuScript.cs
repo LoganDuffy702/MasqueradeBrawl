@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour {
     //public List<Button> ButtonList = new List<Button>();
     //public int count = 0;
     //public bool canInteract = true;
+    public GameObject InfoSheet;
     
     public GameObject PlayerSheet;
     GameObject LvlSelc;
@@ -34,18 +35,22 @@ public class MainMenuScript : MonoBehaviour {
                 if (gameObject.name == "MM")
                 {
                     Debug.Log("MoonMan Selected");
+                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadMoonMan = true;
                 }
                 if (gameObject.name == "Foxy")
                 {
                     Debug.Log("Foxy Selected");
+                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadFoxy = true;
                 }
                 if (gameObject.name == "Pen")
                 {
                     Debug.Log("Pen Selected");
+                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadPenguin = true;
                 }
                 if (gameObject.name == "Butt")
                 {
                     Debug.Log("Buttlady Selected");
+                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadButtLady = true;
                 }
 
                 LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
@@ -54,6 +59,27 @@ public class MainMenuScript : MonoBehaviour {
             }
             else if (gameObject.GetComponent<Image>().color == Color.gray)//Unselected
             {
+                if (gameObject.name == "MM")
+                {
+                    Debug.Log("MoonMan Selected");
+                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadMoonMan = false;
+                }
+                if (gameObject.name == "Foxy")
+                {
+                    Debug.Log("Foxy Selected");
+                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadFoxy = false;
+                }
+                if (gameObject.name == "Pen")
+                {
+                    Debug.Log("Pen Selected");
+                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadPenguin = false;
+                }
+                if (gameObject.name == "Butt")
+                {
+                    Debug.Log("Buttlady Selected");
+                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadButtLady = false;
+                }
+
                 LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
                 gameObject.GetComponent<Image>().color = Color.white;
             }
