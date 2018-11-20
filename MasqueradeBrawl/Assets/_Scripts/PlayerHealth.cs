@@ -13,6 +13,9 @@ public class PlayerHealth : MonoBehaviour {
     public RectTransform healthBar;
     public bool PlayerDead = false;
     public GameObject MainCanvas;
+    public GameObject PlayerAnimation;
+    public GameObject PlayerWeapon;
+    public GameObject PlayerGun;
     GameObject Weapon;
    
     GameObject Gun;
@@ -40,9 +43,9 @@ public class PlayerHealth : MonoBehaviour {
                 PlayerMarker = 2;
                 break;
             case Players.G:
-                Player = GameObject.Find("_ButtLady_Anim");
-                Weapon = GameObject.Find("_ButtLady_Weapon");
-                Gun = GameObject.Find("_ButtLady_Gun");
+                Player = PlayerAnimation; //GameObject.Find("_ButtLady_Anim");
+                Weapon = PlayerWeapon;// GameObject.Find("_ButtLady_Weapon");
+                Gun = PlayerGun;// GameObject.Find("_ButtLady_Gun");
                 RigidWeapon thigny = Gun.GetComponent<RigidWeapon>();
                 thigny.enabled = false;
                 PlayerMarker = 3;
