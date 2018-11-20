@@ -5600,7 +5600,7 @@ Prefab:
     - target: {fileID: 114012626734173118, guid: 679a740006b02e74185f5e0ee3e4c47e,
         type: 2}
       propertyPath: MinZoom
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 114012626734173118, guid: 679a740006b02e74185f5e0ee3e4c47e,
         type: 2}
@@ -93237,6 +93237,7 @@ MonoBehaviour:
   - _MoonMan(Clone)
   - _Penguin(Clone)
   - _Foxy(Clone)
+  - _ButtLady(Clone)
   MainCam: {fileID: 266472512}
   totalPlayersAlive: 4
   KillChecker: 0

@@ -41,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -94,93 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MB_Damage_SpriteSheet_0
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 426
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ce48a4267b674847844f196bebfb732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MB_Damage_SpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 426
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c918a8b40de25fe4798be0d31115cb17
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MB_Damage_SpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 426
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da8e245948e1faa4585050227b9a5cd8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MB_Damage_SpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 1360
-        y: 426
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eea7ad02cf3fd0b4aabff5af45caf8b1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MB_Damage_SpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 181
-        y: 58
-        width: 361
-        height: 361
+        x: 231
+        y: 114
+        width: 130
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,7 +108,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04512f4754c029469b2f6179427c582
+      spriteID: 687f557ad926f9548bc446ad895372ed
       vertices: []
       indices: 
       edges: []
@@ -197,10 +117,10 @@ TextureImporter:
       name: MB_Damage_SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 573
-        y: 59
-        width: 361
-        height: 361
+        x: 663
+        y: 122
+        width: 130
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,7 +128,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c16394d7fc7a21e4dad5e971e83df291
+      spriteID: 3baf4cae022d16348ae511c43bc50dc3
       vertices: []
       indices: 
       edges: []
@@ -217,10 +137,10 @@ TextureImporter:
       name: MB_Damage_SpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 976
-        y: 59
-        width: 361
-        height: 361
+        x: 1095
+        y: 130
+        width: 130
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64fd9256928e06f4e92c5cd3eef4cd8d
+      spriteID: d73987955c66ca74f9b1258af4ba5c99
       vertices: []
       indices: 
       edges: []
@@ -237,10 +157,10 @@ TextureImporter:
       name: MB_Damage_SpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 1373
-        y: 58
-        width: 361
-        height: 361
+        x: 1527
+        y: 114
+        width: 130
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,87 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4f7ce99969c35d4eb19dbb70a0c51c0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MB_Damage_SpriteSheet_8
-      rect:
-        serializedVersion: 2
-        x: 551
-        y: 35
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49efa525bb55ed5499cdddc73dc0d78a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MB_Damage_SpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 951
-        y: 35
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c84933bb21697984f8d0f2d2134d3dff
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MB_Damage_SpriteSheet_10
-      rect:
-        serializedVersion: 2
-        x: 1351
-        y: 35
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a42815498e08ed40a1bad3f65f22899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MB_Damage_SpriteSheet_11
-      rect:
-        serializedVersion: 2
-        x: 1751
-        y: 35
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3240a3bba2b8a11439e0948b1b628dbe
+      spriteID: 920b9913d5e5998469c4f188b7e39a69
       vertices: []
       indices: 
       edges: []
