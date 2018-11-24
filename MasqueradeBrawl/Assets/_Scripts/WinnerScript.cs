@@ -22,7 +22,11 @@ public class WinnerScript : MonoBehaviour {
         //PlayerList is made from PlayerInfoSheet.cs  
         for (int i = 0; i < PlayerList.Count; i++)
         {
-            PlayersAlive.Add(GameObject.Find(PlayerList[i]));
+            if (GameObject.Find(PlayerList[i]) == true)
+            {
+                PlayersAlive.Add(GameObject.Find(PlayerList[i]));
+            }
+           
         }
         
         MainCam.GetComponent<CameraMovement>().Players = PlayersAlive;

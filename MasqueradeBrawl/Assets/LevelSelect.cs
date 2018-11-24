@@ -8,7 +8,9 @@ public class LevelSelect : MonoBehaviour {
 
     public int count = 0;
     GameObject StaticLevel, FallingLevel;
+    int add = 0;
     public GameObject Lamp1, Lamp2;
+    public GameObject CharacterCanvas;
     public void Start()
     {
         //MM = GameObject.Find("MM");
@@ -31,35 +33,36 @@ public class LevelSelect : MonoBehaviour {
     public void ToLevelSelect(int P_selected)
     {
         count = count + P_selected;
-        if (count > 1)
+        if (count > 1 && add == 0)
         {
 
             StaticLevel.GetComponent<Button>().interactable = true;
             StaticLevel.GetComponent<Image>().color = Color.white;
             FallingLevel.GetComponent<Button>().interactable = true;
             FallingLevel.GetComponent<Image>().color = Color.white;
+           
+            CharacterCanvas.GetComponent<MainMenuScript>().btns.Add(StaticLevel.GetComponent<Button>());
+            CharacterCanvas.GetComponent<MainMenuScript>().btns.Add(FallingLevel.GetComponent<Button>());
             Lamp1.GetComponent<SpriteRenderer>().color = Color.white;
             Lamp2.GetComponent<SpriteRenderer>().color = Color.white;
-
-            //MM.GetComponent<Button>().interactable = false;
-            //Foxy.GetComponent<Button>().interactable = false;
-            //Pen.GetComponent<Button>().interactable = false;
-            //Butt.GetComponent<Button>().interactable = false;
+            add = 1;
+           
 
         }
-        else 
+        else if (count < 2)
         {
             StaticLevel.GetComponent<Button>().interactable = false;
             StaticLevel.GetComponent<Image>().color = Color.gray;
             FallingLevel.GetComponent<Button>().interactable = false;
             FallingLevel.GetComponent<Image>().color = Color.gray;
+            add = 0;
+            //CharacterCanvas.GetComponent<MainMenuScript>().btns.RemoveAt(4);
+            CharacterCanvas.GetComponent<MainMenuScript>().btns.Remove(StaticLevel.GetComponent<Button>());
+            CharacterCanvas.GetComponent<MainMenuScript>().btns.Remove(FallingLevel.GetComponent<Button>());
+            // CharacterCanvas.GetComponent<MainMenuScript>().btns.RemoveAt(5);
             Lamp1.GetComponent<SpriteRenderer>().color = Color.gray;
             Lamp2.GetComponent<SpriteRenderer>().color = Color.gray;
 
-            //MM.GetComponent<Button>().interactable = true;
-            //Foxy.GetComponent<Button>().interactable = true;
-            //Pen.GetComponent<Button>().interactable = true;
-            //Butt.GetComponent<Button>().interactable = true;
         }
     }
    

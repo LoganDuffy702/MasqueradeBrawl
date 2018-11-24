@@ -46,6 +46,7 @@ public class RigidWeapon : MonoBehaviour {
         {
             case Player.Player1:
                 fire = Input.GetAxis("Fire1");
+                
                 if (fire > 0)
                 {
                     if (CanShoot == true)
@@ -53,6 +54,7 @@ public class RigidWeapon : MonoBehaviour {
                         
                         if (Ammo > 0)
                         {
+                            Debug.Log("Player1 Fires");
                             StartCoroutine(Fire());
                             
                             CanShoot = false;

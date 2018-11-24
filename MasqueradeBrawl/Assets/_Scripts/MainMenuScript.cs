@@ -10,9 +10,21 @@ public class MainMenuScript : MonoBehaviour {
     //public int count = 0;
     //public bool canInteract = true;
     public GameObject InfoSheet;
+    //public GameObject TEst;
+    //public GameObject PlayerSheet;
+    public GameObject EventSystem;
+    public SpriteState HighlightedSprt = new SpriteState();
+    bool Player1Active, Player2Active, Player3Active, Player4Active;
+
+    public GameObject LevelPicker;
+
+    //string PlayerName;
     
-    public GameObject PlayerSheet;
+    bool MMNotSelected, FNotSelected, ButtNotSelected, PenNotSelected;
     GameObject LvlSelc;
+    public List<Button> btns;
+    int currentNum = 0;
+    bool Nextbutton,Nextbutton2;
 
     public void Start()
     {
@@ -24,109 +36,316 @@ public class MainMenuScript : MonoBehaviour {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
-
-    public void SelectPlayer()
+    public void RemovePlayer(string PlayerName)
     {
-        if (Input.GetButtonDown("Submit") )
+        if (PlayerName == "MM" && MMNotSelected == true)
+        {
+            LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
+            btns[currentNum].GetComponent<Image>().color = Color.white;
+            Debug.Log("MoonMan UnSelected");
+
+            InfoSheet.GetComponent<PlayerInfoSheet>().LoadMoonMan = false;
+            if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = false;
+            }
+            MMNotSelected = false;
+        }
+        if (PlayerName == "Foxy" && FNotSelected == true)
+        {
+            Debug.Log("Foxy UnSelected");
+            LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
+            btns[currentNum].GetComponent<Image>().color = Color.white;
+
+            InfoSheet.GetComponent<PlayerInfoSheet>().LoadFoxy = false;
+            if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = false;
+            }
+            FNotSelected = false;
+
+        }
+        if (PlayerName == "Pen" && PenNotSelected == true)
+        {
+            Debug.Log("Pen UnSelected");
+            LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
+            btns[currentNum].GetComponent<Image>().color = Color.white;
+
+            InfoSheet.GetComponent<PlayerInfoSheet>().LoadPenguin = false;
+            if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = false;
+            }
+            PenNotSelected = false;
+
+        }
+        if (PlayerName == "Butt" && ButtNotSelected == true)
+        {
+            Debug.Log("Buttlady UnSelected");
+            LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
+            btns[currentNum].GetComponent<Image>().color = Color.white;
+
+            InfoSheet.GetComponent<PlayerInfoSheet>().LoadButtLady = false;
+            if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = false;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == true)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = false;
+            }
+            ButtNotSelected = false;
+
+        }
+    }
+
+//------------------------------------ADD PLAYER-------------------------------------
+    public void AddPlayer(string PlayerName,string ControllerNum)
+    {
+
+        if (PlayerName == "MM" && MMNotSelected == false)
+        {
+            LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
+            btns[currentNum].GetComponent<Image>().color = Color.gray;
+            Debug.Log("MoonMan Selected");
+           
+            InfoSheet.GetComponent<PlayerInfoSheet>().LoadMoonMan = true;
+            //InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+            if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
+            }
+           
+            MMNotSelected = true;
+        }
+        else if(PlayerName == "MM" && MMNotSelected == true)
+        {
+            Debug.Log("MoonMan already Selected");
+        }
+        ///--------------------------------------------------------
+
+        if (PlayerName == "Foxy" && FNotSelected == false)
+        {
+            Debug.Log("Foxy Selected");
+            LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
+            btns[currentNum].GetComponent<Image>().color = Color.gray;
+
+            InfoSheet.GetComponent<PlayerInfoSheet>().LoadFoxy = true;
+            if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
+            }
+            FNotSelected = true;
+        }
+        else if (PlayerName == "Foxy" && FNotSelected == true)
+        {
+            Debug.Log("Foxy already Selected");
+        }
+        //-----------------------------------------------------------
+
+        if (PlayerName == "Pen" && PenNotSelected == false)
+        {
+            Debug.Log("Pen Selected");
+            LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
+            btns[currentNum].GetComponent<Image>().color = Color.gray;
+
+            InfoSheet.GetComponent<PlayerInfoSheet>().LoadPenguin = true;
+            if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
+            }
+            PenNotSelected = true;
+
+        }
+        else if (PlayerName == "Pen" && PenNotSelected == true)
+        {
+            Debug.Log("Penguin already Selected");
+        }
+        //-----------------------------------------------------------
+
+        if (PlayerName == "Butt" && ButtNotSelected == false)
+        {
+            Debug.Log("Buttlady Selected");
+            LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
+            btns[currentNum].GetComponent<Image>().color = Color.gray;
+
+            InfoSheet.GetComponent<PlayerInfoSheet>().LoadButtLady = true;
+            if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
+            }
+            else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
+            {
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
+            }
+            ButtNotSelected = true;
+        }
+        else if (PlayerName == "Butt" && ButtNotSelected == true)
+        {
+            Debug.Log("Butt already Selected");
+        }
+       
+    }
+
+
+    public void Update()
+    {
+
+        //Added and remove functions-----------------------------------------------------
+        if (Input.GetButtonDown("Player1_A") || Input.GetButtonDown("Player2_A"))//Player1 Selected
         {
             
-            if (gameObject.GetComponent<Image>().color == Color.white)//Selected
+            string P_name = btns[currentNum].name;
+            Debug.Log("Player1 Picked " + P_name);
+            AddPlayer(P_name,"Player1_A");
+            if (P_name == "StaticButton")
             {
-                if (gameObject.name == "MM")
-                {
-                    Debug.Log("MoonMan Selected");
-                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadMoonMan = true;
-                }
-                if (gameObject.name == "Foxy")
-                {
-                    Debug.Log("Foxy Selected");
-                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadFoxy = true;
-                }
-                if (gameObject.name == "Pen")
-                {
-                    Debug.Log("Pen Selected");
-                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadPenguin = true;
-                }
-                if (gameObject.name == "Butt")
-                {
-                    Debug.Log("Buttlady Selected");
-                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadButtLady = true;
-                }
+                btns[currentNum].GetComponent<Image>().color = Color.gray;
+                gameObject.GetComponent<NextLevel>().SelectLevel(2);
+            }
+        }
 
-                LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
-                gameObject.GetComponent<Image>().color = Color.gray;  
+        if (Input.GetButtonDown("Cancel"))
+        {
+            string P_name = btns[currentNum].name;
+            Debug.Log("Player1 UnPicked " + P_name);
+            RemovePlayer(P_name);
+        }
 
-            }
-            else if (gameObject.GetComponent<Image>().color == Color.gray)//Unselected
+        //Horizontal Movement functions---------------------------------------------------
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Horizontal2") == 0 &&
+            Input.GetAxis("Horizontal3") == 0 && Input.GetAxis("Horizontal4") == 0)
+        {
+            Nextbutton = true;
+            btns[currentNum].Select();
+        }
+        if (Input.GetAxis("Horizontal") > 0.2 && Nextbutton == true 
+            || Input.GetAxis("Horizontal2") > 0.2 && Nextbutton == true
+            || Input.GetAxis("Horizontal3") > 0.2 && Nextbutton == true
+            || Input.GetAxis("Horizontal4") > 0.2 && Nextbutton == true)
+        {
+            Nextbutton = false;
+            currentNum += 1;
+            if (currentNum >= btns.Count)
             {
-                if (gameObject.name == "MM")
-                {
-                    Debug.Log("MoonMan Selected");
-                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadMoonMan = false;
-                }
-                if (gameObject.name == "Foxy")
-                {
-                    Debug.Log("Foxy Selected");
-                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadFoxy = false;
-                }
-                if (gameObject.name == "Pen")
-                {
-                    Debug.Log("Pen Selected");
-                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadPenguin = false;
-                }
-                if (gameObject.name == "Butt")
-                {
-                    Debug.Log("Buttlady Selected");
-                    InfoSheet.GetComponent<PlayerInfoSheet>().LoadButtLady = false;
-                }
+                currentNum = 0;
+            }
+            else if (currentNum < 0)
+            {
+                currentNum = btns.Count - 1;
+            }
+            btns[currentNum].Select();
 
-                LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
-                gameObject.GetComponent<Image>().color = Color.white;
-            }
-     
         }
-        else if (Input.GetButtonDown("Submit2"))
+
+        else if (Input.GetAxis("Horizontal") < -0.2 && Nextbutton == true
+            || Input.GetAxis("Horizontal2") < -0.2 && Nextbutton == true
+            || Input.GetAxis("Horizontal3") < -0.2 && Nextbutton == true 
+            || Input.GetAxis("Horizontal4") < -0.2 && Nextbutton == true)
         {
-            if (gameObject.GetComponent<Image>().color == Color.white)//Selected
+            Nextbutton = false;
+            currentNum -= 1;
+            if (currentNum >= btns.Count)
             {
-                LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
-                gameObject.GetComponent<Image>().color = Color.gray;
+                currentNum = 0;
             }
-            else if (gameObject.GetComponent<Image>().color == Color.grey)//Unselected
+            else if (currentNum < 0)
             {
-                LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
-                gameObject.GetComponent<Image>().color = Color.white;
+                currentNum = btns.Count - 1;
             }
+             btns[currentNum].Select();
         }
-        else if (Input.GetButtonDown("Submit3"))
-        {
-            if (gameObject.GetComponent<Image>().color == Color.white)//Selected
-            {
-                LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
-                gameObject.GetComponent<Image>().color = Color.gray;
-            }
-            else if (gameObject.GetComponent<Image>().color == Color.grey)//Unselected
-            {
-                LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
-                gameObject.GetComponent<Image>().color = Color.white;
-            }
-        }
-        else if (Input.GetButtonDown("Submit4"))
-        {
-            if (gameObject.GetComponent<Image>().color == Color.white)//Selected
-            {
-                LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
-                gameObject.GetComponent<Image>().color = Color.gray;
-            }
-            else if (gameObject.GetComponent<Image>().color == Color.grey)//Unselected
-            {
-                LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(-1);
-                gameObject.GetComponent<Image>().color = Color.white;
-            }
-        }
-        
+
+        //Player2 Controlles------------------------------------------------------------------------
+       
     }
-    
-    
    
 }
