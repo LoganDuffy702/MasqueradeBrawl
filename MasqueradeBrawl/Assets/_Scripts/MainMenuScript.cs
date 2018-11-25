@@ -48,6 +48,7 @@ public class MainMenuScript : MonoBehaviour {
             if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == true)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = false;
+                
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == true)
             {
@@ -144,13 +145,13 @@ public class MainMenuScript : MonoBehaviour {
     }
 
 //------------------------------------ADD PLAYER-------------------------------------
-    public void AddPlayer(string PlayerName,string ControllerNum)
+    public void AddPlayer(string PlayerName,Button currentBtn)
     {
 
         if (PlayerName == "MM" && MMNotSelected == false)
         {
             LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
-            btns[currentNum].GetComponent<Image>().color = Color.gray;
+            //btns[currentNum].GetComponent<Image>().color = Color.gray;
             Debug.Log("MoonMan Selected");
            
             InfoSheet.GetComponent<PlayerInfoSheet>().LoadMoonMan = true;
@@ -158,18 +159,22 @@ public class MainMenuScript : MonoBehaviour {
             if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+                currentBtn.GetComponent<Image>().color = Color.red;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
+                currentBtn.GetComponent<Image>().color = Color.blue;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
+                currentBtn.GetComponent<Image>().color = Color.green;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
+                currentBtn.GetComponent<Image>().color = Color.gray;
             }
            
             MMNotSelected = true;
@@ -184,24 +189,28 @@ public class MainMenuScript : MonoBehaviour {
         {
             Debug.Log("Foxy Selected");
             LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
-            btns[currentNum].GetComponent<Image>().color = Color.gray;
+            //btns[currentNum].GetComponent<Image>().color = Color.gray;
 
             InfoSheet.GetComponent<PlayerInfoSheet>().LoadFoxy = true;
             if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+                currentBtn.GetComponent<Image>().color = Color.red;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
+                currentBtn.GetComponent<Image>().color = Color.blue;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
+                currentBtn.GetComponent<Image>().color = Color.green;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
+                currentBtn.GetComponent<Image>().color = Color.gray;
             }
             FNotSelected = true;
         }
@@ -215,24 +224,28 @@ public class MainMenuScript : MonoBehaviour {
         {
             Debug.Log("Pen Selected");
             LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
-            btns[currentNum].GetComponent<Image>().color = Color.gray;
+            //btns[currentNum].GetComponent<Image>().color = Color.gray;
 
             InfoSheet.GetComponent<PlayerInfoSheet>().LoadPenguin = true;
             if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+                currentBtn.GetComponent<Image>().color = Color.red;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
+                currentBtn.GetComponent<Image>().color = Color.blue;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
+                currentBtn.GetComponent<Image>().color = Color.green;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
+                currentBtn.GetComponent<Image>().color = Color.gray;
             }
             PenNotSelected = true;
 
@@ -247,24 +260,28 @@ public class MainMenuScript : MonoBehaviour {
         {
             Debug.Log("Buttlady Selected");
             LvlSelc.GetComponent<LevelSelect>().ToLevelSelect(1);
-            btns[currentNum].GetComponent<Image>().color = Color.gray;
+           // btns[currentNum].GetComponent<Image>().color = Color.gray;
 
             InfoSheet.GetComponent<PlayerInfoSheet>().LoadButtLady = true;
             if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
+                currentBtn.GetComponent<Image>().color = Color.red;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
+                currentBtn.GetComponent<Image>().color = Color.blue;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
+                currentBtn.GetComponent<Image>().color = Color.green;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
+                currentBtn.GetComponent<Image>().color = Color.gray;
             }
             ButtNotSelected = true;
         }
@@ -285,10 +302,10 @@ public class MainMenuScript : MonoBehaviour {
             
             string P_name = btns[currentNum].name;
             Debug.Log("Player1 Picked " + P_name);
-            AddPlayer(P_name,"Player1_A");
+            AddPlayer(P_name,btns[currentNum]);
             if (P_name == "StaticButton")
             {
-                btns[currentNum].GetComponent<Image>().color = Color.gray;
+               // btns[currentNum].GetComponent<Image>().color = Color.gray;
                 gameObject.GetComponent<NextLevel>().SelectLevel(2);
             }
         }
