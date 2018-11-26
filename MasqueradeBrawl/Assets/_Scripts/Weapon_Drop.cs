@@ -8,6 +8,7 @@ public class Weapon_Drop : MonoBehaviour {
 
     public int BurstSize;
     public float reload_speed;
+    AudioSource NewGunSound;
     public bool ShotGunMode;
     public GameObject Weapon;
     public float LifeSpan;
@@ -15,6 +16,7 @@ public class Weapon_Drop : MonoBehaviour {
     void Start () {
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        NewGunSound = gameObject.GetComponent<AudioSource>();
         StartCoroutine(ShowMe());
         StartCoroutine(HidMe());
     }
@@ -48,6 +50,7 @@ public class Weapon_Drop : MonoBehaviour {
         P_Gun.burstSize = BurstSize;
         P_Gun.ReloadSpeed = reload_speed;
         P_Gun.ShotGunMode = ShotGunMode;
+        P_Gun.Gunsound = NewGunSound;
 
         
     }
