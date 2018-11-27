@@ -5713,7 +5713,7 @@ Prefab:
     - target: {fileID: 114012626734173118, guid: 679a740006b02e74185f5e0ee3e4c47e,
         type: 2}
       propertyPath: MinZoom
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 114012626734173118, guid: 679a740006b02e74185f5e0ee3e4c47e,
         type: 2}
@@ -22292,7 +22292,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 376482842}
   m_LocalRotation: {x: -0.8186147, y: -0.57434314, z: -0, w: 0}
-  m_LocalPosition: {x: -5.78, y: 4.37, z: 0}
+  m_LocalPosition: {x: -6.45, y: 4.75, z: 0}
   m_LocalScale: {x: 1.000001, y: 1.000001, z: 1}
   m_Children: []
   m_Father: {fileID: 1062322119}
@@ -39309,7 +39309,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -676000383
   m_SortingLayer: -4
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: e2732612b561e084381c2db7814ce09f, type: 3}
   m_Color: {r: 0.5019608, g: 0.3882353, b: 0.4117647, a: 1}
   m_FlipX: 0
@@ -71473,8 +71473,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1259163163}
   m_LocalRotation: {x: -0, y: -0, z: -0.121811196, w: 0.9925533}
-  m_LocalPosition: {x: -2.53, y: 3.54, z: 0}
-  m_LocalScale: {x: 3.5801637, y: 4.5517216, z: 0}
+  m_LocalPosition: {x: -2.89, y: 3.61, z: 0}
+  m_LocalScale: {x: 4.335832, y: 5.512457, z: 0}
   m_Children:
   - {fileID: 310084284}
   m_Father: {fileID: 1921992362}
@@ -71515,7 +71515,7 @@ MonoBehaviour:
   RandomExit: 1
   ExitSpeed: 2
   tempSpeed: 0
-  doorsound: {fileID: 0}
+  doorsound: {fileID: 884022230}
   exitList:
   - {fileID: 1917589259}
   - {fileID: 822872941}
@@ -82609,8 +82609,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1522353424}
   m_LocalRotation: {x: -0, y: -0, z: 0.12965058, w: 0.9915598}
-  m_LocalPosition: {x: 2.77, y: 3.37, z: 0}
-  m_LocalScale: {x: 3.3957403, y: 4.8515487, z: 0}
+  m_LocalPosition: {x: 2.81, y: 3.55, z: 0}
+  m_LocalScale: {x: 3.8992753, y: 5.5709567, z: 0}
   m_Children:
   - {fileID: 972796100}
   m_Father: {fileID: 1921992362}
@@ -82633,7 +82633,7 @@ MonoBehaviour:
   RandomExit: 1
   ExitSpeed: 2
   tempSpeed: 0
-  doorsound: {fileID: 0}
+  doorsound: {fileID: 884022230}
   exitList:
   - {fileID: 1917589259}
   - {fileID: 822872941}
@@ -85953,7 +85953,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1673838472}
   m_LocalRotation: {x: -0, y: -0, z: 0.82786506, w: 0.5609274}
-  m_LocalPosition: {x: 5.77, y: 4.5, z: 0}
+  m_LocalPosition: {x: 5.9, y: 4.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1062322119}
@@ -99513,7 +99513,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -676000383
   m_SortingLayer: -4
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fe19ac248c16a7f48a42c804bd249fa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99973,7 +99973,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -676000383
   m_SortingLayer: -4
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fe19ac248c16a7f48a42c804bd249fa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102724,7 +102724,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -676000383
   m_SortingLayer: -4
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e2732612b561e084381c2db7814ce09f, type: 3}
   m_Color: {r: 0.5019608, g: 0.3882353, b: 0.4117647, a: 1}
   m_FlipX: 0
