@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour {
     public GameObject PlayerAnimation;
     public GameObject PlayerWeapon;
     public GameObject PlayerGun;
+    bool waiting, Dtaken;
+    
     GameObject Weapon;
    
     GameObject Gun;
@@ -66,10 +68,8 @@ public class PlayerHealth : MonoBehaviour {
     public void TakeDamage(float amount)
     {
         CurrentHealth += amount;
-        if (amount < 0)
-        {
-            StartCoroutine(dmg());
-        }
+        StartCoroutine(dmg());
+        Dtaken = true;
         if (CurrentHealth <= 0 )
         {
             CurrentHealth = 0;
@@ -130,12 +130,24 @@ public class PlayerHealth : MonoBehaviour {
     
     public IEnumerator dmg()
     {
-        anim.SetBool("Damage", true);
-        int temp = gameObject.GetComponent<PlayerMovementRedux>().Speed;
-        gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
-        yield return new WaitForSeconds(.5f);///This will need some polish
-        gameObject.GetComponent<PlayerMovementRedux>().Speed = temp;
-        anim.SetBool("Damage", false);
+        if (Dtaken == true && waiting == false)
+        {
+            waiting = true;
+            anim.SetBool("Damage", true);
+            int temp = gameObject.GetComponent<PlayerMovementRedux>().Speed;
+            gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
+            yield return new WaitForSeconds(.4f);///This will need some polish
+            gameObject.GetComponent<PlayerMovementRedux>().Speed = temp;
+            anim.SetBool("Damage", false);
+            waiting = false;
+           
+        }
+        else if (Dtaken == true && waiting == true)
+        {
+            Debug.Log("Waiting");
+        }
+
+      
     }
     public IEnumerator HideMe()
     {

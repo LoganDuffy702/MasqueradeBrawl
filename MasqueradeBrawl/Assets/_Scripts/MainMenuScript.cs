@@ -15,6 +15,7 @@ public class MainMenuScript : MonoBehaviour {
     public GameObject EventSystem;
     public SpriteState HighlightedSprt = new SpriteState();
     bool Player1Active, Player2Active, Player3Active, Player4Active;
+    public AudioSource SelectSound, Movesound, RemoveSound;
 
     public GameObject LevelPicker;
 
@@ -48,7 +49,6 @@ public class MainMenuScript : MonoBehaviour {
             if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == true)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = false;
-                
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == true)
             {
@@ -299,7 +299,7 @@ public class MainMenuScript : MonoBehaviour {
         //Added and remove functions-----------------------------------------------------
         if (Input.GetButtonDown("Player1_A") || Input.GetButtonDown("Player2_A"))//Player1 Selected
         {
-            
+            SelectSound.Play();
             string P_name = btns[currentNum].name;
             Debug.Log("Player1 Picked " + P_name);
             AddPlayer(P_name,btns[currentNum]);
@@ -312,6 +312,7 @@ public class MainMenuScript : MonoBehaviour {
 
         if (Input.GetButtonDown("Cancel"))
         {
+            RemoveSound.Play();
             string P_name = btns[currentNum].name;
             Debug.Log("Player1 UnPicked " + P_name);
             RemovePlayer(P_name);
@@ -323,6 +324,7 @@ public class MainMenuScript : MonoBehaviour {
         {
             Nextbutton = true;
             btns[currentNum].Select();
+            
         }
         if (Input.GetAxis("Horizontal") > 0.2 && Nextbutton == true 
             || Input.GetAxis("Horizontal2") > 0.2 && Nextbutton == true
@@ -334,15 +336,20 @@ public class MainMenuScript : MonoBehaviour {
             if (currentNum >= btns.Count)
             {
                 currentNum = 0;
+               
             }
             else if (currentNum < 0)
             {
                 currentNum = btns.Count - 1;
+               
             }
+          
             btns[currentNum].Select();
+            Movesound.pitch += .2f;
+            Movesound.Play();
 
         }
-
+        
         else if (Input.GetAxis("Horizontal") < -0.2 && Nextbutton == true
             || Input.GetAxis("Horizontal2") < -0.2 && Nextbutton == true
             || Input.GetAxis("Horizontal3") < -0.2 && Nextbutton == true 
@@ -353,14 +360,28 @@ public class MainMenuScript : MonoBehaviour {
             if (currentNum >= btns.Count)
             {
                 currentNum = 0;
+                
+
             }
             else if (currentNum < 0)
             {
                 currentNum = btns.Count - 1;
+               
             }
-             btns[currentNum].Select();
+           
+            btns[currentNum].Select();
+            
+            Movesound.pitch -= .2f;
+            Movesound.Play();
         }
-
+        if (Movesound.pitch <= .8f)
+        {
+            Movesound.pitch = 1.8f;
+        }
+        if (Movesound.pitch > 1.8f)
+        {
+            Movesound.pitch = 1f;
+        }
         //Player2 Controlles------------------------------------------------------------------------
        
     }

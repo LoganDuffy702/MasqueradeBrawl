@@ -10,6 +10,7 @@ public class Portal_Factory : MonoBehaviour {
     public bool RandomExit;
     public float ExitSpeed = 2;
     public int tempSpeed;
+    public AudioSource doorsound;
     
 
     public List<GameObject> exitList = new List<GameObject>();
@@ -30,6 +31,7 @@ public class Portal_Factory : MonoBehaviour {
         if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") ||
             other.gameObject.CompareTag("ButtLady")|| other.gameObject.CompareTag("Foxy"))
         {
+            doorsound.Play();
             anim.SetBool("Open", true);
             if (ReleaseUp == true && RandomExit == true)
             {

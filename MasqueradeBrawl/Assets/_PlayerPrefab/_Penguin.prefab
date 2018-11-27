@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 4518561312155766}
   - component: {fileID: 114917106838373042}
   - component: {fileID: 120222545308622264}
+  - component: {fileID: 82374339097427458}
   m_Layer: 0
   m_Name: _Penguin_Gun
   m_TagString: Untagged
@@ -223,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1274467067705846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.520067, y: -6.099232, z: 0}
+  m_LocalPosition: {x: 13.754461, y: 17.748072, z: 0}
   m_LocalScale: {x: 3.1083305, y: 3.10833, z: 0}
   m_Children:
   - {fileID: 4973199506751924}
@@ -318,9 +319,104 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.09}
-  m_Size: {x: 0.29, y: 1.22}
+  m_Offset: {x: 0, y: -0.18}
+  m_Size: {x: 0.38, y: 1.04}
   m_Direction: 0
+--- !u!82 &82374339097427458
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485327310511918}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d78ae018c7d88494db1a35117991c0f1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95363439436481296
 Animator:
   serializedVersion: 3
@@ -488,6 +584,9 @@ MonoBehaviour:
   healthBar: {fileID: 224454265934770780}
   PlayerDead: 0
   MainCanvas: {fileID: 0}
+  PlayerAnimation: {fileID: 0}
+  PlayerWeapon: {fileID: 0}
+  PlayerGun: {fileID: 0}
   respawnTime: 3
 --- !u!114 &114879253154322536
 MonoBehaviour:
@@ -535,6 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burstSize: 1
   FireDelay: 18.27
+  Gunsound: {fileID: 0}
   choosePlayr: 1
   ReloadSpeed: 0.3
   TypeOfBullet: {fileID: 1467269267407004, guid: eceedb20c97b4294181c01fbe5b67471,
@@ -542,7 +642,6 @@ MonoBehaviour:
   ShotGunBullets: 4
   ShotGunMode: 0
   Ammo: 22
-  AmmoPrefab: {fileID: 1375605048804476, guid: 636809173e257d945a301efc727561c3, type: 2}
   PlayerGun: {fileID: 1000432563558794}
   AmmoPos: {fileID: 1290473528959862}
   removeAmount: 1

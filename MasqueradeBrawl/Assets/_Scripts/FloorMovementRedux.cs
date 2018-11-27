@@ -19,7 +19,7 @@ public class FloorMovementRedux : MonoBehaviour
     {
 
         //Vector2 mousePosition = new Vector2 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y); //Supposedly binds firepoint to screen/mouse aspect:ratio...
-        transform.Translate( Vector3.up * Time.deltaTime * tempMove);
+        transform.Translate( Vector3.up * Time.deltaTime * MoveSpeed);
         Destroy(gameObject, DestroyFade);
     }
 

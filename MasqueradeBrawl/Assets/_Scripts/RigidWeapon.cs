@@ -8,6 +8,8 @@ public class RigidWeapon : MonoBehaviour {
 	public int burstSize = 5;
 	public float FireDelay=12;
     //public float Damage;
+
+    public AudioSource Gunsound;
     
 	public enum Player { Player1,Player2,Player3,Player4}
     public Player choosePlayr;
@@ -36,6 +38,7 @@ public class RigidWeapon : MonoBehaviour {
     void Start()
     {
         //Debug.Log(PlayerGun.name);
+        Gunsound = gameObject.GetComponent<AudioSource>();
 
     }
 
@@ -167,6 +170,7 @@ public class RigidWeapon : MonoBehaviour {
 		for (int i = 0; i < burstSize; i++)
 		{
             PlayerGun.transform.localPosition = new Vector3(Mathf.Abs(temp.x / 3), temp.y, temp.z);
+            Gunsound.Play();
             if (ShotGunMode==false) {
                 
                 for (int x = 0; x < removeAmount; x++)
