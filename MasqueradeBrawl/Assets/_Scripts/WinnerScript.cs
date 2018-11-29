@@ -26,14 +26,12 @@ public class WinnerScript : MonoBehaviour {
             {
                 PlayersAlive.Add(GameObject.Find(PlayerList[i]));
             }
-           
         }
         
         MainCam.GetComponent<CameraMovement>().Players = PlayersAlive;
 
 	}
-	
-	
+
     public IEnumerator RestartScene()
     {
         yield return new WaitForSeconds(4);

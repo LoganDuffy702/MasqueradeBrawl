@@ -199,7 +199,7 @@ MonoBehaviour:
   OnContact: {fileID: 1330272458496566, guid: 7c676f322dd64534bb950a2fbb36e890, type: 2}
   BurstSize: 1
   reload_speed: 0.5
-  NewGunSound: {fileID: 0}
+  GunSound: PistolSound
   ShotGunMode: 0
   Weapon: {fileID: 1536313167912140, guid: 73fdfa74500ba0f4aaf055349cd3d2d2, type: 2}
   LifeSpan: 7
