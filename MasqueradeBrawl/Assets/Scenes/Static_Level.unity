@@ -28980,6 +28980,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2124533804}
     m_Modifications:
+    - target: {fileID: 114195313399850900, guid: 296bf84d0fde40342b02833bac3b79f0,
+        type: 2}
+      propertyPath: PowerUpsObject.Array.size
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4744663197686992, guid: 296bf84d0fde40342b02833bac3b79f0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 8.91
@@ -29017,6 +29022,12 @@ Prefab:
       propertyPath: PowerUpsObject.Array.data[1]
       value: 
       objectReference: {fileID: 1591023760951860, guid: ec20e3663ded5a5438d2e43e0f84f22c,
+        type: 2}
+    - target: {fileID: 114195313399850900, guid: 296bf84d0fde40342b02833bac3b79f0,
+        type: 2}
+      propertyPath: PowerUpsObject.Array.data[8]
+      value: 
+      objectReference: {fileID: 1591023760951860, guid: 8c7838c5b0349cb43a43d2aea53987cd,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 296bf84d0fde40342b02833bac3b79f0, type: 2}
@@ -33236,6 +33247,7 @@ MonoBehaviour:
   - {fileID: 1591023760951860, guid: 9e0a0aca00363074e9ff282f8bd0d972, type: 2}
   - {fileID: 1591023760951860, guid: 1ba99bc7b5fead441924de7d92d89963, type: 2}
   - {fileID: 1591023760951860, guid: d88117dc605cdd34e8a2288f06bfec9b, type: 2}
+  - {fileID: 1591023760951860, guid: 8c7838c5b0349cb43a43d2aea53987cd, type: 2}
   UseSpeed: 0
   Touched: 0
   maxOffsetX: 0
@@ -40172,6 +40184,7 @@ MonoBehaviour:
   - {fileID: 1591023760951860, guid: 9e0a0aca00363074e9ff282f8bd0d972, type: 2}
   - {fileID: 1591023760951860, guid: 1ba99bc7b5fead441924de7d92d89963, type: 2}
   - {fileID: 1591023760951860, guid: d88117dc605cdd34e8a2288f06bfec9b, type: 2}
+  - {fileID: 1591023760951860, guid: 8c7838c5b0349cb43a43d2aea53987cd, type: 2}
   UseSpeed: 0
   Touched: 0
   maxOffsetX: 0
@@ -75345,6 +75358,7 @@ MonoBehaviour:
   - {fileID: 1591023760951860, guid: 9e0a0aca00363074e9ff282f8bd0d972, type: 2}
   - {fileID: 1591023760951860, guid: 1ba99bc7b5fead441924de7d92d89963, type: 2}
   - {fileID: 1591023760951860, guid: d88117dc605cdd34e8a2288f06bfec9b, type: 2}
+  - {fileID: 1591023760951860, guid: 8c7838c5b0349cb43a43d2aea53987cd, type: 2}
   UseSpeed: 0
   Touched: 0
   maxOffsetX: 0
@@ -93107,7 +93121,7 @@ Prefab:
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: PowerUpsObject.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.x
@@ -93152,6 +93166,12 @@ Prefab:
       propertyPath: PowerUpsObject.Array.data[1]
       value: 
       objectReference: {fileID: 1591023760951860, guid: ec20e3663ded5a5438d2e43e0f84f22c,
+        type: 2}
+    - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
+        type: 2}
+      propertyPath: PowerUpsObject.Array.data[8]
+      value: 
+      objectReference: {fileID: 1591023760951860, guid: 8c7838c5b0349cb43a43d2aea53987cd,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}

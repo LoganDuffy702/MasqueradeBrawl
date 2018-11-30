@@ -35,7 +35,7 @@ public class WinnerScript : MonoBehaviour {
     public IEnumerator RestartScene()
     {
         yield return new WaitForSeconds(4);
-        SceneManager.LoadScene("Static_Level", LoadSceneMode.Single);
+        SceneManager.LoadScene("_CharSelect", LoadSceneMode.Single);
     }
     
     public void WinChecker()
