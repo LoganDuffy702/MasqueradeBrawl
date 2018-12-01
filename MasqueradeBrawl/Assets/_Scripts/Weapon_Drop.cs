@@ -53,6 +53,10 @@ public class Weapon_Drop : MonoBehaviour {
         P_Gun.burstSize = BurstSize;
         P_Gun.ReloadSpeed = reload_speed;
         P_Gun.ShotGunMode = ShotGunMode;
+        if (ShotGunMode == true)
+        {
+            P_Gun.ShotGunBullets = 4;
+        }
         P_Gun.Gunsound = GunsoundObject.GetComponent<AudioSource>(); ;
 
         

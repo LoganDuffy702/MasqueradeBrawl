@@ -23,7 +23,7 @@ public class WeaponCollisionChecker : MonoBehaviour {
                 }
                 if (other.gameObject.CompareTag("LobShot"))
                 {
-                    Player.GetComponent<PlayerHealth>().TakeDamage(-1);
+                    Player.GetComponent<PlayerHealth>().TakeDamage(-15);
                 }
                 if (other.gameObject.CompareTag("FlameThrower"))
                 {
@@ -45,7 +45,7 @@ public class WeaponCollisionChecker : MonoBehaviour {
                 }
                 if (other.gameObject.CompareTag("LobShot"))
                 {
-                    Player.GetComponent<PlayerHealth>().TakeDamage(-5);
+                    Player.GetComponent<PlayerHealth>().TakeDamage(-15);
                 }
                 if (other.gameObject.CompareTag("FlameThrower"))
                 {
@@ -101,7 +101,7 @@ public class WeaponCollisionChecker : MonoBehaviour {
                 }
                 if (other.gameObject.CompareTag("ShotgunBullet"))
                 {
-                    Player.GetComponent<PlayerHealth>().TakeDamage(-1);
+                    Player.GetComponent<PlayerHealth>().TakeDamage(-2);
                 }
                 break;
             default:

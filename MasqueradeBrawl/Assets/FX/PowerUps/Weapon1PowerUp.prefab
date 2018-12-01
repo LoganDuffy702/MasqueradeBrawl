@@ -122,7 +122,7 @@ MonoBehaviour:
   GunSound: MGSound
   ShotGunMode: 0
   Weapon: {fileID: 1467269267407004, guid: eceedb20c97b4294181c01fbe5b67471, type: 2}
-  LifeSpan: 7
+  LifeSpan: 10
 --- !u!198 &198586887529752614
 ParticleSystem:
   m_ObjectHideFlags: 1

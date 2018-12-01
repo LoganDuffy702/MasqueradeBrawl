@@ -19,11 +19,11 @@ public class LevelSelect : MonoBehaviour {
         //Butt = GameObject.Find("Butt");
 
         StaticLevel = GameObject.Find("StaticButton");
-        StaticLevel.GetComponent<Button>().interactable = false;
+        //StaticLevel.GetComponent<Button>().interactable = false;
         StaticLevel.GetComponent<Image>().color = Color.gray;
 
         FallingLevel = GameObject.Find("FallingButton");
-        FallingLevel.GetComponent<Button>().interactable = false;
+        //FallingLevel.GetComponent<Button>().interactable = false;
         FallingLevel.GetComponent<Image>().color = Color.gray;
 
         Lamp1.GetComponent<SpriteRenderer>().color = Color.gray;

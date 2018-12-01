@@ -3,13 +3,15 @@ using System.Collections;
 
 using UnityEngine.UI;
 
-public class RigidWeapon : MonoBehaviour {
+public class RigidWeaponPen : MonoBehaviour {
 
 	public int burstSize = 5;
 	public float FireDelay=12;
     //public float Damage;
 
     public AudioSource Gunsound;
+    
+	
 
 	public float ReloadSpeed = 1;
     public string Playercontrols;
@@ -36,24 +38,22 @@ public class RigidWeapon : MonoBehaviour {
     void Start()
     {
         //Debug.Log(PlayerGun.name);
-        Gunsound = GameObject.Find("PistolSound").GetComponent<AudioSource>();
+        Gunsound = gameObject.GetComponent<AudioSource>();
 
     }
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
-        //fire = Input.GetAxis(Playercontrols);//Bugggggggggggggggggggggggggggggggg
-
+        
         if (Input.GetAxis(Playercontrols) > 0)
         {
-            Debug.Log("I FIred");
             if (CanShoot == true)
             {
 
                 if (Ammo > 0)
                 {
-                    Debug.Log(Playercontrols);
+                    Debug.Log("Player1 Fires");
                     StartCoroutine(Fire());
 
                     CanShoot = false;
@@ -75,7 +75,7 @@ public class RigidWeapon : MonoBehaviour {
             }
         }
 
-        
+      
 	}
 
     //timer for reload speed 

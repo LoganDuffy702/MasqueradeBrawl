@@ -12,9 +12,13 @@ public class MainMenuScript : MonoBehaviour {
     public GameObject InfoSheet;
     //public GameObject TEst;
     //public GameObject PlayerSheet;
-    public GameObject EventSystem;
+
+    public string PlayerSelect;
+    public string PlayerRemove;
+    public string PlayerHor;
+
     public SpriteState HighlightedSprt = new SpriteState();
-    bool Player1Active, Player2Active, Player3Active, Player4Active;
+    bool AddController;
     public AudioSource SelectSound, Movesound, RemoveSound;
 
     public GameObject LevelPicker;
@@ -30,6 +34,9 @@ public class MainMenuScript : MonoBehaviour {
     public void Start()
     {
         LvlSelc = GameObject.Find("Canvas");
+        AddController = false;
+        //Debug.Log(PlayerSelect);
+        
     }
 
     public void ExitGame()
@@ -266,22 +273,18 @@ public class MainMenuScript : MonoBehaviour {
             if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 == false)
             {
                 InfoSheet.GetComponent<PlayerInfoSheet>().Controller1 = true;
-                currentBtn.GetComponent<Image>().color = Color.red;
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 == false)
             {
-                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;
-                currentBtn.GetComponent<Image>().color = Color.blue;
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller2 = true;   
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 == false)
             {
-                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;
-                currentBtn.GetComponent<Image>().color = Color.green;
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller3 = true;   
             }
             else if (InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 == false)
             {
-                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true;
-                currentBtn.GetComponent<Image>().color = Color.gray;
+                InfoSheet.GetComponent<PlayerInfoSheet>().Controller4 = true; 
             }
             ButtNotSelected = true;
         }
@@ -292,25 +295,23 @@ public class MainMenuScript : MonoBehaviour {
        
     }
 
-
-    public void Update()
+    public void AllowMovement()
     {
-
         //Added and remove functions-----------------------------------------------------
-        if (Input.GetButtonDown("Player1_A") || Input.GetButtonDown("Player2_A"))//Player1 Selected
+        if (Input.GetButtonDown(PlayerSelect))//Player Selected
         {
             SelectSound.Play();
             string P_name = btns[currentNum].name;
             Debug.Log("Player1 Picked " + P_name);
-            AddPlayer(P_name,btns[currentNum]);
+            AddPlayer(P_name, btns[currentNum]);
             if (P_name == "StaticButton")
             {
-               // btns[currentNum].GetComponent<Image>().color = Color.gray;
-                gameObject.GetComponent<NextLevel>().SelectLevel(2);
+                // btns[currentNum].GetComponent<Image>().color = Color.gray;
+                //gameObject.GetComponent<NextLevel>().SelectLevel(2);
             }
         }
 
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown(PlayerRemove))
         {
             RemoveSound.Play();
             string P_name = btns[currentNum].name;
@@ -319,71 +320,75 @@ public class MainMenuScript : MonoBehaviour {
         }
 
         //Horizontal Movement functions---------------------------------------------------
-        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Horizontal2") == 0 &&
-            Input.GetAxis("Horizontal3") == 0 && Input.GetAxis("Horizontal4") == 0)
+        if (Input.GetAxis(PlayerHor) == 0)
         {
             Nextbutton = true;
+            btns[currentNum].spriteState = HighlightedSprt;
             btns[currentNum].Select();
-            
+
+
         }
-        if (Input.GetAxis("Horizontal") > 0.2 && Nextbutton == true 
-            || Input.GetAxis("Horizontal2") > 0.2 && Nextbutton == true
-            || Input.GetAxis("Horizontal3") > 0.2 && Nextbutton == true
-            || Input.GetAxis("Horizontal4") > 0.2 && Nextbutton == true)
+
+        if (Input.GetAxis(PlayerHor) > 0.2 && Nextbutton == true)
         {
             Nextbutton = false;
             currentNum += 1;
             if (currentNum >= btns.Count)
             {
                 currentNum = 0;
-               
+
             }
             else if (currentNum < 0)
             {
                 currentNum = btns.Count - 1;
-               
+
             }
-          
+
             btns[currentNum].Select();
             Movesound.pitch += .2f;
             Movesound.Play();
 
         }
-        
-        else if (Input.GetAxis("Horizontal") < -0.2 && Nextbutton == true
-            || Input.GetAxis("Horizontal2") < -0.2 && Nextbutton == true
-            || Input.GetAxis("Horizontal3") < -0.2 && Nextbutton == true 
-            || Input.GetAxis("Horizontal4") < -0.2 && Nextbutton == true)
+
+        else if (Input.GetAxis(PlayerHor) < -0.2 && Nextbutton == true)
         {
             Nextbutton = false;
             currentNum -= 1;
             if (currentNum >= btns.Count)
             {
                 currentNum = 0;
-                
+
 
             }
             else if (currentNum < 0)
             {
                 currentNum = btns.Count - 1;
-               
+
             }
-           
+
             btns[currentNum].Select();
-            
+
             Movesound.pitch -= .2f;
             Movesound.Play();
         }
+
         if (Movesound.pitch <= .8f)
         {
             Movesound.pitch = 1.8f;
         }
+
         if (Movesound.pitch > 1.8f)
         {
             Movesound.pitch = 1f;
         }
-        //Player2 Controlles------------------------------------------------------------------------
-       
+
+        btns[0].Select();
+        btns[1].Select();
+    }
+   
+    public void Update()
+    {
+        AllowMovement();
     }
    
 }

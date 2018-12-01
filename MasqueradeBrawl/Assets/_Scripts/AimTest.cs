@@ -34,6 +34,7 @@ public class AimTest : MonoBehaviour {
             default:
                 break;
         }
+        gameObject.GetComponentInChildren<RigidWeapon>().enabled = true;
         
     }
 

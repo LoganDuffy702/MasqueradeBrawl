@@ -73,7 +73,7 @@ public class PlayerMovementRedux : MonoBehaviour {
                 switch (PlayerController)
                 {
                     case PlayerPos.Player1:
-                        direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal1");
                         anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player2:
@@ -97,7 +97,7 @@ public class PlayerMovementRedux : MonoBehaviour {
                 switch (PlayerController)
                 {
                     case PlayerPos.Player1:
-                        direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal1");
                         anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player2:
@@ -121,7 +121,7 @@ public class PlayerMovementRedux : MonoBehaviour {
                 switch (PlayerController)
                 {
                     case PlayerPos.Player1:
-                        direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal1");
                         anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player2:
@@ -146,7 +146,7 @@ public class PlayerMovementRedux : MonoBehaviour {
                 switch (PlayerController)
                 {
                     case PlayerPos.Player1:
-                        direction.x = Input.GetAxis("Horizontal");
+                        direction.x = Input.GetAxis("Horizontal1");
                         anim.SetFloat("Speed", Mathf.Abs(direction.x));
                         break;
                     case PlayerPos.Player2:

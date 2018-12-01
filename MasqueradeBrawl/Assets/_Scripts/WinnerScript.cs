@@ -10,6 +10,7 @@ public class WinnerScript : MonoBehaviour {
     public List<GameObject> PlayersAlive;
     public List<string> PlayerList;
     public GameObject MainCam;
+    //public Player Infosheet;
     public int totalPlayersAlive = 4;
     public int KillChecker = 0;
 
@@ -34,6 +35,7 @@ public class WinnerScript : MonoBehaviour {
 
     public IEnumerator RestartScene()
     {
+        GameObject.Find("PlayerInfo").GetComponent<PlayerInfoSheet>().Killold();
         yield return new WaitForSeconds(4);
         SceneManager.LoadScene("_CharSelect", LoadSceneMode.Single);
     }

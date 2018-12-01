@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 120967566131775304}
   m_Layer: 0
   m_Name: SniperBullet
-  m_TagString: PistolBullet
+  m_TagString: LobShot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85002d5ab957f654f96759ef3be9551b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 50
+  MoveSpeed: 60
   DestroyFade: 1
   TimedDeath: 0
   OnContact: {fileID: 1330272458496566, guid: 7c676f322dd64534bb950a2fbb36e890, type: 2}
@@ -242,7 +242,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: f8658e9f624797b4abc4de84f08f88df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.24, y: 2.24}

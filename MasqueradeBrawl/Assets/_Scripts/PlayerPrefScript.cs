@@ -7,6 +7,7 @@ public class PlayerPrefScript : MonoBehaviour {
 	public void Start()
     {
         GameObject.Find("PlayerInfo").GetComponent<PlayerInfoSheet>().ActivePlayers();
+        //GameObject.Find("PlayerInfo").GetComponent<PlayerInfoSheet>().Restart = true;
     }
 
    

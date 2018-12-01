@@ -208,7 +208,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157427487900844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.1123967, y: 8.319614, z: 0}
+  m_LocalPosition: {x: -10.365423, y: -10.492489, z: 0}
   m_LocalScale: {x: 2.7, y: 2.7, z: 0}
   m_Children:
   - {fileID: 4075020460111784}
@@ -567,7 +567,7 @@ MonoBehaviour:
   AmmoPos: {fileID: 1570747957379546}
   AmmoClips: 22
   removeAmount: 1
-  AmmoClip: AmmoClips4
+  AmmoClip: AmmoClips3
 --- !u!114 &114787622827722948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -603,8 +603,8 @@ MonoBehaviour:
   burstSize: 1
   FireDelay: 18
   Gunsound: {fileID: 0}
-  choosePlayr: 3
   ReloadSpeed: 0.3
+  Playercontrols: 
   TypeOfBullet: {fileID: 1467269267407004, guid: eceedb20c97b4294181c01fbe5b67471,
     type: 2}
   ShotGunBullets: 4
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerController: 3
   choosePlayr: 2
-  Speed: 8
+  Speed: 10
   Weapon: {fileID: 1011337299789048}
   PlayerX: -8.16
   PlayerY: 13.1

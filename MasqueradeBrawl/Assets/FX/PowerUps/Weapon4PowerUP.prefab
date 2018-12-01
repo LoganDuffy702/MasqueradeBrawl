@@ -218,7 +218,7 @@ MonoBehaviour:
   GunSound: SGSound
   ShotGunMode: 1
   Weapon: {fileID: 1536313167912140, guid: 73fdfa74500ba0f4aaf055349cd3d2d2, type: 2}
-  LifeSpan: 7
+  LifeSpan: 10
 --- !u!198 &198641277318892702
 ParticleSystem:
   m_ObjectHideFlags: 1
