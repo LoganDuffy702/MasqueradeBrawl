@@ -91,7 +91,7 @@ public class AimTest : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(NewRotation);
                 break;
             case Player.Penguin:
-                
+                gameObject.transform.localPosition = new Vector3(0f, -0.144f, 0f);
                 switch (PlayerController)
                 {
                     case PlayerPos.Player1:
@@ -124,7 +124,7 @@ public class AimTest : MonoBehaviour {
                 {
                     NewRotation.y = 180f;
                     PlayerSprite.GetComponent<SpriteRenderer>().flipX = true;
-                    gameObject.transform.localPosition = new Vector3(-.12f, 0.09f, 0);
+                    //gameObject.transform.localPosition = new Vector3(-.12f, 0.09f, 0);
 
 
                 }
@@ -133,7 +133,7 @@ public class AimTest : MonoBehaviour {
                     
                     NewRotation.y = 0f;
                     PlayerSprite.GetComponent<SpriteRenderer>().flipX = false;
-                    gameObject.transform.localPosition = new Vector3(.12f, 0.09f, 0);
+                    //gameObject.transform.localPosition = new Vector3(.12f, 0.09f, 0);
 
                 }
 
