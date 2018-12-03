@@ -6,11 +6,9 @@ public class FallingPortal : MonoBehaviour {
 
     public List<GameObject> exitList = new List<GameObject>();
     public AudioSource Exitsound;
+    public float exitforce;
     bool goleft, goright;
     // Use this for initialization
-    void Start () {
-		
-	}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,21 +21,21 @@ public class FallingPortal : MonoBehaviour {
             if (goleft == true)
             {
                 other.gameObject.transform.position = exitList[1].transform.position;
-                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.left * 2);
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.left * exitforce);
                 goright = true;
                 goleft = false;
             }
             else if (goright == true)
             {
                 other.gameObject.transform.position = exitList[0].transform.position;
-                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.right * 2);
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.right * exitforce);
                 goright = false;
                 goleft = true;
             }
             else
             {
                 other.gameObject.transform.position = exitList[1].transform.position;
-                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.left * 2);
+                other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.left * exitforce);
                 goright = true;
                 goleft = false;
             }

@@ -12,6 +12,7 @@ public class WinnerScript : MonoBehaviour {
     public GameObject MainCam;
     //public Player Infosheet;
     public int totalPlayersAlive = 4;
+    public bool UseSpecialCam = true;
     public int KillChecker = 0;
 
 	// Use this for initialization
@@ -28,13 +29,15 @@ public class WinnerScript : MonoBehaviour {
                 PlayersAlive.Add(GameObject.Find(PlayerList[i]));
             }
         }
-        
-        MainCam.GetComponent<CameraMovement>().Players = PlayersAlive;
-
+        if (UseSpecialCam == true)
+        {
+            MainCam.GetComponent<CameraMovement>().Players = PlayersAlive;
+        }
 	}
 
     public IEnumerator RestartScene()
     {
+        
         GameObject.Find("PlayerInfo").GetComponent<PlayerInfoSheet>().Killold();
         yield return new WaitForSeconds(4);
         SceneManager.LoadScene("_CharSelect", LoadSceneMode.Single);
@@ -47,9 +50,12 @@ public class WinnerScript : MonoBehaviour {
         {
             if (PlayersAlive[i].GetComponent<PlayerHealth>().PlayerDead == true)
             {
-                MainCam.GetComponent<CameraMovement>().DeleteUpdate(PlayersAlive[i].name);
-                PlayersAlive.RemoveAt(i);
+                if (UseSpecialCam == true)
+                {
+                    MainCam.GetComponent<CameraMovement>().DeleteUpdate(PlayersAlive[i].name);
+                }
                 
+                PlayersAlive.RemoveAt(i);
 
             }
         }
