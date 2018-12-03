@@ -9,6 +9,7 @@ public class PlayerSoundFx : MonoBehaviour {
 	void Start () {
         background.Play();
         Thunder.Play();
+
 	}
 	
     

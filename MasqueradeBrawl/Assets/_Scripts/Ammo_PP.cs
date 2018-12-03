@@ -13,6 +13,7 @@ public class Ammo_PP : MonoBehaviour {
     private RigidWeapon PlayerAmmo;
     private Image AmmoIMG;
     public int AmmoAmmount = 16;
+    AudioSource ReloadSound;
     GameObject AmmoPos;
     public GameObject AmmoPrefab;
 
@@ -21,13 +22,14 @@ public class Ammo_PP : MonoBehaviour {
     void Start ()
     {
         StartCoroutine(HidMe());
-        
+        ReloadSound = GameObject.Find("ReloadSound").GetComponent<AudioSource>();
     }
 
     public void AddAmmo(GameObject PlayerName)
     {   
         //GameObject PlayerObject = GameObject.Find(PlayerName.name);
-        PlayerName.GetComponent<PlayerAmmo>().AddClip();  
+        PlayerName.GetComponent<PlayerAmmo>().AddClip();
+        PlayerName.GetComponent<AudioSource>().Play();
     }
 
     public IEnumerator HidMe()
@@ -43,7 +45,8 @@ public class Ammo_PP : MonoBehaviour {
         if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") 
             || other.gameObject.CompareTag("ButtLady")|| other.gameObject.CompareTag("Foxy"))
         {
-
+            ReloadSound.Play();
+            Debug.Log("Reload");
             AmmoSprite.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
            
