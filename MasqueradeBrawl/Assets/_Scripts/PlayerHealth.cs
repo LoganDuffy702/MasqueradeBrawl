@@ -73,8 +73,12 @@ public class PlayerHealth : MonoBehaviour {
     {
         DamageSound.Play();
         CurrentHealth += amount;
-        StartCoroutine(dmg());
         Dtaken = true;
+        if (amount < 0)
+        {
+            StartCoroutine(dmg());
+        }
+        
         if (CurrentHealth <= 0 )
         {
             CurrentHealth = 0;

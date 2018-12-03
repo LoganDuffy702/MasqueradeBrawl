@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AddHealth: 25
   OnContact: {fileID: 1758789153137206, guid: 0af4d7d24e07a244ebf4dc336451022e, type: 2}
-  LifeSpan: 7
+  LifeSpan: 10
 --- !u!114 &114723385957833878
 MonoBehaviour:
   m_ObjectHideFlags: 1
