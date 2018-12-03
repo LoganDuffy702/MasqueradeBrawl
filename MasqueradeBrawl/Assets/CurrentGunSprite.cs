@@ -9,8 +9,8 @@ public class CurrentGunSprite : MonoBehaviour {
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = GunSprites[0];
     }
-    public void ChangeGun(GameObject GunNumber)
+    public void ChangeGun(int GunNumber)
     {
-
+        gameObject.GetComponent<SpriteRenderer>().sprite = GunSprites[GunNumber];
     }
 }

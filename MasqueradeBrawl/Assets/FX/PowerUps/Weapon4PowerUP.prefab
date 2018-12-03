@@ -232,6 +232,7 @@ MonoBehaviour:
   reload_speed: 1
   GunSound: SGSound
   ShotGunMode: 1
+  GunNum: 2
   ExplosionSound: {fileID: 82822577476129638}
   Weapon: {fileID: 1536313167912140, guid: 73fdfa74500ba0f4aaf055349cd3d2d2, type: 2}
   LifeSpan: 10

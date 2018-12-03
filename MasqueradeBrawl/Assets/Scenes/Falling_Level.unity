@@ -7064,6 +7064,10 @@ Prefab:
       propertyPath: DeathSoundName
       value: BirdDeath
       objectReference: {fileID: 0}
+    - target: {fileID: 1972624737842250, guid: 03d92356dfbdf854e9aad63e9eece76c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03d92356dfbdf854e9aad63e9eece76c, type: 2}
   m_IsPrefabParent: 0
@@ -7535,6 +7539,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GunSprites:
   - {fileID: 21300000, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300002, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300004, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300006, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
 --- !u!1 &1354181124
 GameObject:
   m_ObjectHideFlags: 0

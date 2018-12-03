@@ -11,6 +11,7 @@ public class Weapon_Drop : MonoBehaviour {
     public string GunSound;
     GameObject GunsoundObject;
     public bool ShotGunMode;
+    public int GunNum;
     public AudioSource ExplosionSound;
    
     public GameObject Weapon;
@@ -44,7 +45,7 @@ public class Weapon_Drop : MonoBehaviour {
         //----------------------------------------------------------
         GameObject PlayerGunSprite = GameObject.Find(result + "_Weapon");
         Debug.Log(PlayerGunSprite.name);
-        //PlayerGunSprite.GetComponent<CurrentGunSprite>();
+        PlayerGunSprite.GetComponent<CurrentGunSprite>().ChangeGun(GunNum);
         //-----------------------------------------------------------
 
         GameObject PlayerGun = GameObject.Find(result+"_Gun");
