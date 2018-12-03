@@ -5,7 +5,7 @@ using UnityEngine;
 public class FloorMovementRedux : MonoBehaviour
 {
 
-    public int MoveSpeed;
+    public float MoveSpeed;
     public float DestroyFade = 1;
     public bool TimedDeath;
     float tempMove;

@@ -16,9 +16,9 @@ public class DeathFloor : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("DeathFloor")) 
+        if (other.gameObject.CompareTag("Walls")) 
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

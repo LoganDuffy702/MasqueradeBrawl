@@ -8,9 +8,11 @@ public class FloorGenerator : MonoBehaviour {
     private GameObject lastGroundObject;
     public float maxOffset = 3f;
     private Vector3 lastSpawnPosition;
-    public float duration;
+    //public float duration;
+    public float LowestDuration, HighestDuration;
     private bool spawnfloor = true;
     public bool GoLeft = false;
+    public bool GoRight = false;
     public float speed;
 
     // Use this for initialization
@@ -33,7 +35,6 @@ public class FloorGenerator : MonoBehaviour {
             spawnfloor = false;
         }
         
-
     }
 
     private GameObject RandomGroundObject()
@@ -43,7 +44,7 @@ public class FloorGenerator : MonoBehaviour {
     }
     public IEnumerator Timer()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(Random.Range(LowestDuration, HighestDuration));
         spawnfloor = true;
     }
     public IEnumerator SpeedUpTimer()
@@ -51,7 +52,7 @@ public class FloorGenerator : MonoBehaviour {
         yield return new WaitForSeconds(10f);
         StartCoroutine(SpeedUpTimer());
         speed = speed + .5f;
-        duration = duration - .2f;
+        //duration = duration - .2f;
     }
     private void SpawnNewGroundObject()
     {
@@ -65,18 +66,10 @@ public class FloorGenerator : MonoBehaviour {
         // position the new ground object with the end of this one touching the end of the last one
         //lastGroundObject.transform.position = lastEndPoint.position - (thisStartPoint.position - lastGroundObject.transform.position);
         lastGroundObject.transform.position = transform.position;
-
+        lastGroundObject.GetComponent<FloorMovementRedux>().MoveSpeed = speed;
         // translate the new game object by a random amount left or right
-        lastGroundObject.transform.position += Vector3.right * maxOffset * (Random.value * 2f - 1f);
-        if (GoLeft == true)
-        {
-            lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.left * speed);
-            
-        }
-        else
-        {
-            lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.up * speed);
-        }
+        //lastGroundObject.transform.position += Vector3.right * maxOffset * (Random.value * 2f - 1f);//(For Rigidbody)
+        
         
         
     }
