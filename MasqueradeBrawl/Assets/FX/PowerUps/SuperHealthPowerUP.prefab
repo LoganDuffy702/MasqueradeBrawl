@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114659011458008070}
   - component: {fileID: 58877242921540430}
   - component: {fileID: 114723385957833878}
+  - component: {fileID: 114452570355822716}
   m_Layer: 0
   m_Name: SuperHealthPowerUP
   m_TagString: Untagged
@@ -58,6 +59,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24
+--- !u!114 &114452570355822716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1647000114141026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c744d84a998d13e4996b5ef4f381f7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 0
+  DestroyFade: 30
+  TimedDeath: 0
 --- !u!114 &114659011458008070
 MonoBehaviour:
   m_ObjectHideFlags: 1

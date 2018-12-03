@@ -68,7 +68,7 @@ public class PowerUpGenerator : MonoBehaviour {
         lastGroundObject.transform.position += new Vector3(maxOffsetX* (Random.value * 2f - 1f), maxOffsetY * (Random.value * 2f - 1f),0f);
         if (UseSpeed == true)
         {
-            lastGroundObject.GetComponent<Rigidbody2D>().velocity = (Vector2.up * speed);
+            lastGroundObject.GetComponent<FloorMovementRedux>().MoveSpeed = speed;
         }
         
     }

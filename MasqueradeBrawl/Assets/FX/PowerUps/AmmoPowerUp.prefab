@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114483559744523250}
   - component: {fileID: 61917772416934462}
   - component: {fileID: 114895979304475102}
+  - component: {fileID: 114661025014104596}
   m_Layer: 0
   m_Name: AmmoPowerUp
   m_TagString: Untagged
@@ -114,6 +115,20 @@ MonoBehaviour:
   DestroySpeed: 10
   CloudSpeed: 0
   cloud: 0
+--- !u!114 &114661025014104596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703584403762992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c744d84a998d13e4996b5ef4f381f7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 0
+  DestroyFade: 30
+  TimedDeath: 0
 --- !u!114 &114895979304475102
 MonoBehaviour:
   m_ObjectHideFlags: 1

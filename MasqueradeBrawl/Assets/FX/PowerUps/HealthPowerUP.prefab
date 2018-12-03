@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114659011458008070}
   - component: {fileID: 58877242921540430}
   - component: {fileID: 114723385957833878}
+  - component: {fileID: 114746511363108388}
   m_Layer: 0
   m_Name: HealthPowerUP
   m_TagString: Untagged
@@ -88,6 +89,20 @@ MonoBehaviour:
   ZRotationSpeed: 0
   RotationTimer: 1
   touched: 0
+--- !u!114 &114746511363108388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1647000114141026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c744d84a998d13e4996b5ef4f381f7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 0
+  DestroyFade: 30
+  TimedDeath: 0
 --- !u!212 &212417968247183720
 SpriteRenderer:
   m_ObjectHideFlags: 1
