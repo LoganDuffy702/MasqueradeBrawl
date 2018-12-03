@@ -10,8 +10,8 @@ public class Weapon_Drop : MonoBehaviour {
     public float reload_speed;
     public string GunSound;
     GameObject GunsoundObject;
-    
     public bool ShotGunMode;
+    public AudioSource ExplosionSound;
    
     public GameObject Weapon;
     public float LifeSpan;
@@ -22,6 +22,7 @@ public class Weapon_Drop : MonoBehaviour {
         StartCoroutine(ShowMe());
         StartCoroutine(HidMe());
         GunsoundObject = GameObject.Find(GunSound);
+        
     }
 	
 	// Update is called once per frame
@@ -75,7 +76,7 @@ public class Weapon_Drop : MonoBehaviour {
         if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") || 
             other.gameObject.CompareTag("ButtLady")|| other.gameObject.CompareTag("Foxy"))
         {
-
+            ExplosionSound.Play();
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             ChangeWeapon(other.gameObject);

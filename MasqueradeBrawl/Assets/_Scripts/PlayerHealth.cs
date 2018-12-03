@@ -13,6 +13,9 @@ public class PlayerHealth : MonoBehaviour {
     public RectTransform healthBar;
     public bool PlayerDead = false;
     public GameObject MainCanvas;
+    public AudioSource DamageSound;
+    public string DeathSoundName;
+    AudioSource Deathsound;
     public GameObject PlayerAnimation;
     public GameObject PlayerWeapon;
     public GameObject PlayerGun;
@@ -30,6 +33,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Start () {
         MainCanvas = GameObject.Find("Main_Canvas");
         CurrentHealth = PlayerHP;
+        Deathsound = GameObject.Find(DeathSoundName).GetComponent<AudioSource>();
         switch (P_HP)
         {
             case Players.P:
@@ -67,13 +71,14 @@ public class PlayerHealth : MonoBehaviour {
 
     public void TakeDamage(float amount)
     {
+        DamageSound.Play();
         CurrentHealth += amount;
         StartCoroutine(dmg());
         Dtaken = true;
         if (CurrentHealth <= 0 )
         {
             CurrentHealth = 0;
-
+            Deathsound.Play();
             anim.SetBool("Dead", true);
             Debug.Log(gameObject.name + " Died");
             gameObject.GetComponent<PlayerMovementRedux>().enabled = false;
@@ -135,7 +140,7 @@ public class PlayerHealth : MonoBehaviour {
             waiting = true;
             anim.SetBool("Damage", true);
             int temp = gameObject.GetComponent<PlayerMovementRedux>().Speed;
-            gameObject.GetComponent<PlayerMovementRedux>().Speed = 0;
+            gameObject.GetComponent<PlayerMovementRedux>().Speed = 3;
             yield return new WaitForSeconds(.4f);///This will need some polish
             gameObject.GetComponent<PlayerMovementRedux>().Speed = temp;
             anim.SetBool("Damage", false);

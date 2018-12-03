@@ -20,5 +20,10 @@ public class DeathFloor : MonoBehaviour {
         {
             Destroy(other.gameObject);
         }
+        if (other.gameObject.CompareTag("Penguin") || other.gameObject.CompareTag("MoonMan") ||
+            other.gameObject.CompareTag("ButtLady") || other.gameObject.CompareTag("Foxy"))
+        {
+            other.GetComponent<PlayerHealth>().TakeDamage(-30);
+        }
     }
 }
