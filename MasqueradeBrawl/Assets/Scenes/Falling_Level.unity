@@ -5385,7 +5385,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4364317439402394, guid: e5387cf5be491fa4c9a3232f69665d6d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114159519923484428, guid: e5387cf5be491fa4c9a3232f69665d6d,
         type: 2}
@@ -5412,6 +5412,21 @@ Prefab:
       propertyPath: DamageSound
       value: 
       objectReference: {fileID: 470693001}
+    - target: {fileID: 114103101808356730, guid: e5387cf5be491fa4c9a3232f69665d6d,
+        type: 2}
+      propertyPath: PlayerController
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462261003355554, guid: e5387cf5be491fa4c9a3232f69665d6d,
+        type: 2}
+      propertyPath: Playercontrols
+      value: Fire4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114462261003355554, guid: e5387cf5be491fa4c9a3232f69665d6d,
+        type: 2}
+      propertyPath: Gunsound
+      value: 
+      objectReference: {fileID: 470693002}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5387cf5be491fa4c9a3232f69665d6d, type: 2}
   m_IsPrefabParent: 0
@@ -5444,7 +5459,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4aae59826e5a2744c8c8b1d61813327d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1f28b9a06f47a0f4ca8339f44ec1e345, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5530,6 +5545,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &470693002 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82508789108301684, guid: e5387cf5be491fa4c9a3232f69665d6d,
+    type: 2}
+  m_PrefabInternal: {fileID: 470692996}
+--- !u!114 &470693003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 470692998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c602ea0255d35ff4b9b09a4c53a83725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GunSprites:
+  - {fileID: 21300000, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300002, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300004, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300006, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
 --- !u!1001 &472685349
 Prefab:
   m_ObjectHideFlags: 0
@@ -7109,6 +7145,26 @@ Prefab:
       propertyPath: Playercontrols
       value: Fire3
       objectReference: {fileID: 0}
+    - target: {fileID: 114822213316594632, guid: cbbbd9f8afb2e9347afc893e7608efd1,
+        type: 2}
+      propertyPath: Gunsound
+      value: 
+      objectReference: {fileID: 914320631}
+    - target: {fileID: 120771605411738856, guid: cbbbd9f8afb2e9347afc893e7608efd1,
+        type: 2}
+      propertyPath: m_Positions.Array.data[1].x
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 120771605411738856, guid: cbbbd9f8afb2e9347afc893e7608efd1,
+        type: 2}
+      propertyPath: m_Positions.Array.data[0].x
+      value: -5.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 120771605411738856, guid: cbbbd9f8afb2e9347afc893e7608efd1,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.63
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbbbd9f8afb2e9347afc893e7608efd1, type: 2}
   m_IsPrefabParent: 0
@@ -7233,6 +7289,11 @@ MonoBehaviour:
   - {fileID: 21300002, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
   - {fileID: 21300004, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
   - {fileID: 21300006, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+--- !u!82 &914320631 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82988512959596868, guid: cbbbd9f8afb2e9347afc893e7608efd1,
+    type: 2}
+  m_PrefabInternal: {fileID: 914320626}
 --- !u!1 &916906623
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,6 +8069,21 @@ Prefab:
     - target: {fileID: 4085182995883880, guid: 2b562cd4f3bd6bb4aa7df20eac01b700, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 120764467378011664, guid: 2b562cd4f3bd6bb4aa7df20eac01b700,
+        type: 2}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 120764467378011664, guid: 2b562cd4f3bd6bb4aa7df20eac01b700,
+        type: 2}
+      propertyPath: m_Positions.Array.data[0].x
+      value: -4.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 120764467378011664, guid: 2b562cd4f3bd6bb4aa7df20eac01b700,
+        type: 2}
+      propertyPath: m_Positions.Array.data[1].x
+      value: -0.76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b562cd4f3bd6bb4aa7df20eac01b700, type: 2}
