@@ -210,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875678132299418}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.13, y: 0.052, z: 0}
+  m_LocalPosition: {x: -1.39, y: 0.052, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 4665326549863998}
@@ -788,8 +788,8 @@ MonoBehaviour:
   choosePlayr: 0
   Speed: 20
   Weapon: {fileID: 1424127210201532}
-  PlayerX: 19.46
-  PlayerY: -4.5
+  PlayerX: -9.6
+  PlayerY: 13.16
 --- !u!120 &120764467378011664
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -826,11 +826,11 @@ LineRenderer:
   m_SortingLayer: 12
   m_SortingOrder: 0
   m_Positions:
-  - {x: -2.39, y: 0, z: 0}
-  - {x: -0.36, y: 0, z: 0}
+  - {x: -4.48, y: 0, z: 0}
+  - {x: -0.76, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.56
+    widthMultiplier: 0.92
     widthCurve:
       serializedVersion: 2
       m_Curve:

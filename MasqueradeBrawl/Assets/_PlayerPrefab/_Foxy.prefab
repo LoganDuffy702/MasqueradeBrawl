@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 4370645730932060}
   - component: {fileID: 212753429563111472}
   - component: {fileID: 114103101808356730}
+  - component: {fileID: 114129523003336976}
   m_Layer: 0
   m_Name: _Foxy_Weapon
   m_TagString: Untagged
@@ -177,6 +178,7 @@ GameObject:
   - component: {fileID: 114819336064292242}
   - component: {fileID: 114575737107077054}
   - component: {fileID: 70953803084316000}
+  - component: {fileID: 82222681736050902}
   m_Layer: 0
   m_Name: _Foxy
   m_TagString: Foxy
@@ -208,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1947162649948606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.279383, y: 8.246525, z: 0}
+  m_LocalPosition: {x: -30.78, y: 3.62, z: 0}
   m_LocalScale: {x: 2.7, y: 2.7, z: 0}
   m_Children:
   - {fileID: 4563207828641006}
@@ -292,6 +294,101 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.11}
   m_Size: {x: 0.38, y: 1.45}
   m_Direction: 0
+--- !u!82 &82222681736050902
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1947162649948606}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1f28b9a06f47a0f4ca8339f44ec1e345, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 256
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &82508789108301684
 AudioSource:
   m_ObjectHideFlags: 1
@@ -416,8 +513,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b333dfe22655641b688dab7386abe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerController: 0
+  PlayerController: 3
   choosePlayr: 3
+--- !u!114 &114129523003336976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296101775083098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c602ea0255d35ff4b9b09a4c53a83725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GunSprites:
+  - {fileID: 21300000, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300002, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300004, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300006, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
 --- !u!114 &114159519923484428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,9 +549,11 @@ MonoBehaviour:
   healthBar: {fileID: 224742945130767778}
   PlayerDead: 0
   MainCanvas: {fileID: 0}
-  PlayerAnimation: {fileID: 0}
-  PlayerWeapon: {fileID: 0}
-  PlayerGun: {fileID: 0}
+  DamageSound: {fileID: 82222681736050902}
+  DeathSoundName: FoxyDeath
+  PlayerAnimation: {fileID: 1950911382509006}
+  PlayerWeapon: {fileID: 1296101775083098}
+  PlayerGun: {fileID: 1009530871703222}
   respawnTime: 3
 --- !u!114 &114171827127040068
 MonoBehaviour:
@@ -502,9 +617,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burstSize: 2
   FireDelay: 18
-  Gunsound: {fileID: 0}
-  choosePlayr: 0
+  Gunsound: {fileID: 82508789108301684}
   ReloadSpeed: 0.3
+  Playercontrols: Fire4
   TypeOfBullet: {fileID: 1467269267407004, guid: eceedb20c97b4294181c01fbe5b67471,
     type: 2}
   ShotGunBullets: 4
@@ -596,12 +711,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0113caf2a5a5b374797df23a6dda2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerController: 0
+  PlayerController: 3
   choosePlayr: 3
   Speed: 25
   Weapon: {fileID: 1296101775083098}
-  PlayerX: 9.15
-  PlayerY: 12.45
+  PlayerX: 20.32
+  PlayerY: -4.69
 --- !u!114 &114923429866969282
 MonoBehaviour:
   m_ObjectHideFlags: 1

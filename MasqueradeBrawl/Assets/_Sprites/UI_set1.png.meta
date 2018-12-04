@@ -5,6 +5,8 @@ TextureImporter:
     21300000: UI_set1_0
     21300002: UI_set1_1
     21300004: UI_set1_2
+    21300006: UI_set1_3
+    21300008: UI_set1_4
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -133,13 +135,53 @@ TextureImporter:
         width: 341
         height: 454
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 8d028de8345d7184f8e3e63b5d86fb54
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_set1_3
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 308
+        width: 428
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793866ac5f156fd4688fe3949ed70490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_set1_4
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 161
+        width: 275
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475706d93162dd84283e707862e17f7a
       vertices: []
       indices: 
       edges: []

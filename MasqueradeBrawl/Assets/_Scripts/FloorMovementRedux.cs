@@ -8,12 +8,12 @@ public class FloorMovementRedux : MonoBehaviour
     public float MoveSpeed;
     public float DestroyFade = 1;
     public bool TimedDeath;
-    float tempMove;
+    //float tempMove;
     //ublic GameObject OnContact;
     // Update is called once per frame
     private void Start()
     {
-        tempMove = (Random.Range(5, 25));
+        //tempMove = (Random.Range(5, 25));
     }
     void FixedUpdate()
     {

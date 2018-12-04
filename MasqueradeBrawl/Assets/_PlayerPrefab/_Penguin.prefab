@@ -775,8 +775,8 @@ MonoBehaviour:
   choosePlayr: 1
   Speed: 22
   Weapon: {fileID: 1000432563558794}
-  PlayerX: -2.7
-  PlayerY: 23.1
+  PlayerX: 8.69
+  PlayerY: 13.32
 --- !u!114 &114927571303880792
 MonoBehaviour:
   m_ObjectHideFlags: 1

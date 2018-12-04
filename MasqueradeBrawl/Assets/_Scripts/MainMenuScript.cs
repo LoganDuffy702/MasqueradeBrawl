@@ -18,7 +18,7 @@ public class MainMenuScript : MonoBehaviour {
     public string PlayerHor;
 
     public SpriteState HighlightedSprt = new SpriteState();
-    bool AddController;
+    //bool AddController;
     public AudioSource SelectSound, Movesound, RemoveSound;
 
     public GameObject LevelPicker;
@@ -34,14 +34,14 @@ public class MainMenuScript : MonoBehaviour {
     public void Start()
     {
         LvlSelc = GameObject.Find("Canvas");
-        AddController = false;
+        //AddController = false;
         //Debug.Log(PlayerSelect);
         
     }
 
     public void ExitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
     public void RemovePlayer(string PlayerName)

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4951076715920104}
   - component: {fileID: 212459071188489964}
   - component: {fileID: 114072778961655240}
+  - component: {fileID: 114472236715919484}
   m_Layer: 0
   m_Name: _ButtLady_Weapon
   m_TagString: Untagged
@@ -56,6 +57,7 @@ GameObject:
   - component: {fileID: 114822213316594632}
   - component: {fileID: 120771605411738856}
   - component: {fileID: 82988512959596868}
+  - component: {fileID: 114070653980938066}
   m_Layer: 0
   m_Name: _ButtLady_Gun
   m_TagString: Untagged
@@ -78,6 +80,7 @@ GameObject:
   - component: {fileID: 114965328075986894}
   - component: {fileID: 114695833682500226}
   - component: {fileID: 70138514042342120}
+  - component: {fileID: 82755964522072416}
   m_Layer: 0
   m_Name: _ButtLady
   m_TagString: ButtLady
@@ -208,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157427487900844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.365423, y: -10.492489, z: 0}
+  m_LocalPosition: {x: 10.97, y: 4.67, z: 0}
   m_LocalScale: {x: 2.7, y: 2.7, z: 0}
   m_Children:
   - {fileID: 4075020460111784}
@@ -292,6 +295,101 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.17}
   m_Size: {x: 0.52, y: 1.53}
   m_Direction: 0
+--- !u!82 &82755964522072416
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157427487900844}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4aae59826e5a2744c8c8b1d61813327d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 256
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &82988512959596868
 AudioSource:
   m_ObjectHideFlags: 1
@@ -405,6 +503,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114070653980938066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052803641990570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936b791829c3bc94e8882801de3b05a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114072778961655240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -416,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b333dfe22655641b688dab7386abe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerController: 3
+  PlayerController: 2
   choosePlayr: 2
 --- !u!114 &114119327383395106
 MonoBehaviour:
@@ -546,10 +655,28 @@ MonoBehaviour:
   healthBar: {fileID: 224617606248715960}
   PlayerDead: 0
   MainCanvas: {fileID: 0}
+  DamageSound: {fileID: 82755964522072416}
+  DeathSoundName: ButtDeath
   PlayerAnimation: {fileID: 1825573889727442}
   PlayerWeapon: {fileID: 1011337299789048}
   PlayerGun: {fileID: 1052803641990570}
   respawnTime: 3
+--- !u!114 &114472236715919484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1011337299789048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c602ea0255d35ff4b9b09a4c53a83725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GunSprites:
+  - {fileID: 21300000, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300002, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300004, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300006, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
 --- !u!114 &114695833682500226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -602,9 +729,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burstSize: 1
   FireDelay: 18
-  Gunsound: {fileID: 0}
+  Gunsound: {fileID: 82988512959596868}
   ReloadSpeed: 0.3
-  Playercontrols: 
+  Playercontrols: Fire3
   TypeOfBullet: {fileID: 1467269267407004, guid: eceedb20c97b4294181c01fbe5b67471,
     type: 2}
   ShotGunBullets: 4
@@ -669,12 +796,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0113caf2a5a5b374797df23a6dda2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerController: 3
+  PlayerController: 2
   choosePlayr: 2
-  Speed: 10
+  Speed: 12
   Weapon: {fileID: 1011337299789048}
-  PlayerX: -8.16
-  PlayerY: 13.1
+  PlayerX: -18.39
+  PlayerY: -4.44
 --- !u!120 &120771605411738856
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -711,11 +838,11 @@ LineRenderer:
   m_SortingLayer: 12
   m_SortingOrder: 0
   m_Positions:
-  - {x: -3.26, y: 0, z: 0}
-  - {x: 0.12, y: 0, z: 0}
+  - {x: -5.09, y: 0, z: 0}
+  - {x: -0.7, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.44
+    widthMultiplier: 0.63
     widthCurve:
       serializedVersion: 2
       m_Curve:
