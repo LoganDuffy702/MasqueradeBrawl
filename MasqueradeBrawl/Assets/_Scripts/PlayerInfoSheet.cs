@@ -18,12 +18,11 @@ public class PlayerInfoSheet : MonoBehaviour {
 
     public void P_Health_Info()
     {
-            
             HealthSelector = GameObject.Find("_MoonMan").GetComponent<PlayerHealth>();
             HealthSelector.P_HP = PlayerHealth.Players.M;
             Debug.Log("LoadedHP");
-
     }
+    
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -76,6 +75,11 @@ public class PlayerInfoSheet : MonoBehaviour {
         {
             Debug.Log("Static Level Loaded");
             //LoadPlayer();  
+            CreatePlayers();
+        }
+        else if (SceneManager.GetActiveScene().name == "Falling_Level")
+        {
+            Debug.Log("Falling Level Loaded");
             CreatePlayers();
         }
     }
