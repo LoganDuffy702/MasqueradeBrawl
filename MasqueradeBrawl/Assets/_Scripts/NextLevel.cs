@@ -20,6 +20,18 @@ public class NextLevel : MonoBehaviour {
             Levels[i].SetActive(false);
         }
     }
+
+    public void ActivateLevel()
+    {
+        StartCoroutine(SendActivate());
+    }
+    public IEnumerator SendActivate()
+    {
+        yield return new WaitForSeconds(.25f);
+        CanSelectLevel = true;
+
+    }
+
     public void Update()
     {
         if (CanSelectLevel == true)
@@ -47,7 +59,8 @@ public class NextLevel : MonoBehaviour {
             {
                 Nextbutton = false;
                 currentNum += 1;
-
+              
+                //---------------------------------------------
                 if (currentNum >= Levels.Count)
                 {
                     currentNum = 0;//change to 1? try to skip unselected screen.

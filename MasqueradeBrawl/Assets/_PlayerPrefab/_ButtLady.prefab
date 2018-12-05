@@ -211,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157427487900844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.97, y: 4.67, z: 0}
+  m_LocalPosition: {x: -18.39, y: -4.44, z: 0}
   m_LocalScale: {x: 2.7, y: 2.7, z: 0}
   m_Children:
   - {fileID: 4075020460111784}
@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b333dfe22655641b688dab7386abe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSprite: {fileID: 1825573889727442}
   PlayerController: 2
   choosePlayr: 2
 --- !u!114 &114119327383395106
@@ -648,10 +649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201d11d6d4c53d44ca31a5db6630e514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P_HP: 2
   PlayerHP: 100
   PlayerStock: 2
-  PlayerMarker: 0
   healthBar: {fileID: 224617606248715960}
   PlayerDead: 0
   MainCanvas: {fileID: 0}
@@ -732,7 +731,7 @@ MonoBehaviour:
   Gunsound: {fileID: 82988512959596868}
   ReloadSpeed: 0.3
   Playercontrols: Fire3
-  TypeOfBullet: {fileID: 1467269267407004, guid: eceedb20c97b4294181c01fbe5b67471,
+  TypeOfBullet: {fileID: 1467269267407004, guid: 37561b9413c92a04fa1b3977c77af8e9,
     type: 2}
   ShotGunBullets: 4
   ShotGunMode: 0
@@ -796,9 +795,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0113caf2a5a5b374797df23a6dda2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerController: 2
+  PlayerController: Horizontal1
   choosePlayr: 2
   Speed: 12
+  CharacterAnimation: {fileID: 1825573889727442}
   Weapon: {fileID: 1011337299789048}
   PlayerX: -18.39
   PlayerY: -4.44

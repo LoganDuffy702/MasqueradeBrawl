@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 114099642436945196}
   - component: {fileID: 120764467378011664}
   - component: {fileID: 82957935571605152}
+  - component: {fileID: 114693576805878160}
   m_Layer: 0
   m_Name: _MoonMan_Gun
   m_TagString: Untagged
@@ -250,7 +251,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1953103791792350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.37, y: 9.15, z: 0}
+  m_LocalPosition: {x: -9.6, y: 13.16, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children:
   - {fileID: 4597245813566594}
@@ -534,7 +535,7 @@ MonoBehaviour:
   Gunsound: {fileID: 82957935571605152}
   ReloadSpeed: 0.3
   Playercontrols: Fire2
-  TypeOfBullet: {fileID: 1536313167912140, guid: 73fdfa74500ba0f4aaf055349cd3d2d2,
+  TypeOfBullet: {fileID: 1467269267407004, guid: 37561b9413c92a04fa1b3977c77af8e9,
     type: 2}
   ShotGunBullets: 1
   ShotGunMode: 0
@@ -604,10 +605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201d11d6d4c53d44ca31a5db6630e514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P_HP: 1
   PlayerHP: 100
   PlayerStock: 2
-  PlayerMarker: 0
   healthBar: {fileID: 224996918435766938}
   PlayerDead: 0
   MainCanvas: {fileID: 0}
@@ -656,6 +655,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114693576805878160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875678132299418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936b791829c3bc94e8882801de3b05a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114771845891954500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -667,6 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b333dfe22655641b688dab7386abe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerSprite: {fileID: 1901793527689492}
   PlayerController: 1
   choosePlayr: 0
 --- !u!114 &114810699000274790
@@ -784,9 +795,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0113caf2a5a5b374797df23a6dda2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerController: 1
+  PlayerController: Horizontal3
   choosePlayr: 0
   Speed: 20
+  CharacterAnimation: {fileID: 1901793527689492}
   Weapon: {fileID: 1424127210201532}
   PlayerX: -9.6
   PlayerY: 13.16

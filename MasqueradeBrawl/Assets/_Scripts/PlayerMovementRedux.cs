@@ -6,17 +6,18 @@ using UnityEngine;
 public class PlayerMovementRedux : MonoBehaviour {
 
     public enum Player { MoonMan, Penguin, ButtLady, FoxMan }
-    public enum PlayerPos { Player1, Player2, Player3, Player4 }
-    public PlayerPos PlayerController;
+    //public enum PlayerPos { Player1, Player2, Player3, Player4 }
+    public string PlayerController;
 
     public Player choosePlayr;
     Vector3 direction;
     public int Speed;
+    int checkspeed;
     Vector3 currVel;
     
     //float MoveNum;
 
-    GameObject Character;
+    public GameObject CharacterAnimation;
 
     Animator anim;
 
@@ -32,32 +33,26 @@ public class PlayerMovementRedux : MonoBehaviour {
 
     void Start()
     {
-        switch (choosePlayr)
-        {
-            case Player.MoonMan:
-                Character = GameObject.Find("_MoonMan_Anim");
-                break;
-            case Player.Penguin:
-                Character = GameObject.Find("_Penguin_Anim");
-                break;
-            case Player.ButtLady:
-                Character = GameObject.Find("_ButtLady_Anim");
-                break;
-            case Player.FoxMan:
-                Character = GameObject.Find("_Foxy_Anim");
-                break;
-            default:
-                break;
-        }
-        
+      
         rb2 = gameObject.GetComponent<Rigidbody2D>();
         //CC2D = gameObject.GetComponent<CapsuleCollider2D>();
         WSTrans = Weapon.GetComponent<Transform>();
         WSsr = Weapon.GetComponent<SpriteRenderer>();
-        anim = Character.GetComponent<Animator>();
-        PlayerSprite = Character.GetComponent<SpriteRenderer>();
+        anim = CharacterAnimation.GetComponent<Animator>();
+        checkspeed = Speed;
+        PlayerSprite = CharacterAnimation.GetComponent<SpriteRenderer>();
+        StartCoroutine(SpeedCheck());
         Recreate();
         
+    }
+    public IEnumerator SpeedCheck()
+    {
+        yield return new WaitForSeconds(5f);
+        if (Speed < checkspeed)
+        {
+            Speed = checkspeed;
+        }
+        StartCoroutine(SpeedCheck());
     }
 
     public void Recreate()
@@ -70,101 +65,42 @@ public class PlayerMovementRedux : MonoBehaviour {
         switch (choosePlayr)
         {
             case Player.MoonMan:
-                switch (PlayerController)
-                {
-                    case PlayerPos.Player1:
-                        direction.x = Input.GetAxis("Horizontal1");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player2:
-                        direction.x = Input.GetAxis("Horizontal2");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player3:
-                        direction.x = Input.GetAxis("Horizontal3");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player4:
-                        direction.x = Input.GetAxis("Horizontal4");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    default:
-                        break;
-                }
+                direction.x = Input.GetAxis(PlayerController);
+                anim.SetFloat("Speed", Mathf.Abs(direction.x));
+                //switch (PlayerController)
+                //{
+                //    case PlayerPos.Player1:
+                //        direction.x = Input.GetAxis("Horizontal1");
+                //        anim.SetFloat("Speed", Mathf.Abs(direction.x));
+                //        break;
+                //    case PlayerPos.Player2:
+                //        direction.x = Input.GetAxis("Horizontal2");
+                //        anim.SetFloat("Speed", Mathf.Abs(direction.x));
+                //        break;
+                //    case PlayerPos.Player3:
+                //        direction.x = Input.GetAxis("Horizontal3");
+                //        anim.SetFloat("Speed", Mathf.Abs(direction.x));
+                //        break;
+                //    case PlayerPos.Player4:
+                //        direction.x = Input.GetAxis("Horizontal4");
+                //        anim.SetFloat("Speed", Mathf.Abs(direction.x));
+                //        break;
+                //    default:
+                //        break;
+                //}
                 break;
 
             case Player.Penguin:
-                switch (PlayerController)
-                {
-                    case PlayerPos.Player1:
-                        direction.x = Input.GetAxis("Horizontal1");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player2:
-                        direction.x = Input.GetAxis("Horizontal2");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player3:
-                        direction.x = Input.GetAxis("Horizontal3");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player4:
-                        direction.x = Input.GetAxis("Horizontal4");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    default:
-                        break;
-                }
+                direction.x = Input.GetAxis(PlayerController);
+                anim.SetFloat("Speed", Mathf.Abs(direction.x));
                 break;
-
             case Player.ButtLady:
-                switch (PlayerController)
-                {
-                    case PlayerPos.Player1:
-                        direction.x = Input.GetAxis("Horizontal1");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player2:
-                        direction.x = Input.GetAxis("Horizontal2");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player3:
-                        direction.x = Input.GetAxis("Horizontal3");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player4:
-                        direction.x = Input.GetAxis("Horizontal4");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    default:
-                        break;
-                }
-
+                direction.x = Input.GetAxis(PlayerController);
+                anim.SetFloat("Speed", Mathf.Abs(direction.x));
                 break;
             case Player.FoxMan:
-
-                switch (PlayerController)
-                {
-                    case PlayerPos.Player1:
-                        direction.x = Input.GetAxis("Horizontal1");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player2:
-                        direction.x = Input.GetAxis("Horizontal2");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player3:
-                        direction.x = Input.GetAxis("Horizontal3");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    case PlayerPos.Player4:
-                        direction.x = Input.GetAxis("Horizontal4");
-                        anim.SetFloat("Speed", Mathf.Abs(direction.x));
-                        break;
-                    default:
-                        break;
-                }
-
+                direction.x = Input.GetAxis(PlayerController);
+                anim.SetFloat("Speed", Mathf.Abs(direction.x));
                 break;
             default:
                 break;
@@ -177,7 +113,7 @@ public class PlayerMovementRedux : MonoBehaviour {
     {
         switch (choosePlayr)
         {
-            case Player.MoonMan:
+            case Player.MoonMan: 
                 transform.Translate(direction.x * Speed * Time.deltaTime, 0, 0);
                 break;
             case Player.Penguin:

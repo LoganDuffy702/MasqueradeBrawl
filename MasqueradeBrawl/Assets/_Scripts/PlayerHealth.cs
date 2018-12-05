@@ -5,11 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
-    public enum Players { P,M,G,K}
-    public Players P_HP;
+   
     public float PlayerHP;
     public float PlayerStock = 2;
-    public int PlayerMarker = 0;
+    //public int PlayerMarker = 0;
     public RectTransform healthBar;
     public bool PlayerDead = false;
     public GameObject MainCanvas;
@@ -34,38 +33,15 @@ public class PlayerHealth : MonoBehaviour {
         MainCanvas = GameObject.Find("Main_Canvas");
         CurrentHealth = PlayerHP;
         Deathsound = GameObject.Find(DeathSoundName).GetComponent<AudioSource>();
-        switch (P_HP)
-        {
-            case Players.P:
-                Player = GameObject.Find("_Penguin_Anim");
-                Weapon = GameObject.Find("_Penguin_Weapon");
-                Gun = GameObject.Find("_Penguin_Gun");
-                PlayerMarker = 1;
-                break;
-            case Players.M:
-                Player = GameObject.Find("_MoonMan_Anim");
-                Weapon = GameObject.Find("_MoonMan_Weapon");
-                Gun = GameObject.Find("_MoonMan_Gun");
-                PlayerMarker = 2;
-                break;
-            case Players.G:
-                Player = PlayerAnimation; //GameObject.Find("_ButtLady_Anim");
-                Weapon = PlayerWeapon;// GameObject.Find("_ButtLady_Weapon");
-                Gun = PlayerGun;// GameObject.Find("_ButtLady_Gun");
-                RigidWeapon thigny = Gun.GetComponent<RigidWeapon>();
-                thigny.enabled = false;
-                PlayerMarker = 3;
-                break;
-            case Players.K:
-                Player = GameObject.Find("_Foxy_Anim");
-                Weapon = GameObject.Find("_Foxy_Weapon");
-                Gun = GameObject.Find("_Foxy_Gun");
-                PlayerMarker = 4;
-                break;
-            default:
-                break;
-        }
+
+        Player = PlayerAnimation; //GameObject.Find("_ButtLady_Anim");
+        Weapon = PlayerWeapon;// GameObject.Find("_ButtLady_Weapon");
+        Gun = PlayerGun;// GameObject.Find("_ButtLady_Gun");
+        RigidWeapon thigny = Gun.GetComponent<RigidWeapon>();
+        thigny.enabled = false;
         
+
+
         anim = Player.GetComponent<Animator>();
     }
 

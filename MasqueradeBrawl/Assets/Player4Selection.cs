@@ -31,12 +31,27 @@ public class Player4Selection : MonoBehaviour {
             PlayersList[i].SetActive(false);
         }
     }
+
+    public void Activated()
+    {
+        CanRemove = false;
+        PlayersList[0].GetComponent<Image>().color = Color.white;
+        StartCoroutine(SendActivate());
+    }
+    public IEnumerator SendActivate()
+    {
+        yield return new WaitForSeconds(.5f);
+        activateMe2 = true;
+
+    }
+
     private void Update()
     {
         if (activateMe2 == true)
         {
-            PlayersList[0].GetComponent<Image>().color = Color.white;
+            
             Canmove = true;
+          
         }
         else
         {

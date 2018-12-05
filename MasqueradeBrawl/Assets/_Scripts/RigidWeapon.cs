@@ -47,7 +47,7 @@ public class RigidWeapon : MonoBehaviour {
 
         if (Input.GetAxis(Playercontrols) > 0)
         {
-            Debug.Log("I FIred");
+            //Debug.Log("I FIred");
             if (CanShoot == true)
             {
 

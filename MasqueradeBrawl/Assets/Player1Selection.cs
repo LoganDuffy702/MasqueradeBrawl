@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class Player1Selection : MonoBehaviour {
 
     public List<GameObject> PlayersList;
-    public bool activateMe,Canmove,CanRemove;
+    public bool activateMe2, Canmove, CanRemove;
 
     public string PlayerSelect;
     public string PlayerRemove;
     public string PlayerVer;
-
 
     public GameObject InfoSheet;
     PlayerInfoSheet LevelInformation;
@@ -32,13 +31,26 @@ public class Player1Selection : MonoBehaviour {
             PlayersList[i].SetActive(false);
         }
     }
+
+    public void Activated()
+    {
+        CanRemove = false;
+        PlayersList[0].GetComponent<Image>().color = Color.white;
+        StartCoroutine(SendActivate());
+    }
+    public IEnumerator SendActivate()
+    {
+        yield return new WaitForSeconds(.5f);
+        activateMe2 = true;
+
+    }
+
+
     private void Update()
     {
-        if (activateMe == true)
+        if (activateMe2 == true)
         {
-            PlayersList[0].GetComponent<Image>().color = Color.white;
-            
-            Canmove = true; 
+            Canmove = true;
         }
         else
         {
@@ -50,7 +62,7 @@ public class Player1Selection : MonoBehaviour {
             //Added and remove functions-----------------------------------------------------
             if (Input.GetButtonDown(PlayerSelect))//Player Selected
             {
-                activateMe = false;
+                activateMe2 = false;
                 CanRemove = true;
                 LevelInformation.NextLevelCounter(1);
                 SelectSound.Play();
@@ -135,7 +147,7 @@ public class Player1Selection : MonoBehaviour {
                 PlayersList[currentNum].GetComponent<Image>().color = Color.white;
                 Debug.Log("Player1 UnPicked " + P_name);
                 RemovePlayer(P_name, PlayersList[currentNum]);
-                activateMe = true;
+                activateMe2 = true;
                 CanRemove = false;
             }
             
@@ -160,7 +172,7 @@ public class Player1Selection : MonoBehaviour {
         else if (PlayerName == "MM" && LevelInformation.MMNotSelected == true)
         {
             Debug.Log("MoonMan already Selected");
-            activateMe = true;
+            activateMe2 = true;
             LevelInformation.NextLevelCounter(-1);
         }
         ///--------------------------------------------------------
@@ -179,7 +191,7 @@ public class Player1Selection : MonoBehaviour {
         else if (PlayerName == "Foxy" && LevelInformation.FNotSelected == true)
         {
             Debug.Log("Foxy already Selected");
-            activateMe = true;
+            activateMe2 = true;
             LevelInformation.NextLevelCounter(-1);
         }
         //-----------------------------------------------------------
@@ -197,7 +209,7 @@ public class Player1Selection : MonoBehaviour {
         else if (PlayerName == "Pen" && LevelInformation.PenNotSelected == true)
         {
             Debug.Log("Penguin already Selected");
-            activateMe = true;
+            activateMe2 = true;
             LevelInformation.NextLevelCounter(-1);
         }
         //-----------------------------------------------------------
@@ -215,7 +227,7 @@ public class Player1Selection : MonoBehaviour {
         else if (PlayerName == "Butt" && LevelInformation.ButtNotSelected == true)
         {
             Debug.Log("Butt already Selected");
-            activateMe = true;
+            activateMe2 = true;
             LevelInformation.NextLevelCounter(-1);
         }
 

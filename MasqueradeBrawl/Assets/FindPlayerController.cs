@@ -30,20 +30,27 @@ public class FindPlayerController : MonoBehaviour {
     public void AddPlayerControllers(int controller)
     {
         AssignedControllers.Add(controller);
+
         //Add check for if player added
         if (controller == 1)
         {
-            GameObject.Find("Player1_controlls").GetComponent<Player1Selection>().activateMe = true;
+            GameObject.Find("Player1_controlls").GetComponent<Player1Selection>().Activated();
+            //GameObject.Find("Player1_controlls").GetComponent<Player1Selection>().Canmove = true;
+            //GameObject.Find("Player1_controlls").GetComponent<Player1Selection>().CanRemove = false;
         }
         else if (controller == 2)
         {
-            GameObject.Find("Player2_controlls").GetComponent<Player2Selection>().activateMe2 = true;
+            GameObject.Find("Player2_controlls").GetComponent<Player2Selection>().Activated();
+            //GameObject.Find("Player2_controlls").GetComponent<Player2Selection>().Canmove = true;
+            //GameObject.Find("Player2_controlls").GetComponent<Player2Selection>().Canmove = true;
         } else if (controller == 3)
         {
-            GameObject.Find("Player3_controlls").GetComponent<Player3Selection>().activateMe2 = true;
+            GameObject.Find("Player3_controlls").GetComponent<Player3Selection>().Activated();
+           // GameObject.Find("Player3_controlls").GetComponent<Player3Selection>().Canmove = true;
         } else if (controller == 4)
         {
-            GameObject.Find("Player4_controlls").GetComponent<Player4Selection>().activateMe2 = true;
+            GameObject.Find("Player4_controlls").GetComponent<Player4Selection>().Activated();
+           // GameObject.Find("Player4_controlls").GetComponent<Player4Selection>().Canmove = true;
         }
         //GameObject.Find("Player1_controlls").GetComponent<Player1Selection>().activateMe = true;
         //Debug.Log("AddingPlayer " + controller);

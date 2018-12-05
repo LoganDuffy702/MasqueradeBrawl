@@ -14,6 +14,7 @@ public class CameraMovement : MonoBehaviour {
     
     public float tempX;
     public float tempY;
+    public bool Showwinner = false;
     
     Vector3 NewPosition;
     public bool touched;
@@ -85,6 +86,14 @@ public class CameraMovement : MonoBehaviour {
             MyCam.orthographicSize = Mathf.Lerp(MyCam.orthographicSize, newZoom, Time.deltaTime*speed);
             
 
+        }
+        if (Showwinner == true)
+        {
+            NewPosition = new Vector3(Players[0].GetComponent<Transform>().position.x, Players[0].GetComponent<Transform>().position.y + Yoffset, -64f);
+            gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, NewPosition, ref velocity, MoveSpeed + .3f);
+
+            float newZoom = Mathf.Lerp(MaxZoom, MinZoom, GetGreatestDistance() / DistanceTrigVal);
+            MyCam.orthographicSize = Mathf.Lerp(MyCam.orthographicSize, newZoom, Time.deltaTime * speed);
         }
 
 	}

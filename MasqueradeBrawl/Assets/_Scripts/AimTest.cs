@@ -5,7 +5,7 @@ using UnityEngine;
 public class AimTest : MonoBehaviour {
 
    
-    GameObject PlayerSprite;
+    public GameObject PlayerSprite;
     private Vector3 NewInput;
     private float Heading;
     private Vector3 NewRotation;
@@ -17,23 +17,7 @@ public class AimTest : MonoBehaviour {
   
     void Start () {
 
-        switch (choosePlayr)
-        {
-            case Player.MoonMan:
-                PlayerSprite = GameObject.Find("_MoonMan_Anim");
-                break;
-            case Player.Penguin:
-                PlayerSprite = GameObject.Find("_Penguin_Anim");
-                break;
-            case Player.ButtLady:
-                PlayerSprite = GameObject.Find("_ButtLady_Anim");
-                break;
-            case Player.FoxMan:
-                PlayerSprite = GameObject.Find("_Foxy_Anim");
-                break;
-            default:
-                break;
-        }
+       
         gameObject.GetComponentInChildren<RigidWeapon>().enabled = true;
         
     }

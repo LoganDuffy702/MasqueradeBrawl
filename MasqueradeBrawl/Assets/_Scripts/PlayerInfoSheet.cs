@@ -15,14 +15,6 @@ public class PlayerInfoSheet : MonoBehaviour {
     public GameObject LevelSelector;
     public bool Restart = false;
   
-
-    public void P_Health_Info()
-    {
-            HealthSelector = GameObject.Find("_MoonMan").GetComponent<PlayerHealth>();
-            HealthSelector.P_HP = PlayerHealth.Players.M;
-            Debug.Log("LoadedHP");
-    }
-    
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -54,7 +46,7 @@ public class PlayerInfoSheet : MonoBehaviour {
         if (count > 1)
         {
             Debug.Log("Pick a level");
-            LevelSelector.GetComponent<NextLevel>().CanSelectLevel = true;
+            LevelSelector.GetComponent<NextLevel>().ActivateLevel();
             LevelSelector.GetComponent<NextLevel>().LastPickerHor = "Horizontal1";
             LevelSelector.GetComponent<NextLevel>().LastPickerA = "Player1_A";
         }
@@ -93,21 +85,21 @@ public class PlayerInfoSheet : MonoBehaviour {
             GameObject MoonMan = Instantiate(Characters[3]);
             if (Controller1 == true)
             {
-                MoonMan.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player1;
+                MoonMan.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal1";
                 MoonMan.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player1;
                 MoonMan.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire1";
                 Controller1 = false;
             }
             else if (Controller2 == true)
             {
-                MoonMan.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player2;
+                MoonMan.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal2";
                 MoonMan.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player2;
                 MoonMan.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire2";
                 Controller2 = false;
             }
             else if (Controller3 == true)
             {
-                MoonMan.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player3;
+                MoonMan.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal3";
                 MoonMan.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player3;
                 MoonMan.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire3";
                 Controller3 = false;
@@ -115,7 +107,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller4 == true)
             {
-                MoonMan.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player4;
+                MoonMan.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal4";
                 MoonMan.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player4;
                 MoonMan.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire4";
                 Controller4 = false;
@@ -127,7 +119,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             GameObject ButtLady = Instantiate(Characters[1]);
             if (Controller1 == true)
             {
-                ButtLady.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player1;
+                ButtLady.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal1";
                 ButtLady.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player1;
                 ButtLady.GetComponentInChildren<RigidWeapon>().enabled = true;
                 ButtLady.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire1";
@@ -135,7 +127,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             if (Controller2 == true)
             {
-                ButtLady.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player2;
+                ButtLady.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal2";
                 ButtLady.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player2;
                 ButtLady.GetComponentInChildren<RigidWeapon>().enabled = true;
                 ButtLady.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire2";
@@ -144,7 +136,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller3 == true)
             {
-                ButtLady.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player3;
+                ButtLady.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal3";
                 ButtLady.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player3;
                 ButtLady.GetComponentInChildren<RigidWeapon>().enabled = true;
                 ButtLady.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire3";
@@ -153,7 +145,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller4 == true)
             {
-                ButtLady.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player4;
+                ButtLady.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal4";
                 ButtLady.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player4;
                 ButtLady.GetComponentInChildren<RigidWeapon>().enabled = true;
                 ButtLady.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire4";
@@ -168,7 +160,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             GameObject Foxy = Instantiate(Characters[2]);
             if (Controller1 == true)
             {
-                Foxy.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player1;
+                Foxy.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal1";
                 Foxy.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player1;
                 Foxy.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire1";
 
@@ -176,7 +168,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller2 == true)
             {
-                Foxy.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player2;
+                Foxy.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal2";
                 Foxy.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player2;
                 Foxy.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire2";
 
@@ -184,7 +176,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller3 == true)
             {
-                Foxy.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player3;
+                Foxy.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal3";
                 Foxy.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player3;
                 Foxy.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire3";
 
@@ -192,7 +184,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller4 == true)
             {
-                Foxy.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player4;
+                Foxy.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal4";
                 Foxy.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player4;
                 Foxy.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire4";
 
@@ -206,7 +198,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             GameObject Penguin = Instantiate(Characters[0]);
             if (Controller1 == true)
             {
-                Penguin.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player1;
+                Penguin.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal1";
                 Penguin.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player1;
                 Penguin.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire1";
 
@@ -214,7 +206,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller2 == true)
             {
-                Penguin.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player2;
+                Penguin.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal2";
                 Penguin.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player2;
                 Penguin.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire2";
 
@@ -222,7 +214,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller3 == true)
             {
-                Penguin.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player3;
+                Penguin.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal3";
                 Penguin.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player3;
                 Penguin.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire3";
 
@@ -230,7 +222,7 @@ public class PlayerInfoSheet : MonoBehaviour {
             }
             else if (Controller4 == true)
             {
-                Penguin.GetComponent<PlayerMovementRedux>().PlayerController = PlayerMovementRedux.PlayerPos.Player4;
+                Penguin.GetComponent<PlayerMovementRedux>().PlayerController = "Horizontal4";
                 Penguin.GetComponentInChildren<AimTest>().PlayerController = AimTest.PlayerPos.Player4;
                 Penguin.GetComponentInChildren<RigidWeapon>().Playercontrols = "Fire4";
 
