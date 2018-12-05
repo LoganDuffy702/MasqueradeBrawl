@@ -59,7 +59,7 @@ public class Portal_Factory : MonoBehaviour {
                 other.gameObject.GetComponent<PlayerMovementRedux>().Speed = 3;
                 
                 int r = Mathf.Abs(Random.Range(0, exitList.Count));
-                Debug.Log(r);
+                //Debug.Log(r);
                 Vector3 temp = exitList[r].transform.position;
                 cam.touched = true;
                 cam.tempX = temp.x/3;

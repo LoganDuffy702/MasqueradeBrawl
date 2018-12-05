@@ -232,6 +232,7 @@ MonoBehaviour:
   reload_speed: 0.7
   GunSound: MGSound
   ShotGunMode: 0
+  GunNum: 1
   ExplosionSound: {fileID: 82938812511897336}
   Weapon: {fileID: 1467269267407004, guid: eceedb20c97b4294181c01fbe5b67471, type: 2}
   LifeSpan: 10

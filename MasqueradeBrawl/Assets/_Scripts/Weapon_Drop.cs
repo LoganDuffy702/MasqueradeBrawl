@@ -44,13 +44,13 @@ public class Weapon_Drop : MonoBehaviour {
         string result = Original.Replace(remove,"");
         //----------------------------------------------------------
         GameObject PlayerGunSprite = GameObject.Find(result + "_Weapon");
-        Debug.Log(PlayerGunSprite.name);
+        //Debug.Log(PlayerGunSprite.name);
         PlayerGunSprite.GetComponent<CurrentGunSprite>().ChangeGun(GunNum);
         //-----------------------------------------------------------
 
         GameObject PlayerGun = GameObject.Find(result+"_Gun");
         GameObject PlayerObject = GameObject.Find(P_Weapon_Name.name);
-        Debug.Log(PlayerObject.name);
+        //Debug.Log(PlayerObject.name);
         RigidWeapon P_Gun = PlayerGun.GetComponent<RigidWeapon>();//Butt lady throws error here
 
         //Ammo Section-------------------------------------------------

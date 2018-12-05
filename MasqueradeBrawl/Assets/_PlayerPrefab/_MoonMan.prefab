@@ -534,7 +534,7 @@ MonoBehaviour:
   FireDelay: 18
   Gunsound: {fileID: 82957935571605152}
   ReloadSpeed: 0.3
-  Playercontrols: Fire2
+  Playercontrols: Fire1
   TypeOfBullet: {fileID: 1467269267407004, guid: 37561b9413c92a04fa1b3977c77af8e9,
     type: 2}
   ShotGunBullets: 1
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSprite: {fileID: 1901793527689492}
-  PlayerController: 1
+  PlayerController: 0
   choosePlayr: 0
 --- !u!114 &114810699000274790
 MonoBehaviour:
@@ -767,10 +767,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunSprites:
-  - {fileID: 21300000, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
-  - {fileID: 21300002, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
-  - {fileID: 21300004, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
-  - {fileID: 21300006, guid: e61ac3d78eb429447aace4bd6c676d14, type: 3}
+  - {fileID: 21300006, guid: f5be6179130964d459eab5ce897f30b0, type: 3}
+  - {fileID: 21300000, guid: f5be6179130964d459eab5ce897f30b0, type: 3}
+  - {fileID: 21300008, guid: f5be6179130964d459eab5ce897f30b0, type: 3}
+  - {fileID: 21300004, guid: f5be6179130964d459eab5ce897f30b0, type: 3}
+  - {fileID: 21300002, guid: f5be6179130964d459eab5ce897f30b0, type: 3}
+  - {fileID: 21300010, guid: f5be6179130964d459eab5ce897f30b0, type: 3}
 --- !u!114 &114930184925438192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -795,7 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0113caf2a5a5b374797df23a6dda2409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerController: Horizontal3
+  PlayerController: Horizontal1
   choosePlayr: 0
   Speed: 20
   CharacterAnimation: {fileID: 1901793527689492}

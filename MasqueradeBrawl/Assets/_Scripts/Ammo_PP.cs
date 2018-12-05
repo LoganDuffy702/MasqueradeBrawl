@@ -46,7 +46,7 @@ public class Ammo_PP : MonoBehaviour {
             || other.gameObject.CompareTag("ButtLady")|| other.gameObject.CompareTag("Foxy"))
         {
             ReloadSound.Play();
-            Debug.Log("Reload");
+            //Debug.Log("Reload");
             AmmoSprite.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
            

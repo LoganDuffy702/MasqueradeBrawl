@@ -53,7 +53,7 @@ public class RigidWeapon : MonoBehaviour {
 
                 if (Ammo > 0)
                 {
-                    Debug.Log(Playercontrols);
+                    //Debug.Log(Playercontrols);
                     StartCoroutine(Fire());
 
                     CanShoot = false;
