@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e7f8b17160b86498787f743d3c6df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killcode: {fileID: 1084025446149006, guid: 8425b1558626d784fa2d1c45da71c2e6, type: 2}
 --- !u!124 &124745373700673152
 Behaviour:
   m_ObjectHideFlags: 1

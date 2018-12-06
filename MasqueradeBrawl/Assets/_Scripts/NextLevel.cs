@@ -10,11 +10,15 @@ public class NextLevel : MonoBehaviour {
     public List<GameObject> Levels;
     public bool Nextbutton;
     public string LastPickerA;
+    public GameObject Lamp1;
+    public GameObject Lamp2;
     public string LastPickerHor;
     int currentNum = 0;
    
     public void Start()
     {
+        Lamp1.GetComponent<SpriteRenderer>().color = Color.gray;
+        Lamp2.GetComponent<SpriteRenderer>().color = Color.gray;
         for (int i = 1; i < Levels.Count; i++)
         {
             Levels[i].SetActive(false);
@@ -23,6 +27,8 @@ public class NextLevel : MonoBehaviour {
 
     public void ActivateLevel()
     {
+        Lamp1.GetComponent<SpriteRenderer>().color = Color.white;
+        Lamp2.GetComponent<SpriteRenderer>().color = Color.white;
         StartCoroutine(SendActivate());
     }
     public IEnumerator SendActivate()
@@ -30,6 +36,12 @@ public class NextLevel : MonoBehaviour {
         yield return new WaitForSeconds(.25f);
         CanSelectLevel = true;
 
+    }
+    public void DeActive()
+    {
+        Lamp1.GetComponent<SpriteRenderer>().color = Color.gray;
+        Lamp2.GetComponent<SpriteRenderer>().color = Color.gray;
+        CanSelectLevel = false;
     }
 
     public void Update()

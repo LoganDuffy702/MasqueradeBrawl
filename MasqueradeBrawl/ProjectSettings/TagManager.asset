@@ -29,6 +29,7 @@ TagManager:
   - DeathWall
   - Foxy
   - AmmoClips4
+  - PlayerInfo
   layers:
   - Default
   - TransparentFX

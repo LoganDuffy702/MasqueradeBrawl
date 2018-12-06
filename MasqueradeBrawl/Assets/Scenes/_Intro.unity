@@ -389,19 +389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 0}
-  PlayerSelect: 
-  PlayerRemove: 
-  PlayerHor: 
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  SelectSound: {fileID: 0}
-  Movesound: {fileID: 0}
-  RemoveSound: {fileID: 0}
-  LevelPicker: {fileID: 0}
-  btns: []
 --- !u!114 &803136249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,19 +721,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 0}
-  PlayerSelect: 
-  PlayerRemove: 
-  PlayerHor: 
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  SelectSound: {fileID: 0}
-  Movesound: {fileID: 0}
-  RemoveSound: {fileID: 0}
-  LevelPicker: {fileID: 0}
-  btns: []
 --- !u!114 &1859458531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -935,16 +909,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 0}
-  PlayerSelect: 
-  PlayerRemove: 
-  PlayerHor: 
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  SelectSound: {fileID: 0}
-  Movesound: {fileID: 0}
-  RemoveSound: {fileID: 0}
-  LevelPicker: {fileID: 0}
-  btns: []

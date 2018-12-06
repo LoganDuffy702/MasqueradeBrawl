@@ -57,6 +57,7 @@ public class PlayerInfoSheet : MonoBehaviour {
         else
         {
             LevelSelector.GetComponent<NextLevel>().CanSelectLevel = false;
+            LevelSelector.GetComponent<NextLevel>().DeActive();
         }
         if (Restart == true)
         {

@@ -11,8 +11,8 @@ public class PlayerStock : MonoBehaviour {
     int count = 0;
 	void Start () {
 
-        float TEst = Player.GetComponent<PlayerHealth>().PlayerStock;
-        Debug.Log(TEst);
+        //float TEst = Player.GetComponent<PlayerHealth>().PlayerStock;
+        //Debug.Log(TEst);
         for (int i = 0; i < Player.GetComponent<PlayerHealth>().PlayerStock; i++)
         {
             var StockClone = Instantiate(StockImage);

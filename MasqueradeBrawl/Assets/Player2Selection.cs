@@ -102,7 +102,7 @@ public class Player2Selection : MonoBehaviour {
                 {
                     PlayersList[i].SetActive(false);
                 }
-                Movesound.pitch += .2f;
+                Movesound.pitch += .1f;
                 Movesound.Play();
             }
 
@@ -131,7 +131,7 @@ public class Player2Selection : MonoBehaviour {
                 {
                     PlayersList[i].SetActive(false);
                 }
-                Movesound.pitch -= .2f;
+                Movesound.pitch -= .1f;
                 Movesound.Play();
             }
         }
