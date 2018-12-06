@@ -15879,7 +15879,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 369197954}
-  - component: {fileID: 369197953}
   - component: {fileID: 369197952}
   m_Layer: 5
   m_Name: Player4_controlls
@@ -15915,35 +15914,6 @@ MonoBehaviour:
   SelectSound: {fileID: 1195425727}
   Movesound: {fileID: 138920763}
   RemoveSound: {fileID: 538296057}
---- !u!114 &369197953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 369197951}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 1147098170}
-  PlayerSelect: Player1_A
-  PlayerRemove: Cancel
-  PlayerHor: Horizontal1
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 21300004, guid: 021ea2fa1a3759a4a8282a52450eab4a,
-      type: 3}
-    m_PressedSprite: {fileID: 21300016, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-  SelectSound: {fileID: 1195425727}
-  Movesound: {fileID: 138920763}
-  RemoveSound: {fileID: 538296057}
-  LevelPicker: {fileID: 0}
-  btns:
-  - {fileID: 12713321}
-  - {fileID: 1236793108}
-  - {fileID: 1228847938}
-  - {fileID: 1541899626}
 --- !u!4 &369197954
 Transform:
   m_ObjectHideFlags: 0
@@ -51141,7 +51111,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 933934599}
-  - component: {fileID: 933934601}
   - component: {fileID: 933934600}
   m_Layer: 5
   m_Name: CharacterPortrats
@@ -51189,35 +51158,6 @@ MonoBehaviour:
   Nextbutton: 0
   LastPickerA: 
   LastPickerHor: 
---- !u!114 &933934601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 933934598}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 1147098170}
-  PlayerSelect: 
-  PlayerRemove: 
-  PlayerHor: 
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 21300002, guid: 9e1c617a7edc44b0db701b8f84c4c9c3,
-      type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 9e1c617a7edc44b0db701b8f84c4c9c3, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-  SelectSound: {fileID: 1195425727}
-  Movesound: {fileID: 138920763}
-  RemoveSound: {fileID: 538296057}
-  LevelPicker: {fileID: 0}
-  btns:
-  - {fileID: 1887963337}
-  - {fileID: 1381277853}
-  - {fileID: 212726830}
-  - {fileID: 945014431}
 --- !u!1 &942206587
 GameObject:
   m_ObjectHideFlags: 0
@@ -51226,7 +51166,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 942206588}
-  - component: {fileID: 942206589}
   - component: {fileID: 942206590}
   m_Layer: 5
   m_Name: Player1_controlls
@@ -51249,35 +51188,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &942206589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 942206587}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 1147098170}
-  PlayerSelect: Player1_A
-  PlayerRemove: Cancel
-  PlayerHor: Horizontal1
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 21300004, guid: 021ea2fa1a3759a4a8282a52450eab4a,
-      type: 3}
-    m_PressedSprite: {fileID: 21300016, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-  SelectSound: {fileID: 1195425727}
-  Movesound: {fileID: 138920763}
-  RemoveSound: {fileID: 538296057}
-  LevelPicker: {fileID: 0}
-  btns:
-  - {fileID: 2057836074}
-  - {fileID: 635321448}
-  - {fileID: 1179524542}
-  - {fileID: 996906556}
 --- !u!114 &942206590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52209,10 +52119,22 @@ MonoBehaviour:
   LoadButtLady: 0
   LoadPenguin: 0
   LoadFoxy: 0
-  Controller1: 0
-  Controller2: 0
-  Controller3: 0
-  Controller4: 0
+  MenC1: 0
+  MenC2: 0
+  MenC3: 0
+  MenC4: 0
+  ButtC1: 0
+  ButtC2: 0
+  ButtC3: 0
+  ButtC4: 0
+  PenC1: 0
+  PenC2: 0
+  PenC3: 0
+  PenC4: 0
+  FoxC1: 0
+  FoxC2: 0
+  FoxC3: 0
+  FoxC4: 0
   MMNotSelected: 0
   FNotSelected: 0
   ButtNotSelected: 0
@@ -53382,7 +53304,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1279096581}
-  - component: {fileID: 1279096582}
   - component: {fileID: 1279096583}
   m_Layer: 5
   m_Name: CharacterPortrats
@@ -53414,35 +53335,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000030517578, y: -0.000015258789}
   m_SizeDelta: {x: -129.21701, y: -212.993}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1279096582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1279096580}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 1147098170}
-  PlayerSelect: 
-  PlayerRemove: 
-  PlayerHor: 
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 21300002, guid: 9e1c617a7edc44b0db701b8f84c4c9c3,
-      type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 9e1c617a7edc44b0db701b8f84c4c9c3, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-  SelectSound: {fileID: 1195425727}
-  Movesound: {fileID: 138920763}
-  RemoveSound: {fileID: 538296057}
-  LevelPicker: {fileID: 0}
-  btns:
-  - {fileID: 2057836074}
-  - {fileID: 635321448}
-  - {fileID: 1179524542}
-  - {fileID: 996906556}
 --- !u!114 &1279096583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58840,7 +58732,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1429896661}
-  - component: {fileID: 1429896660}
   - component: {fileID: 1429896659}
   m_Layer: 5
   m_Name: Player3_controlls
@@ -58876,35 +58767,6 @@ MonoBehaviour:
   SelectSound: {fileID: 1195425727}
   Movesound: {fileID: 138920763}
   RemoveSound: {fileID: 538296057}
---- !u!114 &1429896660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1429896658}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 1147098170}
-  PlayerSelect: Player1_A
-  PlayerRemove: Cancel
-  PlayerHor: Horizontal1
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 21300004, guid: 021ea2fa1a3759a4a8282a52450eab4a,
-      type: 3}
-    m_PressedSprite: {fileID: 21300016, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-  SelectSound: {fileID: 1195425727}
-  Movesound: {fileID: 138920763}
-  RemoveSound: {fileID: 538296057}
-  LevelPicker: {fileID: 0}
-  btns:
-  - {fileID: 818245609}
-  - {fileID: 236234657}
-  - {fileID: 599985921}
-  - {fileID: 315909596}
 --- !u!4 &1429896661
 Transform:
   m_ObjectHideFlags: 0
@@ -107685,7 +107547,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2069438136}
-  - component: {fileID: 2069438138}
   - component: {fileID: 2069438137}
   m_Layer: 5
   m_Name: CharacterPortrats
@@ -107733,35 +107594,6 @@ MonoBehaviour:
   Nextbutton: 0
   LastPickerA: 
   LastPickerHor: 
---- !u!114 &2069438138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2069438135}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 1147098170}
-  PlayerSelect: 
-  PlayerRemove: 
-  PlayerHor: 
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 21300002, guid: 9e1c617a7edc44b0db701b8f84c4c9c3,
-      type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 9e1c617a7edc44b0db701b8f84c4c9c3, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-  SelectSound: {fileID: 1195425727}
-  Movesound: {fileID: 138920763}
-  RemoveSound: {fileID: 538296057}
-  LevelPicker: {fileID: 0}
-  btns:
-  - {fileID: 818245609}
-  - {fileID: 236234657}
-  - {fileID: 599985921}
-  - {fileID: 315909596}
 --- !u!1 &2088808262
 GameObject:
   m_ObjectHideFlags: 0
@@ -107770,7 +107602,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2088808265}
-  - component: {fileID: 2088808264}
   - component: {fileID: 2088808263}
   m_Layer: 5
   m_Name: Player2_controlls
@@ -107806,35 +107637,6 @@ MonoBehaviour:
   SelectSound: {fileID: 1195425727}
   Movesound: {fileID: 138920763}
   RemoveSound: {fileID: 538296057}
---- !u!114 &2088808264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2088808262}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 1147098170}
-  PlayerSelect: Player1_A
-  PlayerRemove: Cancel
-  PlayerHor: Horizontal1
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 21300004, guid: 021ea2fa1a3759a4a8282a52450eab4a,
-      type: 3}
-    m_PressedSprite: {fileID: 21300016, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-  SelectSound: {fileID: 1195425727}
-  Movesound: {fileID: 138920763}
-  RemoveSound: {fileID: 538296057}
-  LevelPicker: {fileID: 0}
-  btns:
-  - {fileID: 1887963337}
-  - {fileID: 1381277853}
-  - {fileID: 212726830}
-  - {fileID: 945014431}
 --- !u!4 &2088808265
 Transform:
   m_ObjectHideFlags: 0
@@ -107857,7 +107659,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2124017807}
-  - component: {fileID: 2124017809}
   - component: {fileID: 2124017808}
   m_Layer: 5
   m_Name: CharacterPortrats
@@ -107905,35 +107706,6 @@ MonoBehaviour:
   Nextbutton: 0
   LastPickerA: 
   LastPickerHor: 
---- !u!114 &2124017809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2124017806}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f0cda35e1a58b4bba0c8f4a9b97967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InfoSheet: {fileID: 1147098170}
-  PlayerSelect: 
-  PlayerRemove: 
-  PlayerHor: 
-  HighlightedSprt:
-    m_HighlightedSprite: {fileID: 21300002, guid: 9e1c617a7edc44b0db701b8f84c4c9c3,
-      type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 9e1c617a7edc44b0db701b8f84c4c9c3, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d18e33b3f9ea0b4e866b30efd711cff, type: 3}
-  SelectSound: {fileID: 1195425727}
-  Movesound: {fileID: 138920763}
-  RemoveSound: {fileID: 538296057}
-  LevelPicker: {fileID: 0}
-  btns:
-  - {fileID: 12713321}
-  - {fileID: 1236793108}
-  - {fileID: 1228847938}
-  - {fileID: 1541899626}
 --- !u!1 &2126230998
 GameObject:
   m_ObjectHideFlags: 0

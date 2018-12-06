@@ -163,7 +163,7 @@ public class Player1Selection : MonoBehaviour {
             Debug.Log("MoonMan Selected");
 
             LevelInformation.LoadMoonMan = true;
-            LevelInformation.Controller1 = true;
+            LevelInformation.MenC1 = true;
             LevelInformation.MMNotSelected = true;
 
             currentBtn.GetComponent<Image>().color = Color.gray;
@@ -182,7 +182,7 @@ public class Player1Selection : MonoBehaviour {
             Debug.Log("Foxy Selected");
             
             LevelInformation.LoadFoxy = true;
-            LevelInformation.Controller1 = true;
+            LevelInformation.FoxC1 = true;
             currentBtn.GetComponent<Image>().color = Color.gray;
 
 
@@ -201,7 +201,7 @@ public class Player1Selection : MonoBehaviour {
             Debug.Log("Pen Selected");
         
             LevelInformation.LoadPenguin = true;
-            LevelInformation.Controller1 = true;
+            LevelInformation.PenC1 = true;
             LevelInformation.PenNotSelected = true;
 
             currentBtn.GetComponent<Image>().color = Color.gray;
@@ -219,7 +219,7 @@ public class Player1Selection : MonoBehaviour {
             Debug.Log("Buttlady Selected");
           
             LevelInformation.LoadButtLady = true;
-            LevelInformation.Controller1 = true;
+            LevelInformation.ButtC1 = true;
             LevelInformation.ButtNotSelected = true;
 
             currentBtn.GetComponent<Image>().color = Color.gray;
@@ -241,7 +241,7 @@ public class Player1Selection : MonoBehaviour {
             Debug.Log("MoonMan UnSelected");
 
             LevelInformation.LoadMoonMan = false;
-            LevelInformation.Controller1 = false;
+            LevelInformation.MenC1 = false;
          
             LevelInformation.MMNotSelected = false;
         }
@@ -252,7 +252,7 @@ public class Player1Selection : MonoBehaviour {
             currentbtn.GetComponent<Image>().color = Color.white;
 
             LevelInformation.LoadFoxy = false;
-            LevelInformation.Controller1 = false;
+            LevelInformation.FoxC1 = false;
             LevelInformation.FNotSelected = false;
 
         }
@@ -263,7 +263,7 @@ public class Player1Selection : MonoBehaviour {
             currentbtn.GetComponent<Image>().color = Color.white;
 
             LevelInformation.LoadPenguin = false;
-            LevelInformation.Controller1 = false;
+            LevelInformation.PenC1 = false;
             LevelInformation.PenNotSelected = false;
 
         }
@@ -274,7 +274,7 @@ public class Player1Selection : MonoBehaviour {
             currentbtn.GetComponent<Image>().color = Color.white;
 
             LevelInformation.LoadButtLady = false;
-            LevelInformation.Controller1 = false;
+            LevelInformation.ButtC1 = false;
             LevelInformation.ButtNotSelected = false;
 
         }

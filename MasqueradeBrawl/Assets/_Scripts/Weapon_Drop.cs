@@ -44,7 +44,7 @@ public class Weapon_Drop : MonoBehaviour {
         string result = Original.Replace(remove,"");
         //----------------------------------------------------------
         GameObject PlayerGunSprite = GameObject.Find(result + "_Weapon");
-        //Debug.Log(PlayerGunSprite.name);
+        Debug.Log(PlayerGunSprite.name);
         PlayerGunSprite.GetComponent<CurrentGunSprite>().ChangeGun(GunNum);
         //-----------------------------------------------------------
 

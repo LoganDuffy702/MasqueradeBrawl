@@ -41,8 +41,8 @@ public class LevelSelect : MonoBehaviour {
             FallingLevel.GetComponent<Button>().interactable = true;
             FallingLevel.GetComponent<Image>().color = Color.white;
            
-            CharacterCanvas.GetComponent<MainMenuScript>().btns.Add(StaticLevel.GetComponent<Button>());
-            CharacterCanvas.GetComponent<MainMenuScript>().btns.Add(FallingLevel.GetComponent<Button>());
+            //CharacterCanvas.GetComponent<MainMenuScript>().btns.Add(StaticLevel.GetComponent<Button>());
+           // CharacterCanvas.GetComponent<MainMenuScript>().btns.Add(FallingLevel.GetComponent<Button>());
             Lamp1.GetComponent<SpriteRenderer>().color = Color.white;
             Lamp2.GetComponent<SpriteRenderer>().color = Color.white;
             add = 1;
@@ -57,8 +57,8 @@ public class LevelSelect : MonoBehaviour {
             FallingLevel.GetComponent<Image>().color = Color.gray;
             add = 0;
             //CharacterCanvas.GetComponent<MainMenuScript>().btns.RemoveAt(4);
-            CharacterCanvas.GetComponent<MainMenuScript>().btns.Remove(StaticLevel.GetComponent<Button>());
-            CharacterCanvas.GetComponent<MainMenuScript>().btns.Remove(FallingLevel.GetComponent<Button>());
+            //CharacterCanvas.GetComponent<MainMenuScript>().btns.Remove(StaticLevel.GetComponent<Button>());
+          //  CharacterCanvas.GetComponent<MainMenuScript>().btns.Remove(FallingLevel.GetComponent<Button>());
             // CharacterCanvas.GetComponent<MainMenuScript>().btns.RemoveAt(5);
             Lamp1.GetComponent<SpriteRenderer>().color = Color.gray;
             Lamp2.GetComponent<SpriteRenderer>().color = Color.gray;
