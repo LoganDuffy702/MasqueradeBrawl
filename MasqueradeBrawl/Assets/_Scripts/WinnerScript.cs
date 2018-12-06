@@ -26,12 +26,15 @@ public class WinnerScript : MonoBehaviour {
             if (GameObject.Find(PlayerList[i]) == true)
             {
                 PlayersAlive.Add(GameObject.Find(PlayerList[i]));
-                MainCam.GetComponent<CameraMovement>().Players = PlayersAlive;
+                if (UseSpecialCam == true)
+                {
+                    MainCam.SetActive(true);
+                }
+                else
+                {
+                    MainCam.GetComponent<CameraMovement>().Players = PlayersAlive;
+                }
             }
-        }
-        if (UseSpecialCam == true)
-        {
-            MainCam.GetComponent<CameraMovement>().Players = PlayersAlive;
         }
 	}
 
@@ -52,16 +55,28 @@ public class WinnerScript : MonoBehaviour {
             {
                 if (UseSpecialCam == true)
                 {
+                    MainCam.SetActive(true);
+                }
+                else
+                {
                     MainCam.GetComponent<CameraMovement>().DeleteUpdate(PlayersAlive[i].name);
                 }
                 
+
                 PlayersAlive.RemoveAt(i);
 
             }
         }
         if (PlayersAlive.Count < 2)
         {
-            MainCam.GetComponent<CameraMovement>().Showwinner = true;
+            if (UseSpecialCam == true)
+            {
+                MainCam.SetActive(true);
+            }
+            else
+            {
+                MainCam.GetComponent<CameraMovement>().Showwinner = true;
+            }
             WinnerTag.enabled = true;
             //WinnerTag.GetComponent<Text>().enabled = false;
             StartCoroutine(RestartScene());

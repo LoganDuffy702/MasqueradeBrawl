@@ -41,12 +41,7 @@ public class PlayerAmmo : MonoBehaviour {
             Destroy(AmmoOBJ[Count - 1]);
             Count -= amount;
         }
-        else
-        {
-            
-            Debug.Log("OUT OF AMMO");
-            
-        }
+      
     }
 
     public void AddClip()

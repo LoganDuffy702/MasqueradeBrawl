@@ -81,6 +81,10 @@ public class PlayerInfoSheet : MonoBehaviour {
         else if (SceneManager.GetActiveScene().name == "Falling_Level")
         {
             Debug.Log("Falling Level Loaded");
+            CreateMoonMan();//and send it into this
+            CreateButtLady();
+            CreateFoxy();
+            CreatePen();
             //CreatePlayers();
         }
     }
@@ -89,7 +93,7 @@ public class PlayerInfoSheet : MonoBehaviour {
     {
         GameObject penguin = GameObject.Find("_Penguin");
 
-        penguin.SetActive(true);
+       
         if (LoadPenguin == true && PenC1 == true)
         {
             penguin.SetActive(true);
