@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour {
     public GameObject PlayerAnimation;
     public GameObject PlayerWeapon;
     public GameObject PlayerGun;
+    public GameObject StockCounter;
     bool waiting, Dtaken;
     
     GameObject Weapon;
@@ -70,6 +71,7 @@ public class PlayerHealth : MonoBehaviour {
             Gun.GetComponent<LineRenderer>().enabled = false;
 
             PlayerStock -= 1;
+            
             if (PlayerStock <= 0)
             {
                 PlayerDead = true;
@@ -81,8 +83,9 @@ public class PlayerHealth : MonoBehaviour {
             }
             else if (PlayerStock > 0)
             {
+                StockCounter.GetComponent<PlayerStock>().DeathStock(1);
                 StartCoroutine(Respawn());
- 
+                
             }
             
 
