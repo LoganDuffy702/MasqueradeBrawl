@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour {
     public RectTransform healthBar;
     public bool PlayerDead = false;
     public GameObject MainCanvas;
-    public AudioSource DamageSound;
+    public AudioSource DamageSound,HealSound;
     public string DeathSoundName;
     AudioSource Deathsound;
     public GameObject PlayerAnimation;
@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour {
         MainCanvas = GameObject.Find("Main_Canvas");
         CurrentHealth = PlayerHP;
         Deathsound = GameObject.Find(DeathSoundName).GetComponent<AudioSource>();
+       
 
         Player = PlayerAnimation; //GameObject.Find("_ButtLady_Anim");
         Weapon = PlayerWeapon;// GameObject.Find("_ButtLady_Weapon");
@@ -48,12 +49,17 @@ public class PlayerHealth : MonoBehaviour {
 
     public void TakeDamage(float amount)
     {
-        DamageSound.Play();
+        
         CurrentHealth += amount;
         Dtaken = true;
         if (amount < 0)
         {
+            DamageSound.Play();
             StartCoroutine(dmg());
+        }
+        if (amount > 0)
+        {
+            HealSound.Play();
         }
         
         if (CurrentHealth <= 0 )
@@ -74,6 +80,7 @@ public class PlayerHealth : MonoBehaviour {
             
             if (PlayerStock <= 0)
             {
+                StockCounter.GetComponent<PlayerStock>().DeathStock(1);
                 PlayerDead = true;
                 Debug.Log("PLayer out of stocks");
                 MainCanvas.GetComponent<WinnerScript>().WinChecker();

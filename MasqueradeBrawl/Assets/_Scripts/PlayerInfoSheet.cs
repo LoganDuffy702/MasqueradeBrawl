@@ -51,8 +51,7 @@ public class PlayerInfoSheet : MonoBehaviour {
         {
             Debug.Log("Pick a level");
             LevelSelector.GetComponent<NextLevel>().ActivateLevel();
-            LevelSelector.GetComponent<NextLevel>().LastPickerHor = "Horizontal1";
-            LevelSelector.GetComponent<NextLevel>().LastPickerA = "Player1_A";
+            
         }
         else
         {
@@ -71,10 +70,8 @@ public class PlayerInfoSheet : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "Static_Level")
         {
             Debug.Log("Static Level Loaded");
-            //LoadPlayer();
-            //Set the x,y spawns here for each player.
           
-            CreateMoonMan();//and send it into this
+            CreateMoonMan();
             CreateButtLady();
             CreateFoxy();
             CreatePen();
@@ -82,11 +79,10 @@ public class PlayerInfoSheet : MonoBehaviour {
         else if (SceneManager.GetActiveScene().name == "Falling_Level")
         {
             Debug.Log("Falling Level Loaded");
-            CreateMoonMan();//and send it into this
+            CreateMoonMan();
             CreateButtLady();
             CreateFoxy();
             CreatePen();
-            //CreatePlayers();
         }
     }
 

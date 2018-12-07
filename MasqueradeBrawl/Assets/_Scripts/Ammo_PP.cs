@@ -29,7 +29,7 @@ public class Ammo_PP : MonoBehaviour {
     {   
         //GameObject PlayerObject = GameObject.Find(PlayerName.name);
         PlayerName.GetComponent<PlayerAmmo>().AddClip();
-        PlayerName.GetComponent<AudioSource>().Play();
+        PlayerName.GetComponent<PlayerHealth>().HealSound.Play();
     }
 
     public IEnumerator HidMe()

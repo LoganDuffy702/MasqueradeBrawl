@@ -8,40 +8,34 @@ public class NextLevel : MonoBehaviour {
 
     public bool CanSelectLevel = false;
     public List<GameObject> Levels;
-    public bool Fadein;
-    public string LastPickerA;
-    public GameObject Lamp1;
+   
     public GameObject ControllsScreen;
-    public GameObject Lamp2;
+    public Image Tint;
+   
     
     public string LastPickerHor;
     
    
     public void Start()
     {
-        Lamp1.GetComponent<SpriteRenderer>().color = Color.gray;
-        Lamp2.GetComponent<SpriteRenderer>().color = Color.gray;
+        Tint.enabled = true;
         Levels[0].SetActive(true);
         Levels[1].SetActive(true);
-        Fadein = false;
+
+        ControllsScreen.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void ActivateLevel()
     {
-        Lamp1.GetComponent<SpriteRenderer>().color = Color.white;
-        Lamp2.GetComponent<SpriteRenderer>().color = Color.white;
-        StartCoroutine(SendActivate());
-    }
-    public IEnumerator SendActivate()
-    {
-        yield return new WaitForSeconds(.25f);
         CanSelectLevel = true;
-
+        Tint.enabled = false;
     }
+    
     public void DeActive()
     {
-        Lamp1.GetComponent<SpriteRenderer>().color = Color.gray;
-        Lamp2.GetComponent<SpriteRenderer>().color = Color.gray;
+        Tint.enabled = true;
+        Levels[0].GetComponent<Image>().color = Color.gray;
+        Levels[1].GetComponent<Image>().color = Color.gray;
         CanSelectLevel = false;
     }
 
@@ -56,31 +50,20 @@ public class NextLevel : MonoBehaviour {
                 Levels[0].SetActive(false);
                 StartCoroutine(LoadLevel(2));
             }
-            else if (Input.GetButtonDown("Player1_Back") || Input.GetButtonDown("Player2_Back") || Input.GetButtonDown("Player3_Back") || Input.GetButtonDown("Player4_Back"))
+            else if (Input.GetButtonDown("Player1_Back") || Input.GetButtonDown("Player2_Back") ||
+                Input.GetButtonDown("Player3_Back") || Input.GetButtonDown("Player4_Back"))
             {
                 Levels[1].SetActive(false);
                 StartCoroutine(LoadLevel(3));
             }
-        }
-
-        if (Fadein == true)
-        {
-
-            ControllsScreen.GetComponent<SpriteRenderer>().color = new Color(255,255,255, 1);
-        }
-        else if (Fadein == false)
-        {
-            ControllsScreen.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255,0);
-        }
-           
+        } 
     }
     public IEnumerator LoadLevel(int indexNum)
     {
-        //Debug.Log("Loading Level");
+        
         yield return new WaitForSeconds(2f);
-        Fadein = true;
+        ControllsScreen.GetComponent<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(7f);
-        Fadein = false;
         SceneManager.LoadScene(indexNum);
     }
 }

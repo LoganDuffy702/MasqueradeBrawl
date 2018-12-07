@@ -4,6 +4,8 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: UIButtons_0
     21300002: UIButtons_1
+    21300004: UIButtons_2
+    21300006: UIButtons_3
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -87,6 +89,46 @@ TextureImporter:
       name: UIButtons_0
       rect:
         serializedVersion: 2
+        x: 48
+        y: 372
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0995183199dae2e498a2154a14b3d02d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIButtons_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 369
+        width: 118
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03faa9d03bef5c4e947e7b1a9885e38
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIButtons_2
+      rect:
+        serializedVersion: 2
         x: 55
         y: 192
         width: 118
@@ -98,13 +140,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53d1971d88c8fdd4c908b596f6acb85f
+      spriteID: e4311f8645e496a439b01b6d82f9989c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIButtons_1
+      name: UIButtons_3
       rect:
         serializedVersion: 2
         x: 271
@@ -118,7 +160,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11082b9450c3b1149b8623cd5f784832
+      spriteID: d6ddb554108dfa64f983b1e98ae9b73d
       vertices: []
       indices: 
       edges: []
