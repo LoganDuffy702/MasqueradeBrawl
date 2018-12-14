@@ -10346,11 +10346,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -22.62
+      value: -27.9
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -19.6
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10384,12 +10384,12 @@ Prefab:
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: SpawnTimer
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: speed
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
@@ -10428,7 +10428,7 @@ Prefab:
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
@@ -15909,11 +15909,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 19.39
+      value: 24.3
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -19.6
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -15947,12 +15947,12 @@ Prefab:
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: SpawnTimer
-      value: 11
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: speed
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
@@ -15991,7 +15991,7 @@ Prefab:
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
@@ -23450,12 +23450,12 @@ Prefab:
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: SpawnTimer
-      value: 12
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: speed
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
@@ -23718,11 +23718,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.81
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -19.6
+      value: 13.9
       objectReference: {fileID: 0}
     - target: {fileID: 4380449416298088, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -23756,7 +23756,7 @@ Prefab:
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: SpawnTimer
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
@@ -23838,6 +23838,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1591023760951860, guid: 1ba99bc7b5fead441924de7d92d89963,
         type: 2}
+    - target: {fileID: 1318458865343072, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f68f6cf627f9a7748bf4ff4bce77c10b, type: 2}
   m_IsPrefabParent: 0
@@ -24698,12 +24702,12 @@ Prefab:
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: SpawnTimer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}
       propertyPath: speed
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114823286554586416, guid: f68f6cf627f9a7748bf4ff4bce77c10b,
         type: 2}

@@ -240,7 +240,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.74
+      scalar: 1.01
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4717,8 +4717,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 9539d3b82c54a954893ed7d6ab78885a, type: 2}
-  - {fileID: 2100000, guid: 9539d3b82c54a954893ed7d6ab78885a, type: 2}
+  - {fileID: 2100000, guid: 017f34bf7adb2664c8b41f7c135daf7d, type: 2}
+  - {fileID: 2100000, guid: 017f34bf7adb2664c8b41f7c135daf7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
